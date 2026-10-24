@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) [YEAR - PENDING] [COPYRIGHT HOLDER - PENDING: to be supplied by the project owner]
+Copyright (c) 2026 Meenal Sinha
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +24,5 @@ SOFTWARE.
 NOTE (not part of the licence text): this licence covers the ParkiStep Twin
 SOURCE CODE only. The FoG-STAR dataset (https://zenodo.org/records/17838806)
 and all third-party libraries are covered by their own licences; see
-THIRD_PARTY_NOTICES.md. The two placeholders above must be filled in by the
-project owner before publication.
+THIRD_PARTY_NOTICES.md.
 ---------------------------------------------------------------------------

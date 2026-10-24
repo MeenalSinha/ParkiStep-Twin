@@ -162,6 +162,10 @@ A full 20-minute demonstration script is in [`docs/phase6/DEMO_VIDEO_SCRIPT.md`]
 `docs/phase4/` dashboard · `docs/phase5/` verification, performance, repairs · `docs/phase6/` final verification, release
 checklist, manifest, architecture, presentation, demo script. Historical reports are preserved, not overwritten.
 
+* **Project Presentation:** [`docs/phase6/ParkiStep_Twin_Presentation.pdf`](docs/phase6/ParkiStep_Twin_Presentation.pdf) (PDF) · [`docs/phase6/ParkiStep_Twin_Presentation.pptx`](docs/phase6/ParkiStep_Twin_Presentation.pptx) (PowerPoint)
+* **Architecture Diagram:** [`docs/phase6/architecture.pdf`](docs/phase6/architecture.pdf) (Vector PDF) · [`docs/phase6/architecture.png`](docs/phase6/architecture.png) (PNG)
+
+
 ## 12. Model and evaluation
 
 Source for every number below: [`reports/phase2/phase2_results_report.md`](reports/phase2/phase2_results_report.md)
@@ -213,8 +217,7 @@ via `scripts/release_preflight.py` and `.github/workflows/ci.yml`.
 
 ## 16. License
 
-Source code: **MIT** (`LICENSE`), with copyright holder and year **pending** (placeholders to be filled in by the project
-owner). The dataset (CC BY 4.0) and third-party libraries keep their own licences; see `THIRD_PARTY_NOTICES.md`. The MIT licence
+Source code: **MIT** (`LICENSE`), Copyright (c) 2026 Meenal Sinha. The dataset (CC BY 4.0) and third-party libraries keep their own licences; see `THIRD_PARTY_NOTICES.md`. The MIT licence
 covers the source code only. Pretrained model artifacts are derivative works distributed under Option B (release assets with SHA-256
 checksums) and Option C (reproducible retraining pipeline).
 
@@ -222,10 +225,14 @@ checksums) and Option C (reproducible retraining pipeline).
 
 | Field | Value |
 |---|---|
-| Team name | **[PENDING - to be supplied by owner]** |
-| Team members | **[PENDING - to be supplied by owner]** |
-| College / incubator | **[PENDING - to be supplied by owner]** |
-| Contact | **[PENDING - to be supplied by owner]** |
+| Team name | **NeuroIgniter** |
+| Team members | **Meenal Sinha** |
+| College / incubator | **Indian Institute of Technology Patna (IIT Patna)** |
+| Contact | [meenal_ua2504aih127@iitp.ac.in](mailto:meenal_ua2504aih127@iitp.ac.in) |
 | Public repository URL | [https://github.com/MeenalSinha/ParkiStep-Twin](https://github.com/MeenalSinha/ParkiStep-Twin) |
-| Demonstration video URL | **[PENDING - video not yet recorded; see docs/phase6/DEMO_VIDEO_SCRIPT.md]** |
+| Demonstration video URL | **[See docs/phase6/DEMO_VIDEO_SCRIPT.md]** |
+| Project presentation (PDF / PPT) | [`docs/phase6/ParkiStep_Twin_Presentation.pdf`](docs/phase6/ParkiStep_Twin_Presentation.pdf) · [`docs/phase6/ParkiStep_Twin_Presentation.pptx`](docs/phase6/ParkiStep_Twin_Presentation.pptx) |
+| Architecture diagram (PDF / PNG) | [`docs/phase6/architecture.pdf`](docs/phase6/architecture.pdf) · [`docs/phase6/architecture.png`](docs/phase6/architecture.png) |
+
+
 
