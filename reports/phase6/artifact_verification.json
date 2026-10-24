@@ -1,6 +1,6 @@
 {
   "schema": "parkistep.phase6.artifact_verification/1",
-  "artifacts_root": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2",
+  "artifacts_root": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2",
   "n_manifests": 24,
   "n_passed": 24,
   "all_passed": true,
@@ -14,7 +14,7 @@
   ],
   "artifacts": [
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__dummy_prior__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -68,7 +68,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -82,7 +95,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__dummy_prior__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -136,7 +149,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -150,7 +176,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__dummy_prior__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -204,7 +230,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -218,7 +257,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__dummy_random__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -272,7 +311,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -286,7 +338,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__dummy_random__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -340,7 +392,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -354,7 +419,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__dummy_random__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -408,7 +473,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -422,7 +500,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__logistic__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -476,11 +554,24 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
-        "probability": 0.013456520010763851,
+        "probability": 0.013456520010763862,
         "data_quality": "ok",
         "above_threshold": false,
         "features_expected": 516,
@@ -490,7 +581,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__logistic__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -544,11 +635,24 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
-        "probability": 0.7889994099840387,
+        "probability": 0.7889994099840388,
         "data_quality": "ok",
         "above_threshold": false,
         "features_expected": 516,
@@ -558,7 +662,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__logistic__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -612,11 +716,24 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
-        "probability": 0.9162003995902949,
+        "probability": 0.9162003995902946,
         "data_quality": "ok",
         "above_threshold": false,
         "features_expected": 516,
@@ -626,7 +743,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__random_forest__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -680,7 +797,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -694,7 +824,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__random_forest__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -748,7 +878,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -762,7 +905,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\fusion__random_forest__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -816,7 +959,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -830,7 +986,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__dummy_prior__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -884,7 +1040,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -898,7 +1067,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__dummy_prior__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -952,7 +1121,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -966,7 +1148,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__dummy_prior__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1020,7 +1202,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1034,7 +1229,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__dummy_random__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1088,7 +1283,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1102,7 +1310,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__dummy_random__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1156,7 +1364,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1170,7 +1391,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__dummy_random__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1224,7 +1445,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1238,7 +1472,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__logistic__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1292,11 +1526,24 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
-        "probability": 0.024302486012074062,
+        "probability": 0.024302486012074083,
         "data_quality": "ok",
         "above_threshold": false,
         "features_expected": 516,
@@ -1306,7 +1553,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__logistic__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1360,11 +1607,24 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
-        "probability": 0.8189797995247502,
+        "probability": 0.8189797995247503,
         "data_quality": "ok",
         "above_threshold": false,
         "features_expected": 516,
@@ -1374,7 +1634,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__logistic__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1428,7 +1688,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1442,7 +1715,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h1.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__random_forest__h1.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1496,7 +1769,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1510,7 +1796,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h3.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__random_forest__h3.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1564,7 +1850,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1578,7 +1877,7 @@
       "passed": true
     },
     {
-      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h5.manifest.json",
+      "manifest": "C:\\Users\\Meenal Sinha\\Downloads\\ParkiStep-Twin_Phase6 (1)\\ParkiStep-Twin\\artifacts\\phase2\\fog_onset_forecast_6499e95d\\models\\sensor_only__random_forest__h5.manifest.json",
       "checks": {
         "manifest_has_required_keys": true,
         "artifact_exists": true,
@@ -1632,7 +1931,20 @@
           "joblib": "1.5.3"
         }
       },
-      "software_mismatch": {},
+      "software_mismatch": {
+        "numpy": {
+          "trained_with": "2.4.4",
+          "running": "2.4.6"
+        },
+        "pandas": {
+          "trained_with": "3.0.2",
+          "running": "2.3.3"
+        },
+        "scipy": {
+          "trained_with": "1.17.1",
+          "running": "1.16.3"
+        }
+      },
       "inference": {
         "recording": "p1-s1-t1",
         "window_end_t": 30.0,
@@ -1646,6 +1958,6 @@
       "passed": true
     }
   ],
-  "software_mismatch_in_any_artifact": false,
+  "software_mismatch_in_any_artifact": true,
   "software_mismatch_note": "if true, install requirements-lock.txt to reproduce with the training-time versions"
 }

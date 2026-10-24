@@ -43,7 +43,7 @@
       "wrist_gyro_z"
     ]
   },
-  "config_hash": "9e82561d11a167e77dee33af310880ab9a1add2f555af1095eb6462cd45ed955",
+  "config_hash": "d575e994cb858b52973627a16107e46fd4e645e5003d1eb1678c6c265750310d",
   "model": {
     "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
     "artifact": "sensor_only__random_forest__h3.joblib",
@@ -112,9 +112,9 @@
     "rule": "window_end_time must equal the timestamp of the observation that triggered the forecast"
   },
   "timing": {
-    "wall_seconds": 23.46,
-    "mean_inference_ms": 18.95,
-    "max_inference_ms": 71.28,
+    "wall_seconds": 27.01,
+    "mean_inference_ms": 21.97,
+    "max_inference_ms": 69.95,
     "speed": 0.0
   },
   "determinism_digest": "13ee0b1870bc054f3782db87aeaee18d77ef6cb9d69e9565c5469b6af2f240bd",

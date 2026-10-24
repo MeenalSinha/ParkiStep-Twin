@@ -1,0 +1,389 @@
+{
+  "schema": "parkistep.release_manifest/2",
+  "phase": "Phase 7: Public Release, Deployment Readiness & Submission",
+  "generated_at_utc": "2026-10-24T05:47:28+00:00",
+  "release": {
+    "version": "0.1.0",
+    "release_id": "0.1.0-phase7+abe9acd409",
+    "git_commit": "482f3e17a8ec7cedec15ab052e291ed6c0e1aa59",
+    "git_remote": "https://github.com/MeenalSinha/ParkiStep-Twin.git",
+    "source_tree_sha256": "abe9acd4098e3843c46e197677c04c386b61c0be860a643a956f6fa9ef3ac7f1",
+    "source_files_tracked": 191,
+    "status": "READY_WITH_NON_BLOCKING_WARNINGS",
+    "technical_gate_decision": "PASS"
+  },
+  "dataset": {
+    "name": "FoG-STAR: Freezing of Gait Severity, Tasks, Activities, and Ratings",
+    "version_declared": "3.0",
+    "zenodo_record_url": "https://zenodo.org/records/17838806",
+    "doi": "10.5281/zenodo.17838806",
+    "license": "CC BY 4.0 (Creative Commons Attribution 4.0 International)",
+    "live_zenodo_api_verified": true,
+    "redistributed_in_repository": false,
+    "download_method": "python scripts/acquire_data.py --download",
+    "attribution": "Borzi, L. et al. (2026), Sci Data 13, 305, doi:10.1038/s41597-026-06645-1"
+  },
+  "models": {
+    "distribution_strategy": "Hybrid: Option B (release assets with verified SHA-256) + Option C (reproducible retraining pipeline)",
+    "n_models_verified": 24,
+    "production_default": {
+      "experiment": "sensor_only",
+      "model": "random_forest",
+      "horizon_s": 3.0,
+      "operating_threshold": 0.7031869504322085
+    },
+    "models_list": [
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_prior",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "sha256": "cd0439aed7820083c2fd8e59042a188a887e9e9c709998dfa526c9d5b14c26c1",
+        "threshold": 0.04019277140445007,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_prior",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "sha256": "461b71d4ca73af2df05ad7f6c004631687623d521b40d05ef68d14def44ecfc2",
+        "threshold": 0.13038676522974146,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_prior",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "sha256": "3aa0c1bc94933b4fe872771e236fc1d78f56d4fcdbe9599f7d01ad90d71d9d4a",
+        "threshold": 0.2454741738769135,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_random",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "sha256": "72ad7cadcdf3cd590ef1f7ae0cbcc5eedfde6d6289c352d05c85d8ffb151ab76",
+        "threshold": 0.9989086654299715,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_random",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "sha256": "1209a180eea88a0fb5b767df3ac107945b1dd9662866bbb8d4b8e94a45d412e3",
+        "threshold": 0.9989059132103135,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_random",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "sha256": "a2cbad01a1413856941fdde09540b5a93bf918d40b8c970c331839f1a6a38b9d",
+        "threshold": 0.9987817810298666,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/logistic",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "sha256": "84cbdf9d40ec0a6a8ab8fc7d0f18ca5885cd365eccaa533f02008ebbdf56ad9b",
+        "threshold": 0.9999141949161985,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/logistic",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "sha256": "150554ecd02f15cec0dde8648eaf920fd761668ebd4defc0e891c2449e3664c9",
+        "threshold": 0.9993136815991347,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/logistic",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "sha256": "308eef7ddf30bc2d6168a5af5572dedcc0221084b86a336986fd03632d05539a",
+        "threshold": 0.9976294474733641,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/random_forest",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "sha256": "9fadf87a820bd8ccbdcec727c59eeabba2d7be41ed649c4950a6a697f9d85bc0",
+        "threshold": 0.4780653153278342,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/random_forest",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "sha256": "4df58b386e0c454decbfa40427f8b932e3c7d32c5f2e122e56b5802bd0710d5f",
+        "threshold": 0.6211903695859586,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/fusion/random_forest",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "sha256": "e139777e6a84693c1d61bf962a56c776d25d1b42ed94dc31fa2a88a97b395111",
+        "threshold": 0.6988941760463855,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_prior",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "sha256": "feece12391a630516fa7c9d26825ec03b180a47e65fa28cc8138f691a1dfeb0d",
+        "threshold": 0.04019277140445007,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_prior",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "sha256": "5eff9524059f5989e1d826834c7b7b06b6210f3eb2f665a14023c36670c57c83",
+        "threshold": 0.13038676522974146,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_prior",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "sha256": "89356e39e88df4765967317539fd58d0f2d5fbc571ae1c6dd872de3a35e99e43",
+        "threshold": 0.2454741738769135,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_random",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "sha256": "b4d3b4af43de4e1ba4e0457d161eb234c8f6447e8ce4758c1a9032fcf7cce65c",
+        "threshold": 0.9989086654299715,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_random",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "sha256": "1805a6cda1fdb4c44093c9a45d07fe77f6fa6d14b1f4b13dd2b38f1a381cd917",
+        "threshold": 0.9989059132103135,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_random",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "sha256": "352be71bdfe76d67d8ba6b881304912a8685394ccd865b0d7cfd8d0f6415fc9e",
+        "threshold": 0.9987817810298666,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/logistic",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "sha256": "6845087b7be233e93d833c849254652d6520f5a0969c0ab1d85cf28d2b473935",
+        "threshold": 0.9999351140177216,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/logistic",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "sha256": "36a31d9b919915c8cfa5cfe7e712a7b8c8105628da603acbbafebdb77cacec06",
+        "threshold": 0.9990835478644999,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/logistic",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "sha256": "9a6d8b3aa1aa2b0b062014d0299055253b27ab57059e18209392d96b9ee43bd1",
+        "threshold": 0.9994033660973549,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h1.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "sha256": "5a02924c3d9e58cb36eb91bd19632bd58560cb5b354ac37d015fda530df3f5b3",
+        "threshold": 0.4803448528830765,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h3.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "sha256": "55aee24bcf2325b221781058ece25f757c89f8b81862e2f106dd4fde48203263",
+        "threshold": 0.7031869504322085,
+        "verified": true
+      },
+      {
+        "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h5.manifest.json",
+        "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "sha256": "ec8632e8735de7771f3ee64e0daa4b438341bf31af5bd8abde28305697c3c892",
+        "threshold": 0.7059835364621135,
+        "verified": true
+      }
+    ]
+  },
+  "retraining_verification": {
+    "pipeline_executed": true,
+    "cache_dir": "data/interim/phase2_rerun",
+    "artifacts_dir": "artifacts/phase2_rerun",
+    "reports_dir": "reports/phase2_rerun",
+    "reproducibility": "Identical candidate model rankings and metric values within 0.00003 across 5-fold CV"
+  },
+  "technical_verification": {
+    "full_regression_tests": {
+      "total_collected": 331,
+      "passed": 331,
+      "failed": 0,
+      "skipped": 0,
+      "command": "PARKISTEP_REQUIRE_REAL=1 python -m pytest -q -p no:cacheprovider"
+    },
+    "preflight_status": "READY_WITH_NON_BLOCKING_WARNINGS",
+    "preflight_summary": {
+      "passed": 30,
+      "warnings": 2,
+      "failed": 0,
+      "blocked": 0
+    },
+    "retrospective_metrics_match": "13/13 metrics matched published values on p2-s1-t4"
+  },
+  "deliverables": {
+    "readme": {
+      "path": "README.md",
+      "sha256": "3aa09d07101be2fe8eb77f319116222ff7416a4b18ba8ad72462992e75b4a736",
+      "bytes": 17125
+    },
+    "license": {
+      "path": "LICENSE",
+      "sha256": "48a01b64cb9c7dc3b2a13ab3486a343994160bd18639dc11e0823d01eebd9a88",
+      "bytes": 1619
+    },
+    "third_party_notices": {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "8479c3165b3268b073ab5bfaefd1cd67c36ec88330e850da0ab5bb2e2dd7c884",
+      "bytes": 4042
+    },
+    "architecture_vector": {
+      "path": "docs/phase6/architecture.pdf",
+      "sha256": "6baebc93bcba0f39b4ffaa0c56cf0c4cba0f7a2b0f9a2ce431911d3ff37ef996",
+      "bytes": 33348
+    },
+    "architecture_raster": {
+      "path": "docs/phase6/architecture.png",
+      "sha256": "0a372a130a9d67ddbf4cf12ff58613b59b5faeda1a1a70ccd2f221807877549f",
+      "bytes": 807256
+    },
+    "architecture_svg": {
+      "path": "docs/phase6/architecture.svg",
+      "sha256": "34a0378a143e372b5471b34bbc6fdfe2e37a09e48a729527101bb884732406bf",
+      "bytes": 34866
+    },
+    "presentation_pptx": {
+      "path": "docs/phase6/ParkiStep_Twin_Presentation.pptx",
+      "sha256": "02acd0460a082e8305460253aa2f43a5a335776ae4049a1bfc2e4c1ffa356c3a",
+      "bytes": 838532
+    },
+    "presentation_pdf": {
+      "path": "docs/phase6/ParkiStep_Twin_Presentation.pdf",
+      "sha256": "28f13a1ad4cca64d7e278e5bf1ab6554ec6ba08f2e9740adc8b6f38f892ea22d",
+      "bytes": 846366
+    },
+    "demo_video_script": {
+      "path": "docs/phase6/DEMO_VIDEO_SCRIPT.md",
+      "sha256": "13c852b3032427ae4361e5a70052c42e6f069bbd2ca0a894d861780c2e49daca",
+      "bytes": 14779
+    },
+    "dockerfile": {
+      "path": "Dockerfile",
+      "sha256": "a85e10ff644282ce358ff54093dea3e78ea156406e3e6e9ca70a6da16ee45dbe",
+      "bytes": 1392
+    },
+    "dockerignore": {
+      "path": ".dockerignore",
+      "sha256": "84c5e5af1d81a802628740d3b898c929cfccc5f70df65de82320a2b0463f457a",
+      "bytes": 204
+    },
+    "ci_workflow": {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "161032e84bd2b7496c6c62383e5bad82cc40456bee934c80fb97d0fca2e500ff",
+      "bytes": 4210
+    },
+    "deployment_guide": {
+      "path": "docs/DEPLOYMENT.md",
+      "sha256": "d7b7cfab58723ac8fd4ce6f924899479cf29464078f1395cc2dfa4fa4d31e963",
+      "bytes": 3897
+    },
+    "phase6_verification": {
+      "path": "docs/phase7/PHASE6_FINAL_VERIFICATION.md",
+      "sha256": "0e1d278b8718966106fd271a3afc583c5e6c6e0e1a58cf518938b70c9ad385fd",
+      "bytes": 8999
+    },
+    "release_checklist": {
+      "path": "docs/phase7/RELEASE_CHECKLIST.md",
+      "sha256": "95e84ecbb3b5e401cb44e70bee3c1b4e3b464117fa5eeedab53c53a1672eb567",
+      "bytes": 6426
+    }
+  },
+  "software_environment": {
+    "python": "3.14.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6",
+    "PyYAML": "6.0.3",
+    "requests": "2.31.0",
+    "matplotlib": "3.10.8",
+    "pyarrow": "22.0.0",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.16.3",
+    "joblib": "1.5.3",
+    "streamlit": "1.66.0",
+    "plotly": "6.5.0",
+    "pytest": "8.2.2",
+    "playwright": "1.58.0",
+    "psutil": "7.2.1"
+  },
+  "configuration_hashes": {
+    "configs/datasets.yaml": "05965f2f8c28c7633c7698e09fa8c511ebb59e4317a06e9717a6b541464901f3",
+    "configs/phase2.yaml": "d56aee55903c08ecdce6ee2290559fc1be2586b5c01b097d970ec05cd9f622f1",
+    "configs/phase3.yaml": "6b05d09bd7b1154123a7a7e2d4c6e29ce4050d953ee82c75486ff4b0a41a643a",
+    "configs/phase4.yaml": "80fdbb68a0554001279f825c95c274fbcf5797172402cc1ba82aa94bc9bc7de4",
+    "configs/project.yaml": "9955e4b2a66bfed0359adb69c721ec08533bfb5c33016e2cbe4ade43e3d53340"
+  },
+  "submission_owner_items": {
+    "team_name": "PENDING - to be supplied by owner",
+    "team_members": "PENDING - to be supplied by owner",
+    "institution": "PENDING - to be supplied by owner",
+    "contact_email": "PENDING - to be supplied by owner",
+    "copyright_holder": "PENDING - to be supplied by owner",
+    "copyright_year": "PENDING - to be supplied by owner",
+    "video_url": "PENDING - to be uploaded by owner following DEMO_VIDEO_SCRIPT.md"
+  }
+}

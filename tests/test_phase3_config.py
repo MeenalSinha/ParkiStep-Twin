@@ -62,7 +62,7 @@ def test_storage_locations_come_from_configuration(tmp_path):
     assert s.state_path == tmp_path / "elsewhere/x.sqlite" and s.output_dir == tmp_path / "rep"
     s2 = settings(tmp_path, "persistence.path=rel/state.sqlite")
     assert s2.state_path == REPO / "rel/state.sqlite"
-    assert settings(tmp_path, "model.artifact_dir=/some/dir").model_dir == Path("/some/dir")
+    assert settings(tmp_path, f"model.artifact_dir={tmp_path}/some/dir").model_dir == tmp_path / "some/dir"
 
 
 def test_state_affecting_and_runtime_only_settings_hash_differently(tmp_path):

@@ -195,7 +195,7 @@
     "clinical_influences_forecast": false
   },
   "config": {
-    "config_hash": "9e82561d11a167e77dee33af310880ab9a1add2f555af1095eb6462cd45ed955",
+    "config_hash": "d575e994cb858b52973627a16107e46fd4e645e5003d1eb1678c6c265750310d",
     "compat_hash": "a31f95279e6aff63473494397a363cd5c8956e9d39adb3b1fbcbb242601426ac",
     "warning_policy": {
       "persistence_anchors": 1,

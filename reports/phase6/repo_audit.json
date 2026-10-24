@@ -1,9 +1,10 @@
 {
   "schema": "parkistep.phase6.repo_audit/1",
   "root": ".",
-  "n_files_scanned": 425,
+  "n_files_scanned": 426,
   "git": {
-    "is_git_repo": false
+    "is_git_repo": true,
+    "history_secret_note": "run a history scan (e.g. gitleaks/trufflehog) before publishing; this script scans the working tree only"
   },
   "license_file_present": true,
   "gitignore_patterns": [
@@ -71,6 +72,11 @@
       "match_prefix": "/home/claude..."
     },
     {
+      "file": "reports/phase2/phase2_metrics.json",
+      "line": 9539,
+      "match_prefix": "/home/claude..."
+    },
+    {
       "file": "data/processed/fogstar/dataset_manifest.json",
       "line": 35,
       "match_prefix": "/home/claude..."
@@ -81,18 +87,8 @@
       "match_prefix": "/home/claude..."
     },
     {
-      "file": "reports/phase2/phase2_metrics.json",
-      "line": 9539,
-      "match_prefix": "/home/claude..."
-    },
-    {
       "file": "artifacts/phase2/fog_onset_forecast_6499e95d/config_snapshot.json",
       "line": 232,
-      "match_prefix": "/home/claude..."
-    },
-    {
-      "file": "artifacts/phase2/fog_onset_forecast_6499e95d/phase2_metrics.json",
-      "line": 9539,
       "match_prefix": "/home/claude..."
     },
     {
@@ -104,19 +100,24 @@
       "file": "artifacts/phase2/fog_onset_forecast_6499e95d/dataset_provenance.json",
       "line": 26,
       "match_prefix": "/home/claude..."
+    },
+    {
+      "file": "artifacts/phase2/fog_onset_forecast_6499e95d/phase2_metrics.json",
+      "line": 9539,
+      "match_prefix": "/home/claude..."
     }
   ],
   "n_local_machine_path_mentions": 13,
   "dependency_licences_declared_by_packages": {
     "pandas": {
-      "version": "3.0.2",
+      "version": "2.3.3",
       "license_field": "BSD 3-Clause License   Copyright (c) 2008-2011, AQR Capital Management, LLC, Lam",
       "classifiers": [
         "BSD License"
       ]
     },
     "numpy": {
-      "version": "2.4.4",
+      "version": "2.4.6",
       "license_field": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
       "classifiers": []
     },
@@ -128,8 +129,8 @@
       ]
     },
     "requests": {
-      "version": "2.33.1",
-      "license_field": "Apache-2.0",
+      "version": "2.31.0",
+      "license_field": "Apache 2.0",
       "classifiers": [
         "Apache Software License"
       ]
@@ -142,14 +143,18 @@
       ]
     },
     "pyarrow": {
-      "version": "26.0.0",
-      "license_field": "Apache-2.0",
-      "classifiers": []
+      "version": "22.0.0",
+      "license_field": "Apache Software License",
+      "classifiers": [
+        "Apache Software License"
+      ]
     },
     "pytest": {
-      "version": "9.1.1",
+      "version": "8.2.2",
       "license_field": "MIT",
-      "classifiers": []
+      "classifiers": [
+        "MIT License"
+      ]
     },
     "scikit-learn": {
       "version": "1.8.0",
@@ -157,7 +162,7 @@
       "classifiers": []
     },
     "scipy": {
-      "version": "1.17.1",
+      "version": "1.16.3",
       "license_field": "Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers.  All rights rese",
       "classifiers": [
         "BSD License"
@@ -169,13 +174,13 @@
       "classifiers": []
     },
     "streamlit": {
-      "version": "1.66.1",
+      "version": "1.66.0",
       "license_field": "Apache-2.0",
       "classifiers": []
     },
     "plotly": {
-      "version": "7.1.0",
-      "license_field": "MIT",
+      "version": "6.5.0",
+      "license_field": "MIT License  Copyright (c) 2016-2024 Plotly Technologies Inc.  Permission is her",
       "classifiers": [
         "MIT License"
       ]

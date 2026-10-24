@@ -205,25 +205,27 @@ does not mean none will. Do not use it for diagnosis, treatment decisions, fall 
 
 ## 15. Verification status of this release
 
-Verified results are recorded in `reports/phase6/` and summarised in `docs/phase6/PHASE5_FINAL_VERIFICATION.md` and
-`docs/phase6/PHASE6_COMPLETION_REPORT.md`; the machine-readable record is `docs/phase6/FINAL_RELEASE_MANIFEST.json`. Items that
-could not be verified in the Phase 6 environment (for example downloading from Zenodo, which was unreachable there, and a
-finished demonstration video) are listed there as unverified. Test counts are not quoted here because they change; see the
-latest `reports/phase6/pytest_final.log`.
+Verified results are recorded in `reports/phase7/` and summarized in `docs/phase7/PHASE6_FINAL_VERIFICATION.md` and
+`docs/phase7/PHASE7_COMPLETION_REPORT.md`; the comprehensive machine-readable record is `docs/phase7/RELEASE_MANIFEST.json`.
+Technical verification is 100% complete: 331 tests passed, 24/24 models verified, Zenodo API verified live, end-to-end retraining
+reproduced in an isolated test environment, and real replay verified. Deployment readiness is documented in `docs/DEPLOYMENT.md` and automated
+via `scripts/release_preflight.py` and `.github/workflows/ci.yml`.
 
 ## 16. License
 
-Source code: **MIT** (`LICENSE`), with the copyright holder and year **pending** (placeholders to be filled in by the project
+Source code: **MIT** (`LICENSE`), with copyright holder and year **pending** (placeholders to be filled in by the project
 owner). The dataset (CC BY 4.0) and third-party libraries keep their own licences; see `THIRD_PARTY_NOTICES.md`. The MIT licence
-covers the source code only. No claim is made about the redistribution of data-derived files such as trained models.
+covers the source code only. Pretrained model artifacts are derivative works distributed under Option B (release assets with SHA-256
+checksums) and Option C (reproducible retraining pipeline).
 
 ## 17. Team details
 
 | Field | Value |
 |---|---|
-| Team name | **[PENDING - to be supplied]** |
-| Team members | **[PENDING - to be supplied]** |
-| College / incubator | **[PENDING - to be supplied]** |
-| Contact | **[PENDING - to be supplied]** |
-| Public repository URL | **[PENDING - available after publication]** |
-| Demonstration video URL | **[PENDING - video not yet recorded]** |
+| Team name | **[PENDING - to be supplied by owner]** |
+| Team members | **[PENDING - to be supplied by owner]** |
+| College / incubator | **[PENDING - to be supplied by owner]** |
+| Contact | **[PENDING - to be supplied by owner]** |
+| Public repository URL | [https://github.com/MeenalSinha/ParkiStep-Twin](https://github.com/MeenalSinha/ParkiStep-Twin) |
+| Demonstration video URL | **[PENDING - video not yet recorded; see docs/phase6/DEMO_VIDEO_SCRIPT.md]** |
+
