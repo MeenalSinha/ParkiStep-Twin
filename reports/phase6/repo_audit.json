@@ -1,7 +1,7 @@
 {
   "schema": "parkistep.phase6.repo_audit/1",
   "root": ".",
-  "n_files_scanned": 426,
+  "n_files_scanned": 548,
   "git": {
     "is_git_repo": true,
     "history_secret_note": "run a history scan (e.g. gitleaks/trufflehog) before publishing; this script scans the working tree only"
@@ -36,6 +36,11 @@
     {
       "file": "data/processed/fogstar/sensor_validated.parquet",
       "mb": 70.1,
+      "ignored_by_gitignore": true
+    },
+    {
+      "file": "data/interim/phase2_rerun/windows_59b6408e/features.parquet",
+      "mb": 46.9,
       "ignored_by_gitignore": true
     }
   ],
@@ -87,6 +92,16 @@
       "match_prefix": "/home/claude..."
     },
     {
+      "file": "artifacts/phase2_rerun/fog_onset_forecast_90ecd04f/dataset_provenance.json",
+      "line": 19,
+      "match_prefix": "/home/claude..."
+    },
+    {
+      "file": "artifacts/phase2_rerun/fog_onset_forecast_90ecd04f/dataset_provenance.json",
+      "line": 26,
+      "match_prefix": "/home/claude..."
+    },
+    {
       "file": "artifacts/phase2/fog_onset_forecast_6499e95d/config_snapshot.json",
       "line": 232,
       "match_prefix": "/home/claude..."
@@ -107,7 +122,7 @@
       "match_prefix": "/home/claude..."
     }
   ],
-  "n_local_machine_path_mentions": 13,
+  "n_local_machine_path_mentions": 15,
   "dependency_licences_declared_by_packages": {
     "pandas": {
       "version": "2.3.3",

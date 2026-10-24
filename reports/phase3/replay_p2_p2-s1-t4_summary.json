@@ -112,9 +112,9 @@
     "rule": "window_end_time must equal the timestamp of the observation that triggered the forecast"
   },
   "timing": {
-    "wall_seconds": 27.01,
-    "mean_inference_ms": 21.97,
-    "max_inference_ms": 69.95,
+    "wall_seconds": 19.0,
+    "mean_inference_ms": 15.33,
+    "max_inference_ms": 34.72,
     "speed": 0.0
   },
   "determinism_digest": "13ee0b1870bc054f3782db87aeaee18d77ef6cb9d69e9565c5469b6af2f240bd",
