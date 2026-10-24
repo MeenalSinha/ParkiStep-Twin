@@ -26,20 +26,84 @@ def badge(s4, group, key) -> None:
 
 
 def card(title: str, big: str, sub: str = "", badge_markup: str = "") -> None:
-    st.markdown(f'<div class="pk-card"><h4>{html.escape(title)}</h4><div class="pk-big">{html.escape(big)}</div>'
-                f'<div class="pk-sub">{badge_markup}{(" " if badge_markup and sub else "")}{html.escape(sub)}</div></div>', unsafe_allow_html=True)
+    b_markup = f'<div class="pk-card-badge">{badge_markup}</div>' if badge_markup else ""
+    sub_markup = f'<div class="pk-sub">{html.escape(sub)}</div>' if sub else ""
+    st.markdown(
+        f'<div class="pk-card">'
+        f'<div class="pk-card-header"><h4>{html.escape(title)}</h4>{b_markup}</div>'
+        f'<div class="pk-big">{html.escape(big)}</div>'
+        f'{sub_markup}'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
 
 
 def banner(text: str) -> None:
-    st.markdown(f'<div class="pk-banner">{html.escape(" ".join(text.split()))}</div>', unsafe_allow_html=True)
+    clean_txt = html.escape(" ".join(text.split()))
+    st.markdown(
+        f'<div class="pk-banner">'
+        f'<div style="display:flex;align-items:center;gap:8px;">'
+        f'<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#0284C7;"></span>'
+        f'<span style="font-size:0.7rem;font-weight:700;color:#0369A1;letter-spacing:0.06em;text-transform:uppercase;">Information</span>'
+        f'</div>'
+        f'<div style="font-size:0.835rem;color:#0C4A6E;line-height:1.45;margin-top:2px;">{clean_txt}</div>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
 
 
 def disclaimer(ctx) -> None:
-    banner(ctx.s4["app"]["disclaimer_short"])
+    txt = html.escape(" ".join(ctx.s4["app"]["disclaimer_short"].split()))
+    st.markdown(
+        f'<div class="pk-disclaimer">'
+        f'<div style="display:flex;align-items:center;gap:8px;">'
+        f'<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#D97706;"></span>'
+        f'<span style="font-size:0.7rem;font-weight:700;color:#B45309;letter-spacing:0.06em;text-transform:uppercase;">Research Prototype &bull; Safety Notice</span>'
+        f'</div>'
+        f'<div style="font-size:0.825rem;color:#78350F;line-height:1.45;margin-top:3px;">{txt}</div>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
+
+
+def page_header(ctx, title: str, category: str, subtitle: str, accent_color: str = "#0284C7") -> None:
+    from state import selection
+    sel = selection()
+    sess = ctx.session() if hasattr(ctx, "session") else None
+    is_live = sess is not None and hasattr(sess, "status") and sess.status.value in ("running", "paused")
+    status_pill = (
+        '<span class="pk-badge" style="color:#0F766E;border-color:#99F6E4;background:#F0FDFA;"><span class="pk-badge-dot" style="background:#0D9488;"></span>STREAMING</span>'
+        if is_live else
+        '<span class="pk-badge" style="color:#64748B;border-color:#E2E8F0;background:#F8FAFC;"><span class="pk-badge-dot" style="background:#94A3B8;"></span>STANDBY</span>'
+    )
+    pid = sel.get("patient_id") or "2"
+    rid = sel.get("recording_id") or "p2-s1-t4"
+    st.markdown(
+        f'''<div class="pk-page-header">
+            <div class="pk-header-meta">
+                <div class="pk-header-category" style="color:{accent_color};">
+                    <span class="pk-category-dot" style="background:{accent_color};"></span>
+                    {html.escape(category)}
+                </div>
+                <div class="pk-header-context">
+                    <span style="font-weight:600;color:#0F172A;">Patient {html.escape(str(pid))}</span>
+                    <span style="color:#CBD5E1;">&bull;</span>
+                    <span style="color:#64748B;">{html.escape(str(rid))}</span>
+                    {status_pill}
+                </div>
+            </div>
+            <h1 class="pk-header-title">{html.escape(title)}</h1>
+            <div class="pk-header-subtitle">{html.escape(subtitle)}</div>
+        </div>''',
+        unsafe_allow_html=True
+    )
+    disclaimer(ctx)
+
 
 
 def empty_state(title: str, body: str, next_step: str | None = None) -> None:
-    st.info(f"**{title}**  \n{body}" + (f"  \n*Next:* {next_step}" if next_step else ""))
+    msg = f"**{title}**  \n{body}" + (f"  \n*Action:* {next_step}" if next_step else "")
+    st.info(msg)
 
 
 def dataset_guard(ctx) -> bool:

@@ -4,7 +4,7 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
-from components.common import banner, dataset_guard, disclaimer, empty_state, fmt_pct, fmt_time, live_page
+from components.common import banner, dataset_guard, disclaimer, empty_state, fmt_pct, fmt_time, live_page, page_header
 from components.replay_controls import control_bar, model_summary, progress_panel, selection_panel
 from components.sensor_charts import movement_figure, risk_figure
 from parkistep.dashboard.analysis import LABELS
@@ -100,10 +100,10 @@ def render_live(ctx) -> None:
 
 
 def render(ctx) -> None:
-    st.title("Replay Analysis")
-    disclaimer(ctx)
+    page_header(ctx, "Interactive Replay & Retrospective Analysis", "SIMULATION & VERIFICATION", "Replay real wearable sensor recordings through the digital twin with ground-truth withholding and post-session evaluation.", "#0284C7")
     if not dataset_guard(ctx):
         return
     validate_selection(ctx)
     live_page(ctx, render_live)
+
 

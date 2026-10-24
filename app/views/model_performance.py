@@ -4,15 +4,14 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
-from components.common import banner, disclaimer, empty_state, fmt_score
+from components.common import banner, disclaimer, empty_state, fmt_score, page_header
 from components.performance_tables import fold_table, lead_table, metric_figure, participant_table, summary_table
 from state import selection, validate_selection
 
 
 def render(ctx) -> None:
     s4, svc = ctx.s4, ctx.svc
-    st.title("Model Performance")
-    disclaimer(ctx)
+    page_header(ctx, "Model Validation & Retrospective Performance", "OFFLINE VALIDATION", "Participant-grouped out-of-fold cross-validation metrics and clinical benchmark evaluation.", "#0284C7")
     perf = svc.performance()
     if not perf.available:
         st.error("Evaluation results unavailable")
