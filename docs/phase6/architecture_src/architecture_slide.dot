@@ -1,0 +1,35 @@
+// Slide-sized SIMPLIFICATION of architecture.dot (same data flows and colour semantics, fewer labels, larger text).
+// Render: neato -Tpng -Gdpi=200 architecture_slide.dot -o architecture_slide.png     (the complete diagram is architecture.dot / architecture.pdf)
+digraph slide {
+  layout=neato; overlap=false; splines=true; pad=0.2; fontname="Helvetica";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=17, margin="0.18,0.12", color="#4b5563", fillcolor="#ffffff", width=2.7, height=0.95];
+  edge [fontname="Helvetica", fontsize=13, color="#4b5563", arrowsize=0.9, penwidth=2];
+
+  clin [pos="1.7,5.4!",  fillcolor="#dcfce7", label="Clinical record\n(historical context)"];
+  sens [pos="5.2,5.4!",  fillcolor="#dbeafe", label="Wearable sensors\n(dynamic stream)"];
+  ann  [pos="11.4,5.4!", fillcolor="#fee2e2", label="Video annotations\n(labels only)"];
+
+  p1   [pos="3.45,3.8!", label="Phase 1\nvalidate - audit - fuse"];
+  p2   [pos="8.3,3.8!",  label="Phase 2 (offline)\nwindows - features - model\ngrouped cross-validation"];
+
+  twin [pos="1.7,2.2!",  fillcolor="#f0fdf4", label="Phase 3 digital twin\nstate + rolling buffer"];
+  art  [pos="8.3,2.2!",  fillcolor="#ffedd5", label="Model artifacts\nchecksummed manifests"];
+  retro[pos="11.4,2.2!", fillcolor="#ede9fe", label="Retrospective\ncomparison\n(after replay ends)"];
+
+  gate [pos="4.9,0.7!",  fillcolor="#ffedd5", label="Model gateway\nverifies artifact"];
+  warn [pos="8.3,0.7!",  fillcolor="#ffedd5", label="Warning manager\nscore -> warning"];
+  dash [pos="11.4,0.7!", fillcolor="#fff7ed", label="Phase 4 dashboard\n(Streamlit, 7 pages)"];
+
+  clin -> p1 [color="#16a34a"]; sens -> p1 [color="#2563eb"];
+  p1 -> p2 [color="#2563eb", label="training windows", fontcolor="#2563eb"];
+  ann -> p2 [color="#dc2626", style=dashed, label="training-only\nlabels", fontcolor="#dc2626"];
+  p2 -> art [color="#ea580c"];
+  p1 -> twin [color="#2563eb", label="LIVE: past samples\nonly", fontcolor="#2563eb", penwidth=3.2];
+  twin -> gate [color="#2563eb", penwidth=3.2, label="trailing\nwindow", fontcolor="#2563eb"];
+  art -> gate [color="#ea580c", label="load + verify", fontcolor="#ea580c"];
+  gate -> warn [color="#ea580c", label="score", fontcolor="#ea580c"];
+  warn -> dash [color="#ea580c"];
+  warn -> retro [color="#7c3aed", style=dashed];
+  ann -> retro [color="#7c3aed", style=dashed, label="ground truth,\nafter replay only", fontcolor="#7c3aed"];
+  retro -> dash [color="#7c3aed", style=dashed];
+}

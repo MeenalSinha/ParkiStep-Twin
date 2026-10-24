@@ -1,0 +1,214 @@
+{
+  "twin_id": "twin-2",
+  "patient_id": "2",
+  "created_at": "obs-clock:none",
+  "updated_at": "obs-clock:739.333333",
+  "schema_version": "parkistep.twin.state/1",
+  "update_seq": 11178,
+  "status": "WAITING_FOR_DATA",
+  "status_reason": "no observation received in the current session",
+  "status_since_ts": 739.333333333333,
+  "clinical": {
+    "status": "valid",
+    "values": {
+      "age": 72.0,
+      "gender": "F",
+      "disease_duration": 10.0,
+      "hoehn_yahr": 4.0,
+      "updrs_iii": 61.0,
+      "fog_q": 17.0,
+      "moca": 17.0,
+      "fes_i": 27.0,
+      "pdq_8": 29.0
+    },
+    "missing_fields": [],
+    "validation": {
+      "age": "ok",
+      "gender": "ok",
+      "disease_duration": "ok",
+      "hoehn_yahr": "ok",
+      "updrs_iii": "ok",
+      "fog_q": "ok",
+      "moca": "ok",
+      "fes_i": "ok",
+      "pdq_8": "ok"
+    },
+    "provenance": {
+      "source": "phase1_processed",
+      "key_field": "participant_id",
+      "key_value": "2",
+      "row_sha256": "93e7a117efa42eeff6ec7712a56383c1962e8974c4b18c0532c593b2fa84c5de",
+      "dataset": "FoG-STAR: Freezing of Gait Severity, Tasks, Activities, and Ratings",
+      "dataset_version": "3.0 (as stated in the bundled README; the Zenodo record's own version tag could not be verified offline)"
+    },
+    "influences_forecast": false
+  },
+  "stream": {
+    "session_id": null,
+    "latest_observation_ts": 739.333333333333,
+    "latest_values": null,
+    "n_buffered": 0,
+    "buffer_duration_s": 0.0,
+    "required_samples": 121,
+    "coverage_fraction": 0.0,
+    "quality_status": "none",
+    "quality_detail": {},
+    "missing_channels": [],
+    "last_gap_s": null,
+    "gap_active": false,
+    "n_accepted_session": 0,
+    "n_accepted_total": 11176,
+    "rejected_counts": {},
+    "last_processing_time_utc": "obs-clock:739.333333"
+  },
+  "forecast": {
+    "status": "none",
+    "status_reason": "session ended (replay_finished); forecasts of the old session are historical",
+    "latest_prediction_id": "twin-2-p000922",
+    "latest_prediction_time": 739.283333333333,
+    "last_attempt_ts": 739.283333333333,
+    "next_due_ts": 739.483333333375,
+    "n_predictions": 922,
+    "n_pruned": 0,
+    "n_unavailable": 0
+  },
+  "warning": {
+    "state": "none",
+    "active_warning_id": null,
+    "pending_count": 0,
+    "pending_since": null,
+    "last_warning_at": 731.083333333333,
+    "n_warnings": 14,
+    "n_suppressed_cooldown": 0,
+    "n_suppressed_status": 0
+  },
+  "baseline": {
+    "enabled": true,
+    "status": "reporting",
+    "n_updates": 226,
+    "positions": {
+      "ankleL_acc": {
+        "mean": 0.026646488843458823,
+        "var": 0.0015389622352291038,
+        "n": 226
+      },
+      "ankleR_acc": {
+        "mean": 0.009317527552586129,
+        "var": 8.092267513584211e-06,
+        "n": 226
+      },
+      "back_acc": {
+        "mean": 0.014003611820772612,
+        "var": 9.627783539627081e-05,
+        "n": 226
+      },
+      "wrist_acc": {
+        "mean": 0.034137503260076855,
+        "var": 0.0004035602032534444,
+        "n": 226
+      }
+    },
+    "latest": {
+      "ankleL_acc": {
+        "value": 0.005038082283210268,
+        "z": -0.5581416724808299
+      },
+      "ankleR_acc": {
+        "value": 0.008083292740601116,
+        "z": -0.43912227777971163
+      },
+      "back_acc": {
+        "value": 0.006319524264658818,
+        "z": -0.7960696249935661
+      },
+      "wrist_acc": {
+        "value": 0.008956884768304224,
+        "z": -1.286992584944813
+      }
+    },
+    "note": "descriptive statistics of observed movement; not a model input, not a personalised disease model, not clinically validated"
+  },
+  "model": {
+    "status": "available",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "artifact": "sensor_only__random_forest__h3.joblib",
+    "sha256": "55aee24bcf2325b221781058ece25f757c89f8b81862e2f106dd4fde48203263",
+    "horizon_s": 3.0,
+    "experiment": "sensor_only",
+    "uses_clinical": false,
+    "threshold": {
+      "value": 0.7031869504322085,
+      "source": "model_manifest",
+      "policy": {
+        "policy": "fa_budget",
+        "threshold": 0.7031869504322085,
+        "inner_event_sensitivity": 0.05333333333333334,
+        "inner_false_alerts_per_hour": 13.309507671452337,
+        "budget": 30.0,
+        "n_inner_rows": 16229
+      },
+      "note": null
+    },
+    "window": {
+      "input_window_s": 2.0,
+      "dt_s": 0.016666666670062114,
+      "n_samples": 121,
+      "timestamp_tolerance_fraction": 0.05,
+      "min_valid_fraction": 0.95,
+      "max_ffill_samples": 3,
+      "positions": [
+        "ankleL",
+        "ankleR",
+        "back",
+        "wrist"
+      ],
+      "raw_channels": [
+        "ankleL_acc_x",
+        "ankleL_acc_y",
+        "ankleL_acc_z",
+        "ankleL_gyro_x",
+        "ankleL_gyro_y",
+        "ankleL_gyro_z",
+        "ankleR_acc_x",
+        "ankleR_acc_y",
+        "ankleR_acc_z",
+        "ankleR_gyro_x",
+        "ankleR_gyro_y",
+        "ankleR_gyro_z",
+        "back_acc_x",
+        "back_acc_y",
+        "back_acc_z",
+        "back_gyro_x",
+        "back_gyro_y",
+        "back_gyro_z",
+        "wrist_acc_x",
+        "wrist_acc_y",
+        "wrist_acc_z",
+        "wrist_gyro_x",
+        "wrist_gyro_y",
+        "wrist_gyro_z"
+      ],
+      "stride_s": 0.2,
+      "timestamp_col": "timestamp_s"
+    },
+    "cadence_s": 0.2,
+    "clinical_influences_forecast": false
+  },
+  "config": {
+    "config_hash": "9e82561d11a167e77dee33af310880ab9a1add2f555af1095eb6462cd45ed955",
+    "compat_hash": "a31f95279e6aff63473494397a363cd5c8956e9d39adb3b1fbcbb242601426ac",
+    "warning_policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    }
+  },
+  "restored": null,
+  "disclaimer": "Research model score; not a diagnosis and not a validated clinical warning."
+}

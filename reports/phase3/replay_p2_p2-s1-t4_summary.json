@@ -1,0 +1,212 @@
+{
+  "schema": "parkistep.twin.replay_summary/1",
+  "disclaimer": "Research model score; not a diagnosis and not a validated clinical warning.",
+  "in_sample_note": "The saved Phase 2 model was fitted on ALL participants, including the replayed one. A replay of dataset recordings is therefore an in-sample software demonstration, not evidence of predictive performance.",
+  "patient_id": "2",
+  "twin_id": "twin-2",
+  "stream": {
+    "kind": "recording_replay",
+    "recordings": [
+      "p2-s1-t4"
+    ],
+    "participants": [
+      "2"
+    ],
+    "n_records": 11176,
+    "fields": [
+      "participant_id",
+      "timestamp_s",
+      "recording_id",
+      "ankleL_acc_x",
+      "ankleL_acc_y",
+      "ankleL_acc_z",
+      "ankleL_gyro_x",
+      "ankleL_gyro_y",
+      "ankleL_gyro_z",
+      "ankleR_acc_x",
+      "ankleR_acc_y",
+      "ankleR_acc_z",
+      "ankleR_gyro_x",
+      "ankleR_gyro_y",
+      "ankleR_gyro_z",
+      "back_acc_x",
+      "back_acc_y",
+      "back_acc_z",
+      "back_gyro_x",
+      "back_gyro_y",
+      "back_gyro_z",
+      "wrist_acc_x",
+      "wrist_acc_y",
+      "wrist_acc_z",
+      "wrist_gyro_x",
+      "wrist_gyro_y",
+      "wrist_gyro_z"
+    ]
+  },
+  "config_hash": "9e82561d11a167e77dee33af310880ab9a1add2f555af1095eb6462cd45ed955",
+  "model": {
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "artifact": "sensor_only__random_forest__h3.joblib",
+    "sha256": "55aee24bcf2325b221781058ece25f757c89f8b81862e2f106dd4fde48203263",
+    "horizon_s": 3.0,
+    "experiment": "sensor_only",
+    "uses_clinical": false
+  },
+  "threshold": {
+    "value": 0.7031869504322085,
+    "source": "model_manifest",
+    "policy": {
+      "policy": "fa_budget",
+      "threshold": 0.7031869504322085,
+      "inner_event_sensitivity": 0.05333333333333334,
+      "inner_false_alerts_per_hour": 13.309507671452337,
+      "budget": 30.0,
+      "n_inner_rows": 16229
+    },
+    "note": null
+  },
+  "warning_policy": {
+    "persistence_anchors": 1,
+    "merge_gap_s": 1.0,
+    "cooldown_s": 0.0,
+    "consecutive_below": 1,
+    "allow_repeat_while_active": false,
+    "expire_after_invalid_s": 5.0,
+    "max_active_s": null,
+    "continuity_s": 0.30000000000000004,
+    "source": "model_manifest"
+  },
+  "model_training_scope": "all participants (final model; not for evaluation)",
+  "counts": {
+    "observations_offered": 11176,
+    "observations_processed": 11176,
+    "rejected": {},
+    "ignored_duplicates": 0,
+    "held": 0,
+    "predictions": 922,
+    "forecasts_unavailable": {},
+    "warnings_activated": 14,
+    "warnings_by_status": {
+      "RESOLVED": 14
+    },
+    "suppressed_cooldown": 0,
+    "suppressed_status": 0
+  },
+  "observations_per_status": {
+    "WARMING_UP": 120,
+    "READY": 11056
+  },
+  "status_transitions": [
+    {
+      "ts": 553.083333333333,
+      "to": "WARMING_UP"
+    },
+    {
+      "ts": 555.083333333333,
+      "to": "READY"
+    }
+  ],
+  "future_data_check": {
+    "predictions_checked": 922,
+    "violations": 0,
+    "rule": "window_end_time must equal the timestamp of the observation that triggered the forecast"
+  },
+  "timing": {
+    "wall_seconds": 23.46,
+    "mean_inference_ms": 18.95,
+    "max_inference_ms": 71.28,
+    "speed": 0.0
+  },
+  "determinism_digest": "13ee0b1870bc054f3782db87aeaee18d77ef6cb9d69e9565c5469b6af2f240bd",
+  "retrospective_comparison": {
+    "labels_used_only_after_replay": true,
+    "horizon_s": 3.0,
+    "recordings": [
+      {
+        "recording": "p2-s1-t4",
+        "first_t": 553.083333333333,
+        "last_t": 739.333333333333,
+        "n_events": 7,
+        "n_forecasts": 922,
+        "n_forecasts_scored": 409,
+        "warnings_false": 3,
+        "warnings_excluded_overlap_freezing": 10,
+        "warnings_excluded_censored_future": 0
+      }
+    ],
+    "events": [
+      {
+        "event_id": "p2-s1-t4-e0",
+        "recording": "p2-s1-t4",
+        "onset_t": 569.083333333333,
+        "forecast_window_before_onset": true,
+        "detected": true,
+        "warning_lead_s": 2.3999999999999773
+      },
+      {
+        "event_id": "p2-s1-t4-e1",
+        "recording": "p2-s1-t4",
+        "onset_t": 604.883333333333,
+        "forecast_window_before_onset": true,
+        "detected": false,
+        "warning_lead_s": null
+      },
+      {
+        "event_id": "p2-s1-t4-e2",
+        "recording": "p2-s1-t4",
+        "onset_t": 614.783333333333,
+        "forecast_window_before_onset": true,
+        "detected": false,
+        "warning_lead_s": null
+      },
+      {
+        "event_id": "p2-s1-t4-e3",
+        "recording": "p2-s1-t4",
+        "onset_t": 633.183333333333,
+        "forecast_window_before_onset": true,
+        "detected": false,
+        "warning_lead_s": null
+      },
+      {
+        "event_id": "p2-s1-t4-e4",
+        "recording": "p2-s1-t4",
+        "onset_t": 638.866666666667,
+        "forecast_window_before_onset": true,
+        "detected": false,
+        "warning_lead_s": null
+      },
+      {
+        "event_id": "p2-s1-t4-e5",
+        "recording": "p2-s1-t4",
+        "onset_t": 691.366666666667,
+        "forecast_window_before_onset": true,
+        "detected": false,
+        "warning_lead_s": null
+      },
+      {
+        "event_id": "p2-s1-t4-e6",
+        "recording": "p2-s1-t4",
+        "onset_t": 724.266666666667,
+        "forecast_window_before_onset": true,
+        "detected": false,
+        "warning_lead_s": null
+      }
+    ],
+    "totals": {
+      "annotated_events": 7,
+      "events_with_forecast_coverage": 7,
+      "events_detected": 1,
+      "event_sensitivity_all_events": 0.14285714285714285,
+      "event_sensitivity_covered_events": 0.14285714285714285,
+      "valid_early_warnings": 1,
+      "false_warnings": 3,
+      "redundant_warnings": 0,
+      "warnings_excluded_overlap_freezing": 10,
+      "warnings_excluded_censored_future": 0,
+      "scored_monitored_hours": 0.022722222222222227,
+      "false_warnings_per_hour": 132.0293398533007,
+      "median_lead_s": 2.3999999999999773
+    },
+    "note": "Retrospective, single-participant/recording, in-sample for the saved model; not a performance estimate. The participant-grouped Phase 2 evaluation reports are the reference for expected behaviour."
+  }
+}

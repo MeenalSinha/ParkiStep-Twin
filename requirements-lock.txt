@@ -1,0 +1,16 @@
+# Exact versions used to train the shipped model artifacts and to run the Phase 6 verification (Python 3.12.3, Linux).
+# Use for faithful reproduction:   pip install -r requirements-lock.txt
+# requirements.txt keeps lower bounds only; with newer scikit-learn the saved models load with an InconsistentVersionWarning
+# ("might lead to breaking code or invalid results") - scripts/p6_verify_artifacts.py reports such mismatches.
+pandas==3.0.2
+numpy==2.4.4
+PyYAML==6.0.3
+requests==2.33.1
+matplotlib==3.10.8
+pyarrow==26.0.0
+pytest==9.1.1
+scikit-learn==1.8.0
+scipy==1.17.1
+joblib==1.5.3
+streamlit==1.66.1
+plotly==7.1.0

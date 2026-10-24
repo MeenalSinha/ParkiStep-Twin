@@ -1,0 +1,89 @@
+2026-10-23 06:19:10,177 INFO parkistep.twin.model: model loaded: fog_onset_forecast_6499e95d/sensor_only/random_forest (horizon 3.0 s, uses_clinical=False, threshold=0.7031869504322085 [model_manifest])
+{
+  "model": {
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "artifact": "sensor_only__random_forest__h3.joblib",
+    "sha256": "55aee24bcf2325b221781058ece25f757c89f8b81862e2f106dd4fde48203263",
+    "horizon_s": 3.0,
+    "experiment": "sensor_only",
+    "uses_clinical": false
+  },
+  "checksum_verified": true,
+  "window": {
+    "input_window_s": 2.0,
+    "dt_s": 0.016666666670062114,
+    "n_samples": 121,
+    "timestamp_tolerance_fraction": 0.05,
+    "min_valid_fraction": 0.95,
+    "max_ffill_samples": 3,
+    "positions": [
+      "ankleL",
+      "ankleR",
+      "back",
+      "wrist"
+    ],
+    "raw_channels": [
+      "ankleL_acc_x",
+      "ankleL_acc_y",
+      "ankleL_acc_z",
+      "ankleL_gyro_x",
+      "ankleL_gyro_y",
+      "ankleL_gyro_z",
+      "ankleR_acc_x",
+      "ankleR_acc_y",
+      "ankleR_acc_z",
+      "ankleR_gyro_x",
+      "ankleR_gyro_y",
+      "ankleR_gyro_z",
+      "back_acc_x",
+      "back_acc_y",
+      "back_acc_z",
+      "back_gyro_x",
+      "back_gyro_y",
+      "back_gyro_z",
+      "wrist_acc_x",
+      "wrist_acc_y",
+      "wrist_acc_z",
+      "wrist_gyro_x",
+      "wrist_gyro_y",
+      "wrist_gyro_z"
+    ],
+    "stride_s": 0.2,
+    "timestamp_col": "timestamp_s"
+  },
+  "threshold": {
+    "value": 0.7031869504322085,
+    "source": "model_manifest",
+    "policy": {
+      "policy": "fa_budget",
+      "threshold": 0.7031869504322085,
+      "inner_event_sensitivity": 0.05333333333333334,
+      "inner_false_alerts_per_hour": 13.309507671452337,
+      "budget": 30.0,
+      "n_inner_rows": 16229
+    },
+    "note": null
+  },
+  "uses_clinical": false,
+  "real_recording": "p2-s1-t4",
+  "window_end_time": 573.233333333333,
+  "used_samples_after_window_end": 0,
+  "prediction": {
+    "probability": 0.7283012784173702,
+    "horizon_s": 3.0,
+    "prediction_time": 573.233333333333,
+    "window_start_time": 571.233333333333,
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "experiment": "sensor_only",
+    "data_quality": "ok",
+    "warnings": [],
+    "features_expected": 516,
+    "features_finite": 516,
+    "used_clinical": false,
+    "threshold": 0.7031869504322085,
+    "above_threshold": true,
+    "metadata": {},
+    "disclaimer": "Research model score; not a diagnosis and not a validated clinical warning."
+  },
+  "ok": true
+}

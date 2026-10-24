@@ -1,0 +1,428 @@
+{
+  "schema": "parkistep.phase6.browser_failure_paths/1",
+  "scenarios": [
+    {
+      "scenario": "stop",
+      "description": "Stop a real replay: advancement ceases, state is STOPPED (not COMPLETED), history stays accessible, no duplicate twin",
+      "passed": true,
+      "checks": {
+        "observations and forecasts advance while running": {
+          "pass": true,
+          "detail": "{'Recording': 'p2-s1-t4', 'Replay position': '7.48 s', 'Processed / rejected': '450 / 0', 'Forecasts': '28', 'Warnings (active+closed)': '0', 'Twin status': 'READY'} -> {'Recording': 'p2-s1-t4', 'Replay position': '14.98 s', 'Processed / rejected': '900 / 0', 'Forecasts': '65', 'Warnings (active+closed)': '1', 'Twin status': 'READY'}"
+        },
+        "advancement ceases after Stop (identical after 5 s)": {
+          "pass": true,
+          "detail": "{'Recording': 'p2-s1-t4', 'Replay position': '19.98 s', 'Processed / rejected': '1,200 / 0', 'Forecasts': '90', 'Warnings (active+closed)': '2', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '1,200', 'Rejected': '0', 'Warnings': '2', 'Future-data violations': '0', 'Annotated events': '1', 'Detected early': '1 / 1', 'Valid / false warnings': '1 / 0', 'Median warning lead': '2.40 s'} "
+        },
+        "UI shows STOPPED": {
+          "pass": true,
+          "detail": "2. Run\n\nStart new replay\n\nPause\n\nResume\n\nStop\n\nStopped\n\n1,200 of 11,176 observations offered\n\nRecording\n\np2-s1-t4\n\nReplay position\n\n19.98 s\n\nProcessed / rejected\n\n1,200 / 0\n\nForecasts\n\n90\n\nWarnings (a"
+        },
+        "start button available again, pause/resume/stop disabled": {
+          "pass": true,
+          "detail": ""
+        },
+        "twin enters the ended-session state (WAITING_FOR_DATA, not READY)": {
+          "pass": true,
+          "detail": "WAITING_FOR_DATA"
+        },
+        "partial replay is flagged in the retrospective section": {
+          "pass": true,
+          "detail": ""
+        },
+        "retrospective section distinguishes in-sample/partial": {
+          "pass": true,
+          "detail": ""
+        },
+        "Early Warning: no current forecast, last forecast labelled NOT current": {
+          "pass": true,
+          "detail": ""
+        },
+        "old score is not shown as a fresh forecast or as zero risk": {
+          "pass": true,
+          "detail": ""
+        },
+        "Warning Center accessible after Stop without exception": {
+          "pass": true,
+          "detail": ""
+        },
+        "Movement Monitor still shows recorded observations": {
+          "pass": true,
+          "detail": ""
+        },
+        "after a browser reload no replay is running or restarted (idle, new session)": {
+          "pass": true,
+          "detail": "2. Run\n\nStart new replay\n\nPause\n\nResume\n\nStop\n\nNo replay started\nChoose a patient, recording and model, then press Start."
+        },
+        "exactly one twin created by the whole interaction (no duplicate replay on reruns/reload)": {
+          "pass": true,
+          "detail": "1"
+        },
+        "no Streamlit exceptions / JS page errors": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "no Python traceback in server log": {
+          "pass": true,
+          "detail": "0"
+        }
+      },
+      "observations": {
+        "metrics_after_stop": {
+          "Recording": "p2-s1-t4",
+          "Replay position": "19.98 s",
+          "Processed / rejected": "1,200 / 0",
+          "Forecasts": "90",
+          "Warnings (active+closed)": "2",
+          "Twin status": "WAITING_FOR_DATA",
+          "Observations processed": "1,200",
+          "Rejected": "0",
+          "Warnings": "2",
+          "Future-data violations": "0",
+          "Annotated events": "1",
+          "Detected early": "1 / 1",
+          "Valid / false warnings": "1 / 0",
+          "Median warning lead": "2.40 s"
+        },
+        "after_reload": "2. Run\n\nStart new replay\n\nPause\n\nResume\n\nStop\n\nNo replay started\nChoose a patient, recording and model, then press Start."
+      },
+      "notes": [],
+      "wall_seconds": 67.4
+    },
+    {
+      "scenario": "failed_replay",
+      "description": "Controlled stream failure mid-replay, then recovery with a new valid session",
+      "passed": true,
+      "checks": {
+        "failure is presented clearly in the UI": {
+          "pass": true,
+          "detail": ""
+        },
+        "error names the cause": {
+          "pass": true,
+          "detail": ""
+        },
+        "UI states no synthetic data were substituted": {
+          "pass": true,
+          "detail": ""
+        },
+        "no new forecasts appear after the failure": {
+          "pass": true,
+          "detail": "{'Recording': 'p2-s1-t4', 'Replay position': '14.98 s', 'Processed / rejected': '900 / 0', 'Forecasts': '65', 'Warnings (active+closed)': '1', 'Twin status': 'WAITING_FOR_DATA'} vs {'Recording': 'p2-s1-t4', 'Replay position': '14.98 s', 'Processed / rejected': '900 / 0', 'Forecasts': '65', 'Warnings (active+closed)': '1', 'Twin status': 'WAITING_FOR_DATA'}"
+        },
+        "status badge FAILED and controls reset": {
+          "pass": true,
+          "detail": ""
+        },
+        "no retrospective (ground-truth) analysis is produced for a failed replay": {
+          "pass": true,
+          "detail": ""
+        },
+        "Early Warning does not present a current forecast after failure": {
+          "pass": true,
+          "detail": "Skip to main content\nkeyboard_double_arrow_left\n\nOverview\n\nPatient Profile\n\nMovement Monitor\n\nEarly Warning\n\nWarning Center\n\nReplay Analysis\n\nModel Performance\n\nParkiStep Twin\n\nFreezing-of-gait forecasting digital twin - research prototype\n\nResearch prototype. Model scores are experimental estimates"
+        },
+        "no Streamlit exception screens": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "a new valid replay can be started after the failure and produces forecasts": {
+          "pass": true,
+          "detail": "{'Recording': 'p2-s1-t4', 'Replay position': '9.98 s', 'Processed / rejected': '600 / 0', 'Forecasts': '40', 'Warnings (active+closed)': '0', 'Twin status': 'READY'}"
+        },
+        "server logged the failure with a traceback (diagnosable)": {
+          "pass": true,
+          "detail": ""
+        }
+      },
+      "observations": {
+        "error_text": "Replay failed: RuntimeError: injected test fault: sensor stream connection lost\n\nDetails were written to the application log. No synthetic data were substituted.",
+        "metrics_after_failure": {
+          "Recording": "p2-s1-t4",
+          "Replay position": "14.98 s",
+          "Processed / rejected": "900 / 0",
+          "Forecasts": "65",
+          "Warnings (active+closed)": "1",
+          "Twin status": "WAITING_FOR_DATA"
+        },
+        "metrics_after_recovery": {
+          "Recording": "p2-s1-t4",
+          "Replay position": "9.98 s",
+          "Processed / rejected": "600 / 0",
+          "Forecasts": "40",
+          "Warnings (active+closed)": "0",
+          "Twin status": "READY"
+        }
+      },
+      "notes": [],
+      "wall_seconds": 39.1
+    },
+    {
+      "scenario": "stale_forecast",
+      "description": "Sensor stream stalls while historical predictions are retained: forecast becomes stale, never a fresh/zero score",
+      "passed": true,
+      "checks": {
+        "while data flows, the forecast is shown as current": {
+          "pass": true,
+          "detail": "CURRENT MODEL SCORE\n0.753\nCurrent threshold 0.703 (model_manifest) - at or above threshold\nThe score is an uncalibrated model output. It is not a probability of a freezing episode and has not been validated as a clinical"
+        },
+        "forecast is no longer presented as current once data stop": {
+          "pass": true,
+          "detail": "CURRENT MODEL SCORE\nNo current forecast\nStale latest forecast is older than 0.60 s\n\nLast computed forecast (not current): score 0.638 at observation time 580.48 s, 0.08 s before the latest observation.\n\nThe score is an uncalibrated model output. It is not a probability of a freezing episode and has not been validated as a clinical measure.\nkeyboard_arrow_right\n\nForecast details (last computed - NO"
+        },
+        "badge says Stale (or unavailable), not a score": {
+          "pass": true,
+          "detail": ""
+        },
+        "old score labelled 'last computed ... not current'": {
+          "pass": true,
+          "detail": ""
+        },
+        "missing/stale forecast is not displayed as zero risk": {
+          "pass": true,
+          "detail": ""
+        },
+        "sensor-stream state (latest sensor timestamp) and model state (forecast card) are both shown and distinguishable": {
+          "pass": true,
+          "detail": "TWIN STATUS\nStale\nStale no accepted observation within the configured freshness limit\nLATEST SENSOR TIMESTAMP\n580.57 s\nrecording p2-s1-t4 - 1,650 accepted\nMODEL\n3 s horizon\nfog_onset_forecast_6499e95d/sensor_only/random_forest\nModel-estimated freezing-of-gait risk score within the configured forecast horizon\nCURRENT MODEL SCORE\nNo current forecast\nStale latest forecast is older than 0.60 s\n\nLast c"
+        },
+        "twin status is STALE": {
+          "pass": true,
+          "detail": ""
+        },
+        "when data resume, a fresh current forecast is shown again": {
+          "pass": true,
+          "detail": ""
+        },
+        "no Streamlit exceptions": {
+          "pass": true,
+          "detail": "[]"
+        }
+      },
+      "observations": {
+        "fresh_text": "CURRENT MODEL SCORE\n0.753\nCurrent threshold 0.703 (model_manifest) - at or above threshold\nThe score is an uncalibrated model output. It is not a probability of a freezing episode and has not been validated as a clinical",
+        "stale_text": "CURRENT MODEL SCORE\nNo current forecast\nStale latest forecast is older than 0.60 s\n\nLast computed forecast (not current): score 0.638 at observation time 580.48 s, 0.08 s before the latest observation.\n\nThe score is an uncalibrated model output. It is not a probability of a freezing episode and has not been validated as a clinical measure.\nkeyboard_arrow_right\n\nForecast details (last computed - NOT current)\n\nNo active warning \u00a0 The warning policy has not raised a warning.\n\n560\n565\n570\n575\n580\n0\n0.5\n1\nModel score\nAt",
+        "overview_excerpt": "TWIN STATUS\nStale\nStale no accepted observation within the configured freshness limit\nLATEST SENSOR TIMESTAMP\n580.57 s\nrecording p2-s1-t4 - 1,650 accepted\nMODEL\n3 s horizon\nfog_onset_forecast_6499e95d/sensor_only/random_forest\nModel-estimated freezing-of-gait risk score within the configured forecast horizon\nCURRENT MODEL SCORE\nNo current forecast\nStale latest forecast is older than 0.60 s\n\nLast computed forecast (not current): score 0.638 at observation time 580.48 s, 0.08 s before the latest o"
+      },
+      "notes": [],
+      "wall_seconds": 35.2
+    },
+    {
+      "scenario": "persistence_failure",
+      "description": "State-store failure during a persisted replay: failure shown, no false claim of persistence, lock released, recovery possible",
+      "passed": true,
+      "checks": {
+        "persistence failure is shown in the dashboard": {
+          "pass": true,
+          "detail": "Replay failed: StateStoreError: injected test fault: database is locked / disk full\n\nDetails were written to the application log. No synthetic data were substituted."
+        },
+        "error text identifies storage (not silently ignored)": {
+          "pass": true,
+          "detail": ""
+        },
+        "no retrospective/successful-completion view is shown": {
+          "pass": true,
+          "detail": ""
+        },
+        "replay state stays consistent after the failure (counters frozen)": {
+          "pass": true,
+          "detail": "{'Recording': 'p2-s1-t4', 'Replay position': '13.58 s', 'Processed / rejected': '816 / 0', 'Forecasts': '58', 'Warnings (active+closed)': '1', 'Twin status': 'READY'} vs {'Recording': 'p2-s1-t4', 'Replay position': '13.58 s', 'Processed / rejected': '816 / 0', 'Forecasts': '58', 'Warnings (active+closed)': '1', 'Twin status': 'READY'}"
+        },
+        "database does not claim more predictions than were produced (rolled back, not falsely persisted)": {
+          "pass": true,
+          "detail": "db={'twins': 1, 'predictions': 58, 'events': 5} shown=58"
+        },
+        "after storage recovers, a replay for another patient starts and produces forecasts (no 'database is locked')": {
+          "pass": true,
+          "detail": "2. Run\n\nStart\n\nPause\n\nResume\n\nStop\n\nReplaying\n\n300 of 4,886 observations offered\n\nRecording\n\np1-s1-t4\n\nReplay position\n\n4.98 s\n\nProcessed / rejected\n\n300 / 0\n\nForecasts\n\n15\n\nWarnings (active+closed)\n\n0\n\nTwin status\n\nREADY"
+        },
+        "no Streamlit exception screens / JS errors": {
+          "pass": true,
+          "detail": "[]"
+        }
+      },
+      "observations": {
+        "error_text": "Replay failed: StateStoreError: injected test fault: database is locked / disk full\n\nDetails were written to the application log. No synthetic data were substituted.",
+        "db_rows_after_failure": {
+          "twins": 1,
+          "predictions": 58,
+          "events": 5
+        },
+        "n_patient_options": 22,
+        "recovery_metrics": {
+          "Recording": "p1-s1-t4",
+          "Replay position": "4.98 s",
+          "Processed / rejected": "300 / 0",
+          "Forecasts": "15",
+          "Warnings (active+closed)": "0",
+          "Twin status": "READY"
+        }
+      },
+      "notes": [],
+      "wall_seconds": 31.3
+    },
+    {
+      "scenario": "data_integrity_faults",
+      "description": "Duplicate, invalid-timestamp, out-of-order and missing-channel observations injected into the real stream",
+      "passed": true,
+      "checks": {
+        "replay did not crash on bad records (no 'Replay failed')": {
+          "pass": true,
+          "detail": "2. Run\n\nStart\n\nPause\n\nResume\n\nStop\n\nReplaying\n\n1,800 of 11,176 observations offered\n\nRecording\n\np2-s1-t4\n\nReplay position\n\n29.95 s\n\nProcessed / rejected\n\n1,797 / 3\n\nForecasts\n\n140\n\nWarnings (active+cl"
+        },
+        "rejected observations are counted and shown (not silently dropped)": {
+          "pass": true,
+          "detail": "1,797 / 3"
+        },
+        "forecasting continued on valid data after the faults": {
+          "pass": true,
+          "detail": "140"
+        },
+        "no Streamlit exception screen": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "Overview surfaces data-quality information": {
+          "pass": true,
+          "detail": ""
+        }
+      },
+      "observations": {
+        "metrics": {
+          "Recording": "p2-s1-t4",
+          "Replay position": "29.95 s",
+          "Processed / rejected": "1,797 / 3",
+          "Forecasts": "140",
+          "Warnings (active+closed)": "2",
+          "Twin status": "READY"
+        },
+        "rejection_text": "rejected\n\n1,797 / 3\n\nForecasts\n\n140\n\nWarnings (active+closed)\n\n2\n\nTwin status\n\nREADY",
+        "overview_dq": "DATA QUALITY\nok\nwindow coverage 100%, 601/121 samples buffered\n\nThe selected model is sensor-only. The clinical record is shown as context and does not influence its forecast."
+      },
+      "notes": [],
+      "wall_seconds": 22.6
+    },
+    {
+      "scenario": "model_inference_failure",
+      "description": "Model inference raises during replay: forecast unavailable, no fabricated/zero score, recovers when the model works again",
+      "passed": true,
+      "checks": {
+        "no new forecasts are counted while inference fails": {
+          "pass": true,
+          "detail": "28 -> 32"
+        },
+        "Early Warning shows no current forecast during inference failure": {
+          "pass": true,
+          "detail": "CURRENT MODEL SCORE\nNo current forecast\nUnavailable predictor_rejected_input: injected test fault: model inference failure\n\nLast computed forecast (not current): score 0.262 at observation time 561.28 s, 36.78 s before the latest observation.\n\nThe score is an uncalibrated model output. It is not a probability of a freezing episode and has not been validated as a clinical measure.\nkeyboard_arrow_ri"
+        },
+        "no zero-risk score is displayed": {
+          "pass": true,
+          "detail": ""
+        },
+        "no Streamlit exception screen": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "forecasting recovers when the model works again": {
+          "pass": true,
+          "detail": ""
+        }
+      },
+      "observations": {
+        "metrics_during_fault": {
+          "Recording": "p2-s1-t4",
+          "Replay position": "29.98 s",
+          "Processed / rejected": "1,800 / 0",
+          "Forecasts": "32",
+          "Warnings (active+closed)": "0",
+          "Twin status": "READY"
+        },
+        "early_warning_excerpt": "CURRENT MODEL SCORE\nNo current forecast\nUnavailable predictor_rejected_input: injected test fault: model inference failure\n\nLast computed forecast (not current): score 0.262 at observation time 561.28 s, 36.78 s before the latest observation.\n\nThe score is an uncalibrated model output. It is not a probability of a freezing episode and has not been validated as a clinical measure.\nkeyboard_arrow_ri"
+      },
+      "notes": [],
+      "wall_seconds": 26.8
+    },
+    {
+      "scenario": "bad_reports_and_saved_state",
+      "description": "Malformed / metric-less / missing evaluation report, and a corrupted persisted twin state: clear errors, nothing fabricated",
+      "passed": true,
+      "checks": {
+        "[malformed_json] Model Performance says evaluation results are unavailable": {
+          "pass": true,
+          "detail": "Model Performance\n\nParkiStep Twin\n\nFreezing-of-gait forecasting digital twin - research prototype\n\nResearch prototype. Model scores are experimental estimates, not diagnoses, and not a validated clinical warning. Not a medical device.\n\nDeploy\nModel P"
+        },
+        "[malformed_json] a reason is given": {
+          "pass": true,
+          "detail": "unavailable\n\nPhase 2 metrics file /tmp/p6_bad_uiq1i2s4/malformed_json.json could not be read: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+        },
+        "[malformed_json] no performance figures are invented": {
+          "pass": true,
+          "detail": ""
+        },
+        "[malformed_json] no Streamlit exception screen / JS error": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "[missing_metrics] Model Performance says evaluation results are unavailable": {
+          "pass": true,
+          "detail": "Model Performance\n\nParkiStep Twin\n\nFreezing-of-gait forecasting digital twin - research prototype\n\nResearch prototype. Model scores are experimental estimates, not diagnoses, and not a validated clinical warning. Not a medical device.\n\nDeploy\nModel P"
+        },
+        "[missing_metrics] a reason is given": {
+          "pass": true,
+          "detail": "unavailable\n\nPhase 2 metrics file /tmp/p6_bad_uiq1i2s4/missing_metrics.json could not be read: no results mapping"
+        },
+        "[missing_metrics] no performance figures are invented": {
+          "pass": true,
+          "detail": ""
+        },
+        "[missing_metrics] no Streamlit exception screen / JS error": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "[missing_file] Model Performance says evaluation results are unavailable": {
+          "pass": true,
+          "detail": "Model Performance\n\nParkiStep Twin\n\nFreezing-of-gait forecasting digital twin - research prototype\n\nResearch prototype. Model scores are experimental estimates, not diagnoses, and not a validated clinical warning. Not a medical device.\n\nDeploy\nModel P"
+        },
+        "[missing_file] a reason is given": {
+          "pass": true,
+          "detail": "unavailable\n\nPhase 2 metrics file not found: /tmp/p6_bad_uiq1i2s4/missing_file.json. Run python scripts/train_phase2.py and python scripts/evaluate_phase2.py (or restore the saved reports) to enable this page."
+        },
+        "[missing_file] no performance figures are invented": {
+          "pass": true,
+          "detail": ""
+        },
+        "[missing_file] no Streamlit exception screen / JS error": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "with a corrupt persisted twin the replay does not start": {
+          "pass": true,
+          "detail": "{}"
+        },
+        "an explicit error explains the refusal (never overwritten / not silently trusted)": {
+          "pass": true,
+          "detail": "2. Run\n\nStart new replay\n\nPause\n\nResume\n\nStop\n\nCannot start the replay: a twin for patient '2' already exists (patient.exists_policy=error) (persisted state is never overwritten; set replay.persist_state: false or use another store)\n\nNo replay started\nChoose a patient, recording and model, then press Start."
+        },
+        "no default/blank state is shown as if it were the patient's real state": {
+          "pass": true,
+          "detail": ""
+        },
+        "no Streamlit exception screen / JS error": {
+          "pass": true,
+          "detail": "[]"
+        },
+        "the corrupted record was left untouched (not overwritten)": {
+          "pass": true,
+          "detail": "{broken"
+        }
+      },
+      "observations": {
+        "saved_state_text": "2. Run\n\nStart new replay\n\nPause\n\nResume\n\nStop\n\nCannot start the replay: a twin for patient '2' already exists (patient.exists_policy=error) (persisted state is never overwritten; set replay.persist_state: false or use another store)\n\nNo replay started\nChoose a patient, recording and model, then press Start."
+      },
+      "notes": [],
+      "wall_seconds": 60.1,
+      "note": "run separately from the other scenarios on identical code (merged into this file)"
+    }
+  ],
+  "all_passed": true
+}

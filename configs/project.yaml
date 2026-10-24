@@ -1,0 +1,67 @@
+# ParkiStep Twin - project-level settings (paths, outputs, logging, reports, plots).
+# Dataset-specific settings live in configs/datasets.yaml. All relative paths are
+# resolved against the project root (parent of the configs/ directory by default).
+project:
+  name: ParkiStep Twin
+  phase: 1
+  intended_use: research proof of concept; not for diagnosis or treatment
+
+active_dataset: fogstar          # key under `datasets:` in configs/datasets.yaml
+
+paths:
+  data_root: data/raw            # raw datasets: <data_root>/<dataset raw_subdir>/
+  interim_root: data/interim
+  processed_root: data/processed # processed outputs: <processed_root>/<dataset key>/
+  reports_dir: reports
+  figures_dir: reports/figures
+
+acquisition:
+  allow_download: false          # network download only when true (or --download)
+  timeout_seconds: 30
+  retries: 3
+  backoff_seconds: 2.0
+  overwrite: false               # never overwrite raw data unless true (or --overwrite)
+
+outputs:
+  format: parquet                # parquet | csv
+  fallback_format: csv           # used if the primary format's library is missing; null = fail instead
+  compression: snappy            # parquet only
+  write_joined: true
+  file_stems:
+    clinical: clinical_validated
+    sensor: sensor_validated
+    joined: sensor_clinical_joined
+  manifest: dataset_manifest.json
+
+reports:
+  markdown: data_quality_report.md
+  json: data_quality_report.json
+  join_audit: join_audit_report.json
+  top_n_gaps: 10
+  histogram_bins: 20
+
+logging:
+  level: INFO                    # DEBUG | INFO | WARNING | ERROR
+  format: "%(asctime)s %(levelname)s %(name)s: %(message)s"
+  file: null                     # optional log file path (relative to project root)
+
+visualization:
+  enabled: true
+  format: png
+  dpi: 110
+  figures:                       # remove entries to skip figures
+    - missing_values
+    - sampling_intervals
+    - channel_traces
+    - clinical_distributions
+    - label_distribution
+    - event_traces
+    - recording_durations
+    - stream_coverage
+  selection:                     # deterministic recording/event selection (no hard-coded IDs)
+    policy: longest                # longest | shortest | first | evenly_spaced (ordered by recording key)
+    count: 2
+  channels: [ankleL_acc_x, ankleR_acc_x, back_acc_x, wrist_acc_x]   # canonical channel names to plot
+  event_context_seconds: 3.0
+  max_events: 3
+  max_plot_points: 20000         # applies to plotting only; integrity checks always use all rows

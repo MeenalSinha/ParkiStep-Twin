@@ -1,0 +1,33 @@
+{
+  "join_key": "participant_id",
+  "join_type": "left",
+  "expected_cardinality": "many_to_one",
+  "observed_cardinality": "many_to_one",
+  "distinct_participants_sensor": 22,
+  "distinct_participants_clinical": 22,
+  "matched_participants": 22,
+  "sensor_participants_without_clinical": [],
+  "clinical_participants_without_sensor": [],
+  "sensor_null_keys": 0,
+  "duplicate_clinical_keys": 0,
+  "sensor_rows_before": 329027,
+  "clinical_rows": 22,
+  "validation_passed": true,
+  "warnings": [
+    "Some clinical attributes are missing for joined sensor rows (propagated from missing clinical values): disease_duration=6,249, hoehn_yahr=17,287, moca=13,855, fes_i=10,992"
+  ],
+  "failures": [],
+  "sensor_rows_after": 329027,
+  "rows_without_clinical_match": 0,
+  "missing_clinical_values_after_join_rows": {
+    "age": 0,
+    "gender": 0,
+    "disease_duration": 6249,
+    "hoehn_yahr": 17287,
+    "updrs_iii": 0,
+    "fog_q": 0,
+    "moca": 13855,
+    "fes_i": 10992,
+    "pdq_8": 0
+  }
+}

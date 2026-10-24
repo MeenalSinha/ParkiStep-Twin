@@ -1,0 +1,208 @@
+{
+  "schema": "parkistep.phase6.retrospective_recompute/1",
+  "tag": "p2_p2-s1-t4",
+  "patient_id": "2",
+  "recording_id": "p2-s1-t4",
+  "raw_recording_samples": 11176,
+  "raw_first_t": 553.083333333333,
+  "raw_last_t": 739.333333333333,
+  "identity_checks": {
+    "patient_same_in_predictions_warnings_summary": true,
+    "recording_same": true,
+    "prediction_rows": 922,
+    "warnings": 14
+  },
+  "model": {
+    "id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "input_window_s": 2.0,
+    "stride_s": 0.2,
+    "threshold": 0.7031869504322085,
+    "alert_policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "min_lead_s": 0.0,
+      "extra_alerts_for_matched_event": "ignore"
+    }
+  },
+  "leakage_checks": {
+    "alerts_activated_at_or_after_an_event_onset": 6,
+    "note": "such alerts fall inside an annotated episode and are excluded as 'overlap with freezing'; none is credited as warning"
+  },
+  "independent": {
+    "annotated_events": 7,
+    "events_with_forecast_coverage": 7,
+    "events_detected": 1,
+    "event_sensitivity_all_events": 0.14285714285714285,
+    "event_sensitivity_covered_events": 0.14285714285714285,
+    "valid_early_warnings": 1,
+    "false_warnings": 3,
+    "redundant_warnings": 0,
+    "warnings_excluded_overlap_freezing": 10,
+    "warnings_excluded_censored_future": 0,
+    "scored_monitored_hours": 0.022722222222222227,
+    "false_warnings_per_hour": 132.0293398533007,
+    "median_lead_s": 2.3999999999999773
+  },
+  "comparison": [
+    {
+      "metric": "annotated_events",
+      "independent": 7,
+      "saved": 7,
+      "match": true
+    },
+    {
+      "metric": "events_with_forecast_coverage",
+      "independent": 7,
+      "saved": 7,
+      "match": true
+    },
+    {
+      "metric": "events_detected",
+      "independent": 1,
+      "saved": 1,
+      "match": true
+    },
+    {
+      "metric": "event_sensitivity_all_events",
+      "independent": 0.14285714285714285,
+      "saved": 0.14285714285714285,
+      "match": true
+    },
+    {
+      "metric": "event_sensitivity_covered_events",
+      "independent": 0.14285714285714285,
+      "saved": 0.14285714285714285,
+      "match": true
+    },
+    {
+      "metric": "valid_early_warnings",
+      "independent": 1,
+      "saved": 1,
+      "match": true
+    },
+    {
+      "metric": "false_warnings",
+      "independent": 3,
+      "saved": 3,
+      "match": true
+    },
+    {
+      "metric": "redundant_warnings",
+      "independent": 0,
+      "saved": 0,
+      "match": true
+    },
+    {
+      "metric": "warnings_excluded_overlap_freezing",
+      "independent": 10,
+      "saved": 10,
+      "match": true
+    },
+    {
+      "metric": "warnings_excluded_censored_future",
+      "independent": 0,
+      "saved": 0,
+      "match": true
+    },
+    {
+      "metric": "scored_monitored_hours",
+      "independent": 0.022722222222222227,
+      "saved": 0.022722222222222227,
+      "match": true
+    },
+    {
+      "metric": "false_warnings_per_hour",
+      "independent": 132.0293398533007,
+      "saved": 132.0293398533007,
+      "match": true
+    },
+    {
+      "metric": "median_lead_s",
+      "independent": 2.3999999999999773,
+      "saved": 2.3999999999999773,
+      "match": true
+    }
+  ],
+  "events": [
+    {
+      "event": "e0",
+      "onset_t": 569.083333333333,
+      "end_t": 594.766666666667,
+      "independent_detected": true,
+      "independent_lead_s": 2.3999999999999773,
+      "saved_detected": true,
+      "saved_lead_s": 2.3999999999999773,
+      "saved_event_id": "p2-s1-t4-e0"
+    },
+    {
+      "event": "e1",
+      "onset_t": 604.883333333333,
+      "end_t": 610.166666666667,
+      "independent_detected": false,
+      "independent_lead_s": null,
+      "saved_detected": false,
+      "saved_lead_s": null,
+      "saved_event_id": "p2-s1-t4-e1"
+    },
+    {
+      "event": "e2",
+      "onset_t": 614.783333333333,
+      "end_t": 620.166666666667,
+      "independent_detected": false,
+      "independent_lead_s": null,
+      "saved_detected": false,
+      "saved_lead_s": null,
+      "saved_event_id": "p2-s1-t4-e2"
+    },
+    {
+      "event": "e3",
+      "onset_t": 633.183333333333,
+      "end_t": 635.666666666667,
+      "independent_detected": false,
+      "independent_lead_s": null,
+      "saved_detected": false,
+      "saved_lead_s": null,
+      "saved_event_id": "p2-s1-t4-e3"
+    },
+    {
+      "event": "e4",
+      "onset_t": 638.866666666667,
+      "end_t": 651.25,
+      "independent_detected": false,
+      "independent_lead_s": null,
+      "saved_detected": false,
+      "saved_lead_s": null,
+      "saved_event_id": "p2-s1-t4-e4"
+    },
+    {
+      "event": "e5",
+      "onset_t": 691.366666666667,
+      "end_t": 715.45,
+      "independent_detected": false,
+      "independent_lead_s": null,
+      "saved_detected": false,
+      "saved_lead_s": null,
+      "saved_event_id": "p2-s1-t4-e5"
+    },
+    {
+      "event": "e6",
+      "onset_t": 724.266666666667,
+      "end_t": 739.333333333333,
+      "independent_detected": false,
+      "independent_lead_s": null,
+      "saved_detected": false,
+      "saved_lead_s": null,
+      "saved_event_id": "p2-s1-t4-e6"
+    }
+  ],
+  "warnings_rederived_from_scores": {
+    "count": 14,
+    "saved_count": 14,
+    "same_times": true,
+    "note": "re-derivation uses threshold + merge gap only; the engine also applies hysteresis/cooldown/status rules, so a difference is explained, not an error, only if documented"
+  },
+  "n_discrepancies": 0,
+  "discrepant_metrics": []
+}

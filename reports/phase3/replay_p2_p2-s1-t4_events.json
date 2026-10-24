@@ -1,0 +1,509 @@
+[
+  {
+    "seq": 1,
+    "ts": null,
+    "kind": "TWIN_CREATED",
+    "detail": {
+      "clinical_status": "valid",
+      "model_available": true
+    },
+    "processing_time_utc": "obs-clock:none"
+  },
+  {
+    "seq": 2,
+    "ts": null,
+    "kind": "STATUS_CHANGE",
+    "detail": {
+      "from": "INITIALIZING",
+      "to": "WAITING_FOR_DATA",
+      "reason": "no observation received in the current session"
+    },
+    "processing_time_utc": "obs-clock:none"
+  },
+  {
+    "seq": 3,
+    "ts": 553.083333333333,
+    "kind": "SESSION_START",
+    "detail": {
+      "session_id": "p2-s1-t4"
+    },
+    "processing_time_utc": "obs-clock:553.083333"
+  },
+  {
+    "seq": 4,
+    "ts": 553.083333333333,
+    "kind": "STATUS_CHANGE",
+    "detail": {
+      "from": "WAITING_FOR_DATA",
+      "to": "WARMING_UP",
+      "reason": "the rolling window does not yet hold enough contiguous samples"
+    },
+    "processing_time_utc": "obs-clock:553.083333"
+  },
+  {
+    "seq": 5,
+    "ts": 555.083333333333,
+    "kind": "STATUS_CHANGE",
+    "detail": {
+      "from": "WARMING_UP",
+      "to": "READY",
+      "reason": "the window satisfies the model's input requirements"
+    },
+    "processing_time_utc": "obs-clock:555.083333"
+  },
+  {
+    "seq": 6,
+    "ts": 566.683333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0001",
+      "prediction_id": "twin-2-p000059",
+      "score": 0.7605686307133189,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:566.683333"
+  },
+  {
+    "seq": 7,
+    "ts": 571.283333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0001",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:571.283333"
+  },
+  {
+    "seq": 8,
+    "ts": 572.483333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0002",
+      "prediction_id": "twin-2-p000088",
+      "score": 0.716450297278251,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:572.483333"
+  },
+  {
+    "seq": 9,
+    "ts": 574.683333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0002",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:574.683333"
+  },
+  {
+    "seq": 10,
+    "ts": 594.883333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0003",
+      "prediction_id": "twin-2-p000200",
+      "score": 0.717789834916654,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:594.883333"
+  },
+  {
+    "seq": 11,
+    "ts": 596.883333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0003",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:596.883333"
+  },
+  {
+    "seq": 12,
+    "ts": 596.883333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0004",
+      "prediction_id": "twin-2-p000210",
+      "score": 0.7076138848061403,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:596.883333"
+  },
+  {
+    "seq": 13,
+    "ts": 606.883333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0004",
+      "prediction_id": "twin-2-p000260",
+      "merged_run_start": 606.883333333333
+    },
+    "processing_time_utc": "obs-clock:606.883333"
+  },
+  {
+    "seq": 14,
+    "ts": 609.883333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0004",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:609.883333"
+  },
+  {
+    "seq": 15,
+    "ts": 611.283333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0005",
+      "prediction_id": "twin-2-p000282",
+      "score": 0.7198705151403236,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:611.283333"
+  },
+  {
+    "seq": 16,
+    "ts": 617.283333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0005",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:617.283333"
+  },
+  {
+    "seq": 17,
+    "ts": 621.483333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0006",
+      "prediction_id": "twin-2-p000333",
+      "score": 0.7355983132806904,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:621.483333"
+  },
+  {
+    "seq": 18,
+    "ts": 635.483333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0006",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:635.483333"
+  },
+  {
+    "seq": 19,
+    "ts": 637.083333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0007",
+      "prediction_id": "twin-2-p000411",
+      "score": 0.7320701168893492,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:637.083333"
+  },
+  {
+    "seq": 20,
+    "ts": 637.483333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0007",
+      "prediction_id": "twin-2-p000413",
+      "merged_run_start": 637.483333333333
+    },
+    "processing_time_utc": "obs-clock:637.483333"
+  },
+  {
+    "seq": 21,
+    "ts": 638.283333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0007",
+      "prediction_id": "twin-2-p000417",
+      "merged_run_start": 638.283333333333
+    },
+    "processing_time_utc": "obs-clock:638.283333"
+  },
+  {
+    "seq": 22,
+    "ts": 639.483333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0007",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:639.483333"
+  },
+  {
+    "seq": 23,
+    "ts": 639.483333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0008",
+      "prediction_id": "twin-2-p000423",
+      "score": 0.7063268957256469,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:639.483333"
+  },
+  {
+    "seq": 24,
+    "ts": 640.683333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0008",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:640.683333"
+  },
+  {
+    "seq": 25,
+    "ts": 643.483333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0009",
+      "prediction_id": "twin-2-p000443",
+      "score": 0.7205238553834945,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:643.483333"
+  },
+  {
+    "seq": 26,
+    "ts": 645.083333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0009",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:645.083333"
+  },
+  {
+    "seq": 27,
+    "ts": 672.883333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0010",
+      "prediction_id": "twin-2-p000590",
+      "score": 0.7060749234050253,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:672.883333"
+  },
+  {
+    "seq": 28,
+    "ts": 675.883333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0010",
+      "prediction_id": "twin-2-p000605",
+      "merged_run_start": 675.883333333333
+    },
+    "processing_time_utc": "obs-clock:675.883333"
+  },
+  {
+    "seq": 29,
+    "ts": 680.483333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0010",
+      "prediction_id": "twin-2-p000628",
+      "merged_run_start": 680.483333333333
+    },
+    "processing_time_utc": "obs-clock:680.483333"
+  },
+  {
+    "seq": 30,
+    "ts": 680.883333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0010",
+      "prediction_id": "twin-2-p000630",
+      "merged_run_start": 680.883333333333
+    },
+    "processing_time_utc": "obs-clock:680.883333"
+  },
+  {
+    "seq": 31,
+    "ts": 682.083333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0010",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:682.083333"
+  },
+  {
+    "seq": 32,
+    "ts": 682.683333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0011",
+      "prediction_id": "twin-2-p000639",
+      "score": 0.7570280338075154,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:682.683333"
+  },
+  {
+    "seq": 33,
+    "ts": 685.083333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0011",
+      "prediction_id": "twin-2-p000651",
+      "merged_run_start": 685.083333333333
+    },
+    "processing_time_utc": "obs-clock:685.083333"
+  },
+  {
+    "seq": 34,
+    "ts": 693.683333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0011",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:693.683333"
+  },
+  {
+    "seq": 35,
+    "ts": 694.683333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0012",
+      "prediction_id": "twin-2-p000699",
+      "score": 0.7163023388177119,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:694.683333"
+  },
+  {
+    "seq": 36,
+    "ts": 695.483333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0012",
+      "prediction_id": "twin-2-p000703",
+      "merged_run_start": 695.483333333333
+    },
+    "processing_time_utc": "obs-clock:695.483333"
+  },
+  {
+    "seq": 37,
+    "ts": 695.883333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0012",
+      "prediction_id": "twin-2-p000705",
+      "merged_run_start": 695.883333333333
+    },
+    "processing_time_utc": "obs-clock:695.883333"
+  },
+  {
+    "seq": 38,
+    "ts": 698.083333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0012",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:698.083333"
+  },
+  {
+    "seq": 39,
+    "ts": 712.683333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0013",
+      "prediction_id": "twin-2-p000789",
+      "score": 0.7161519409565855,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:712.683333"
+  },
+  {
+    "seq": 40,
+    "ts": 726.283333333333,
+    "kind": "WARNING_EXTENDED",
+    "detail": {
+      "warning_id": "twin-2-w0013",
+      "prediction_id": "twin-2-p000857",
+      "merged_run_start": 726.283333333333
+    },
+    "processing_time_utc": "obs-clock:726.283333"
+  },
+  {
+    "seq": 41,
+    "ts": 728.283333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0013",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:728.283333"
+  },
+  {
+    "seq": 42,
+    "ts": 731.083333333333,
+    "kind": "WARNING_ACTIVATED",
+    "detail": {
+      "warning_id": "twin-2-w0014",
+      "prediction_id": "twin-2-p000881",
+      "score": 0.7120570914882828,
+      "threshold": 0.7031869504322085,
+      "threshold_source": "model_manifest"
+    },
+    "processing_time_utc": "obs-clock:731.083333"
+  },
+  {
+    "seq": 43,
+    "ts": 734.083333333333,
+    "kind": "WARNING_RESOLVED",
+    "detail": {
+      "warning_id": "twin-2-w0014",
+      "reason": "no qualifying forecast within the merge gap; score below threshold"
+    },
+    "processing_time_utc": "obs-clock:734.083333"
+  },
+  {
+    "seq": 44,
+    "ts": 739.333333333333,
+    "kind": "SESSION_END",
+    "detail": {
+      "session_id": "p2-s1-t4",
+      "reason": "replay_finished",
+      "next_session": null,
+      "n_accepted": 11176
+    },
+    "processing_time_utc": "obs-clock:739.333333"
+  },
+  {
+    "seq": 45,
+    "ts": 739.333333333333,
+    "kind": "STATUS_CHANGE",
+    "detail": {
+      "from": "READY",
+      "to": "WAITING_FOR_DATA",
+      "reason": "no observation received in the current session"
+    },
+    "processing_time_utc": "obs-clock:739.333333"
+  }
+]

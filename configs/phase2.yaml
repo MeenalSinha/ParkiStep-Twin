@@ -1,0 +1,107 @@
+# ParkiStep Twin - Phase 2 configuration (forecasting target, windows, features, models, evaluation).
+# Dataset-specific column names stay in configs/datasets.yaml (Phase 1 profile); this file only refers to
+# canonical field names. Every value below can be overridden on the command line with --set a.b.c=value.
+phase2:
+  name: fog_onset_forecast
+  datasets_config: configs/datasets.yaml        # Phase 1 dataset profile (column mappings, units, annotation rules)
+  project_config: configs/project.yaml          # Phase 1 project settings (processed-data location and file stems)
+  dataset: null                                 # null = project active_dataset
+
+  data:
+    clinical_features: [age, gender, disease_duration, hoehn_yahr, updrs_iii, fog_q, moca, pdq_8]
+    clinical_categorical: [gender]
+    # fes_i is left out on purpose: 9 of 21 values fall outside the README range (Phase 1 warning CLINICAL_OUT_OF_RANGE)
+    eligible_tasks: null                        # null = all tasks; otherwise restrict the prediction population
+    eligible_activities: null                   # null = all (activity is used only to restrict the population, never as a predictor)
+    sensor_sets:                                # named groups of sensor positions (must exist in the dataset profile)
+      all: [ankleL, ankleR, back, wrist]
+
+  events:
+    merge_gap_s: 0.0                            # merge events separated by <= this gap (0 = never merge)
+    min_duration_s: 0.0                         # discard events shorter than this (0 = keep all annotated events)
+
+  windowing:
+    input_window_s: 2.0
+    horizons_s: [1.0, 3.0, 5.0]
+    stride_s: 0.2
+    timestamp_tolerance_fraction: 0.05          # window time span vs expected span; larger deviation = invalid window
+    min_valid_fraction: 0.95                    # raw (pre-fill) valid fraction required per channel of a required sensor position
+    max_ffill_samples: 3                        # causal forward-fill limit for isolated missing samples (0 = never fill)
+    exclude_input_overlapping_event: true       # input window must not contain an annotated FoG sample
+    min_time_since_previous_event_s: 0.0        # extra exclusion after the end of a previous event (0 = only the window rule)
+    require_full_future: true                   # anchors whose full horizon is not observed are censored, never negative
+
+  features:
+    time_domain: [mean, std, min, max, rms, q25, median, q75, range, mean_abs_diff]
+    derived_channels:
+      - {type: magnitude, signals: [acc, gyro]}
+    frequency:
+      enabled: true
+      channels: all                             # all | list of channel names
+      window_function: hann                     # hann | none
+      detrend: mean
+      dominant_range_hz: [0.5, 15.0]            # clipped to the Nyquist frequency
+      bands_hz: {locomotor: [0.5, 3.0], freeze: [3.0, 8.0]}
+      ratios: [[freeze, locomotor]]             # band-energy ratios (freeze index style)
+      features: [dominant_freq, band_energy, band_ratio, spectral_entropy, total_power]
+      log_energy: true                          # log10(1 + energy) for band energy and total power
+    cross_sensor:
+      - {name: ankle_acc_mag_corr,  type: correlation,   a: ankleL_acc_mag,  b: ankleR_acc_mag}
+      - {name: ankle_gyro_mag_corr, type: correlation,   a: ankleL_gyro_mag, b: ankleR_gyro_mag}
+      - {name: ankle_acc_std_logratio,  type: std_log_ratio, a: ankleL_acc_mag,  b: ankleR_acc_mag}
+      - {name: ankle_gyro_std_logratio, type: std_log_ratio, a: ankleL_gyro_mag, b: ankleR_gyro_mag}
+    exclude_features: []                        # feature-name patterns (fnmatch) removed from the schema
+
+  models:                                       # candidate list; every entry is trained for every experiment
+    dummy_prior:   {type: dummy_prior}
+    dummy_random:  {type: dummy_random}
+    logistic:      {type: logistic_regression, params: {C: 0.05, max_iter: 500, class_weight: balanced}}
+    random_forest: {type: random_forest, params: {n_estimators: 150, max_depth: 8, min_samples_leaf: 40, max_features: sqrt, class_weight: balanced_subsample, n_jobs: 1}}
+
+  experiments:                                  # ablation: same target, same folds, different inputs
+    - {name: sensor_only, sensor_set: all, clinical: false}
+    - {name: fusion,      sensor_set: all, clinical: true}
+
+  preprocessing:
+    sensor_impute: median                       # fitted inside each training fold
+    clinical_impute: median
+    scale: true
+
+  training:
+    random_seed: 20260101
+    subject_balanced_weights: true              # each training participant contributes equal total weight
+    train_stride_multiplier: 2                  # use every k-th anchor of each recording for fitting (features are still extracted at the full stride)
+    final_models: true                          # fit models on all participants for the inference interface
+
+  split:
+    strategy: balanced_group_kfold              # balanced_group_kfold | leave_one_group_out
+    n_splits: 5
+    seed: 20260101
+
+  threshold:                                    # selected on inner grouped out-of-fold predictions of the training participants only
+    policy: fa_budget                           # fa_budget | max_fbeta | fixed
+    target_false_alerts_per_hour: 30.0
+    beta: 1.0
+    fixed_value: 0.5
+    inner_splits: 3
+    grid_size: 40                               # candidate thresholds = probability quantiles
+
+  alerts:
+    persistence_anchors: 1                      # consecutive above-threshold anchors required to raise an alert
+    merge_gap_s: 1.0                            # alert runs closer than this are one alert
+    cooldown_s: 0.0                             # refractory period after an alert (0 = none)
+    min_lead_s: 0.0                             # an alert must precede onset by at least this much to count
+    extra_alerts_for_matched_event: ignore      # ignore | false  (additional alerts for an already-detected event)
+
+  evaluation:
+    bootstrap: {n_resamples: 300, ci: 0.95, seed: 20260101}   # resampling unit = participant
+    calibration_bins: 10
+    selection: {metric: average_precision, among: [logistic, random_forest]}   # used to flag the preferred model per horizon
+
+  outputs:
+    artifacts_root: artifacts/phase2            # <root>/<experiment_id>/...
+    reports_dir: reports/phase2
+    window_cache_dir: data/interim/phase2       # events, anchors and features
+    overwrite: true
+  logging:
+    level: INFO

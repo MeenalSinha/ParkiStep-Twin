@@ -1,0 +1,64 @@
+{
+  "schema": "parkistep.phase6.browser_full_replay/1",
+  "checks": {
+    "replay reaches Completed and shows the retrospective section": {
+      "pass": true,
+      "detail": "70 s wall incl. server start"
+    },
+    "the replayed recording is the one recorded in the independent recomputation": {
+      "pass": true,
+      "detail": "p2-s1-t4"
+    },
+    "Observations processed equals observations offered (11k scale), none rejected": {
+      "pass": true,
+      "detail": "{'Recording': 'p2-s1-t4', 'Replay position': '186.25 s', 'Processed / rejected': '11,176 / 0', 'Forecasts': '922', 'Warnings (active+closed)': '14', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '11,176', 'Rejected': '0', 'Warnings': '14', 'Future-data violations': '0', 'Annotated eve"
+    },
+    "annotated events (shown only now) equal the independent count": {
+      "pass": true,
+      "detail": "['7']"
+    },
+    "detected early matches independent recompute": {
+      "pass": true,
+      "detail": ""
+    },
+    "valid / false warnings match independent recompute": {
+      "pass": true,
+      "detail": ""
+    },
+    "excluded-overlap warning count stated and equal": {
+      "pass": true,
+      "detail": ""
+    },
+    "retrospective result is labelled in-sample": {
+      "pass": true,
+      "detail": ""
+    },
+    "future-data violations reported as 0": {
+      "pass": true,
+      "detail": "0"
+    },
+    "no Streamlit exception / JS error": {
+      "pass": true,
+      "detail": "[]"
+    }
+  },
+  "all_passed": true,
+  "selection_before_start": {},
+  "metrics_after_completion": {
+    "Recording": "p2-s1-t4",
+    "Replay position": "186.25 s",
+    "Processed / rejected": "11,176 / 0",
+    "Forecasts": "922",
+    "Warnings (active+closed)": "14",
+    "Twin status": "WAITING_FOR_DATA",
+    "Observations processed": "11,176",
+    "Rejected": "0",
+    "Warnings": "14",
+    "Future-data violations": "0",
+    "Annotated events": "7",
+    "Detected early": "1 / 7",
+    "Valid / false warnings": "1 / 3",
+    "Median warning lead": "2.40 s"
+  },
+  "wall_seconds_including_server_start": 70.2
+}

@@ -1,0 +1,78 @@
+project:
+  name: ParkiStep Twin
+  condition: Parkinson's disease
+  target_event: onset of an expert-annotated freezing-of-gait episode
+  intended_use: research proof of concept; not for diagnosis or treatment
+
+data:
+  primary_dataset: FoG-STAR
+  primary_url: https://zenodo.org/records/17838806
+  license: CC-BY-4.0
+  secondary_dataset: Daphnet
+  secondary_status: optional_stretch_goal
+  secondary_url: https://archive.ics.uci.edu/dataset/245/daphnet%2Bfreezing%2Bof%2Bgait
+  sampling_rate_hz: 60
+  sensors:
+    - left_ankle_accelerometer
+    - left_ankle_gyroscope
+    - right_ankle_accelerometer
+    - right_ankle_gyroscope
+    - back_accelerometer
+    - back_gyroscope
+    - wrist_accelerometer
+    - wrist_gyroscope
+  note: Inspect the actual dataset headers and timestamp quality before locking field mappings.
+
+forecast:
+  primary_horizon_seconds: 3
+  sensitivity_horizons_seconds: [1, 5]
+  trailing_window_seconds: 2
+  provisional_prediction_stride_seconds: 0.5
+  target_definition: >-
+    At time t, estimate the probability that at least one annotated FoG onset
+    occurs in (t, t + horizon], using only information available at or before t.
+  exclude_active_fog_from_forecast_input: true
+  labels_forbidden_as_live_predictors: true
+
+fusion:
+  method: feature_level
+  join_key: subjectID
+  compare_sensor_only_and_clinical_plus_sensor: true
+  primary_baseline: regularized_logistic_regression
+  optional_challenger: random_forest_or_gradient_boosting_if_time_permits
+  clinical_features: inspect_actual_header_before_finalizing
+  report_fog_q_ablation: true
+
+evaluation:
+  outer_split: participant_grouped
+  preferred_protocol: leave_one_subject_out_if_feasible
+  tune_threshold_only_inside_training_fold: true
+  primary_metrics:
+    - event_sensitivity
+    - false_alerts_per_hour_of_eligible_non_fog_time
+    - warning_lead_time_distribution
+  secondary_metrics:
+    - precision
+    - recall
+    - precision_recall_auc
+  success_rule: >-
+    Do not set an arbitrary accuracy target. Require reproducible evidence of
+    non-trivial advance prediction against a trivial baseline on held-out
+    participants and report the event-sensitivity/false-alert trade-off.
+
+ui:
+  framework: Streamlit
+  replay_mode: timestamp_ordered_simulated_live_stream
+  must_show:
+    - patient_profile_and_data_provenance
+    - recent_sensor_signals
+    - predicted_risk_and_horizon
+    - data_quality_and_uncertainty
+    - alert_history
+    - post_hoc_ground_truth_comparison
+
+submission:
+  github_visibility: public
+  required_video_minutes_minimum: 20
+  architecture_format: PDF_or_PPT
+  presentation_format: PDF_or_PPT

@@ -1,0 +1,1651 @@
+{
+  "schema": "parkistep.phase6.artifact_verification/1",
+  "artifacts_root": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2",
+  "n_manifests": 24,
+  "n_passed": 24,
+  "all_passed": true,
+  "real_window_source": {
+    "recording": "p1-s1-t1",
+    "participant": "1",
+    "window_offset_s": 30.0
+  },
+  "experiment_ids": [
+    "fog_onset_forecast_6499e95d"
+  ],
+  "artifacts": [
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "cd0439aed7820083c2fd8e59042a188a887e9e9c709998dfa526c9d5b14c26c1",
+      "sha256_manifest": "cd0439aed7820083c2fd8e59042a188a887e9e9c709998dfa526c9d5b14c26c1",
+      "artifact_bytes": 63282,
+      "threshold": {
+        "value": 0.04019277140445007,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": null,
+        "inner_event_sensitivity": null,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "dummy_prior",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.027591653719261748,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "461b71d4ca73af2df05ad7f6c004631687623d521b40d05ef68d14def44ecfc2",
+      "sha256_manifest": "461b71d4ca73af2df05ad7f6c004631687623d521b40d05ef68d14def44ecfc2",
+      "artifact_bytes": 63282,
+      "threshold": {
+        "value": 0.13038676522974146,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": null,
+        "inner_event_sensitivity": null,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "dummy_prior",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.08680260592309172,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "3aa0c1bc94933b4fe872771e236fc1d78f56d4fcdbe9599f7d01ad90d71d9d4a",
+      "sha256_manifest": "3aa0c1bc94933b4fe872771e236fc1d78f56d4fcdbe9599f7d01ad90d71d9d4a",
+      "artifact_bytes": 63282,
+      "threshold": {
+        "value": 0.2454741738769135,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": null,
+        "inner_event_sensitivity": null,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "dummy_prior",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.14890149307423184,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "72ad7cadcdf3cd590ef1f7ae0cbcc5eedfde6d6289c352d05c85d8ffb151ab76",
+      "sha256_manifest": "72ad7cadcdf3cd590ef1f7ae0cbcc5eedfde6d6289c352d05c85d8ffb151ab76",
+      "artifact_bytes": 63102,
+      "threshold": {
+        "value": 0.9989086654299715,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 18.08617530586914,
+        "inner_event_sensitivity": 0.0,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "dummy_random",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.1950471919367377,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "1209a180eea88a0fb5b767df3ac107945b1dd9662866bbb8d4b8e94a45d412e3",
+      "sha256_manifest": "1209a180eea88a0fb5b767df3ac107945b1dd9662866bbb8d4b8e94a45d412e3",
+      "artifact_bytes": 63102,
+      "threshold": {
+        "value": 0.9989059132103135,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 17.74601022860312,
+        "inner_event_sensitivity": 0.013333333333333334,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "dummy_random",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.1950471919367377,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "a2cbad01a1413856941fdde09540b5a93bf918d40b8c970c331839f1a6a38b9d",
+      "sha256_manifest": "a2cbad01a1413856941fdde09540b5a93bf918d40b8c970c331839f1a6a38b9d",
+      "artifact_bytes": 63102,
+      "threshold": {
+        "value": 0.9987817810298666,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 16.212043232115285,
+        "inner_event_sensitivity": 0.02666666666666667,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "dummy_random",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.1950471919367377,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "84cbdf9d40ec0a6a8ab8fc7d0f18ca5885cd365eccaa533f02008ebbdf56ad9b",
+      "sha256_manifest": "84cbdf9d40ec0a6a8ab8fc7d0f18ca5885cd365eccaa533f02008ebbdf56ad9b",
+      "artifact_bytes": 67850,
+      "threshold": {
+        "value": 0.9999141949161985,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 8.511141320409008,
+        "inner_event_sensitivity": 0.0,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "logistic",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.013456520010763851,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "150554ecd02f15cec0dde8648eaf920fd761668ebd4defc0e891c2449e3664c9",
+      "sha256_manifest": "150554ecd02f15cec0dde8648eaf920fd761668ebd4defc0e891c2449e3664c9",
+      "artifact_bytes": 67850,
+      "threshold": {
+        "value": 0.9993136815991347,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 8.87300511430156,
+        "inner_event_sensitivity": 0.02666666666666667,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "logistic",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.7889994099840387,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "308eef7ddf30bc2d6168a5af5572dedcc0221084b86a336986fd03632d05539a",
+      "sha256_manifest": "308eef7ddf30bc2d6168a5af5572dedcc0221084b86a336986fd03632d05539a",
+      "artifact_bytes": 67850,
+      "threshold": {
+        "value": 0.9976294474733641,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 26.634071024189396,
+        "inner_event_sensitivity": 0.06666666666666667,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "logistic",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.9162003995902949,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "9fadf87a820bd8ccbdcec727c59eeabba2d7be41ed649c4950a6a697f9d85bc0",
+      "sha256_manifest": "9fadf87a820bd8ccbdcec727c59eeabba2d7be41ed649c4950a6a697f9d85bc0",
+      "artifact_bytes": 941851,
+      "threshold": {
+        "value": 0.4780653153278342,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 18.08617530586914,
+        "inner_event_sensitivity": 0.06666666666666667,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "random_forest",
+        "horizon_s": 1.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.13990148143259354,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "4df58b386e0c454decbfa40427f8b932e3c7d32c5f2e122e56b5802bd0710d5f",
+      "sha256_manifest": "4df58b386e0c454decbfa40427f8b932e3c7d32c5f2e122e56b5802bd0710d5f",
+      "artifact_bytes": 1044251,
+      "threshold": {
+        "value": 0.6211903695859586,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 9.982130753589253,
+        "inner_event_sensitivity": 0.013333333333333334,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "random_forest",
+        "horizon_s": 3.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.33722616222273444,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "e139777e6a84693c1d61bf962a56c776d25d1b42ed94dc31fa2a88a97b395111",
+      "sha256_manifest": "e139777e6a84693c1d61bf962a56c776d25d1b42ed94dc31fa2a88a97b395111",
+      "artifact_bytes": 1146971,
+      "threshold": {
+        "value": 0.6988941760463855,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 6.948018528049407,
+        "inner_event_sensitivity": 0.0,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "fusion",
+        "model": "random_forest",
+        "horizon_s": 5.0,
+        "uses_clinical": true,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.4135711553450427,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "feece12391a630516fa7c9d26825ec03b180a47e65fa28cc8138f691a1dfeb0d",
+      "sha256_manifest": "feece12391a630516fa7c9d26825ec03b180a47e65fa28cc8138f691a1dfeb0d",
+      "artifact_bytes": 60338,
+      "threshold": {
+        "value": 0.04019277140445007,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": null,
+        "inner_event_sensitivity": null,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "dummy_prior",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.027591653719261748,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "5eff9524059f5989e1d826834c7b7b06b6210f3eb2f665a14023c36670c57c83",
+      "sha256_manifest": "5eff9524059f5989e1d826834c7b7b06b6210f3eb2f665a14023c36670c57c83",
+      "artifact_bytes": 60338,
+      "threshold": {
+        "value": 0.13038676522974146,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": null,
+        "inner_event_sensitivity": null,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "dummy_prior",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.08680260592309172,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "89356e39e88df4765967317539fd58d0f2d5fbc571ae1c6dd872de3a35e99e43",
+      "sha256_manifest": "89356e39e88df4765967317539fd58d0f2d5fbc571ae1c6dd872de3a35e99e43",
+      "artifact_bytes": 60338,
+      "threshold": {
+        "value": 0.2454741738769135,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": null,
+        "inner_event_sensitivity": null,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "dummy_prior",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.14890149307423184,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "b4d3b4af43de4e1ba4e0457d161eb234c8f6447e8ce4758c1a9032fcf7cce65c",
+      "sha256_manifest": "b4d3b4af43de4e1ba4e0457d161eb234c8f6447e8ce4758c1a9032fcf7cce65c",
+      "artifact_bytes": 60158,
+      "threshold": {
+        "value": 0.9989086654299715,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 18.08617530586914,
+        "inner_event_sensitivity": 0.0,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "dummy_random",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.1950471919367377,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "1805a6cda1fdb4c44093c9a45d07fe77f6fa6d14b1f4b13dd2b38f1a381cd917",
+      "sha256_manifest": "1805a6cda1fdb4c44093c9a45d07fe77f6fa6d14b1f4b13dd2b38f1a381cd917",
+      "artifact_bytes": 60158,
+      "threshold": {
+        "value": 0.9989059132103135,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 17.74601022860312,
+        "inner_event_sensitivity": 0.013333333333333334,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "dummy_random",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.1950471919367377,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "352be71bdfe76d67d8ba6b881304912a8685394ccd865b0d7cfd8d0f6415fc9e",
+      "sha256_manifest": "352be71bdfe76d67d8ba6b881304912a8685394ccd865b0d7cfd8d0f6415fc9e",
+      "artifact_bytes": 60158,
+      "threshold": {
+        "value": 0.9987817810298666,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 16.212043232115285,
+        "inner_event_sensitivity": 0.02666666666666667,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "dummy_random",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.1950471919367377,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "6845087b7be233e93d833c849254652d6520f5a0969c0ab1d85cf28d2b473935",
+      "sha256_manifest": "6845087b7be233e93d833c849254652d6520f5a0969c0ab1d85cf28d2b473935",
+      "artifact_bytes": 64810,
+      "threshold": {
+        "value": 0.9999351140177216,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 9.575033985460133,
+        "inner_event_sensitivity": 0.0,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "logistic",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.024302486012074062,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "36a31d9b919915c8cfa5cfe7e712a7b8c8105628da603acbbafebdb77cacec06",
+      "sha256_manifest": "36a31d9b919915c8cfa5cfe7e712a7b8c8105628da603acbbafebdb77cacec06",
+      "artifact_bytes": 64810,
+      "threshold": {
+        "value": 0.9990835478644999,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 7.763879475013864,
+        "inner_event_sensitivity": 0.02666666666666667,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "logistic",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.8189797995247502,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "9a6d8b3aa1aa2b0b062014d0299055253b27ab57059e18209392d96b9ee43bd1",
+      "sha256_manifest": "9a6d8b3aa1aa2b0b062014d0299055253b27ab57059e18209392d96b9ee43bd1",
+      "artifact_bytes": 64810,
+      "threshold": {
+        "value": 0.9994033660973549,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 6.948018528049407,
+        "inner_event_sensitivity": 0.02666666666666667,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "logistic",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.9152819607609293,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h1.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "5a02924c3d9e58cb36eb91bd19632bd58560cb5b354ac37d015fda530df3f5b3",
+      "sha256_manifest": "5a02924c3d9e58cb36eb91bd19632bd58560cb5b354ac37d015fda530df3f5b3",
+      "artifact_bytes": 955851,
+      "threshold": {
+        "value": 0.4803448528830765,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 29.788994621431527,
+        "inner_event_sensitivity": 0.05333333333333334,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "random_forest",
+        "horizon_s": 1.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.12277873208517884,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h3.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "55aee24bcf2325b221781058ece25f757c89f8b81862e2f106dd4fde48203263",
+      "sha256_manifest": "55aee24bcf2325b221781058ece25f757c89f8b81862e2f106dd4fde48203263",
+      "artifact_bytes": 1032971,
+      "threshold": {
+        "value": 0.7031869504322085,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 13.309507671452337,
+        "inner_event_sensitivity": 0.05333333333333334,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "random_forest",
+        "horizon_s": 3.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.2965575619982303,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    },
+    {
+      "manifest": "/home/claude/proj/ParkiStep-Twin/artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h5.manifest.json",
+      "checks": {
+        "manifest_has_required_keys": true,
+        "artifact_exists": true,
+        "sha256_algorithm_is_sha256_hex64": true,
+        "sha256_matches_manifest": true,
+        "experiment_id_matches_directory": true,
+        "name_matches_manifest_identity": true,
+        "artifact_name_matches_stem": true,
+        "threshold_finite": true,
+        "feature_schema_nonempty": true,
+        "training_scope_recorded": true,
+        "real_inference_ran": true,
+        "prediction_in_unit_interval_or_unavailable": true,
+        "prediction_horizon_matches_manifest": true,
+        "prediction_threshold_matches_manifest": true,
+        "prediction_model_id_matches": true,
+        "clinical_flag_consistent": true
+      },
+      "problems": [],
+      "sha256_recomputed": "ec8632e8735de7771f3ee64e0daa4b438341bf31af5bd8abde28305697c3c892",
+      "sha256_manifest": "ec8632e8735de7771f3ee64e0daa4b438341bf31af5bd8abde28305697c3c892",
+      "artifact_bytes": 1184971,
+      "threshold": {
+        "value": 0.7059835364621135,
+        "policy": "fa_budget",
+        "inner_false_alerts_per_hour": 5.790015440041173,
+        "inner_event_sensitivity": 0.0,
+        "above_one_alert_disabled": false
+      },
+      "identity": {
+        "experiment_id": "fog_onset_forecast_6499e95d",
+        "experiment": "sensor_only",
+        "model": "random_forest",
+        "horizon_s": 5.0,
+        "uses_clinical": false,
+        "n_sensor_features": 516,
+        "window": {
+          "input_window_s": 2.0,
+          "stride_s": 0.2,
+          "timestamp_tolerance_fraction": 0.05,
+          "min_valid_fraction": 0.95,
+          "max_ffill_samples": 3
+        },
+        "software": {
+          "python": "3.12.3",
+          "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+          "numpy": "2.4.4",
+          "pandas": "3.0.2",
+          "scikit-learn": "1.8.0",
+          "scipy": "1.17.1",
+          "joblib": "1.5.3"
+        }
+      },
+      "software_mismatch": {},
+      "inference": {
+        "recording": "p1-s1-t1",
+        "window_end_t": 30.0,
+        "probability": 0.3673799233385372,
+        "data_quality": "ok",
+        "above_threshold": false,
+        "features_expected": 516,
+        "features_finite": 516,
+        "warnings": []
+      },
+      "passed": true
+    }
+  ],
+  "software_mismatch_in_any_artifact": false,
+  "software_mismatch_note": "if true, install requirements-lock.txt to reproduce with the training-time versions"
+}

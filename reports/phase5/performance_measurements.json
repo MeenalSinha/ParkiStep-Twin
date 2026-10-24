@@ -1,0 +1,75 @@
+{
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v140-x86_64-with-glibc2.39",
+    "cpu_count": 1,
+    "ram_gb": 3.9,
+    "pandas": "3.0.2",
+    "numpy": "2.4.4"
+  },
+  "parameters": {
+    "config": "configs/phase4.yaml",
+    "repetitions": 3,
+    "max_observations": 0,
+    "patient": null,
+    "recording": null,
+    "out": "reports/phase5/performance_measurements.json"
+  },
+  "measured": {
+    "config_load_s": 0.012258542999916244,
+    "service_build_s": 0.039719035000075564,
+    "warm_up_s_(dataset_discovery+model_load)": 2.444256759000041,
+    "replays": [
+      {
+        "twin_init_s": 0.36507166900003085,
+        "replay_wall_s": 27.01316956200003,
+        "observations": 11176,
+        "forecasts": 922,
+        "ms_per_observation": 2.4170695742662875,
+        "mean_inference_ms": 21.44,
+        "max_inference_ms": 78.15,
+        "ticks": 19,
+        "max_tick_s": 1.6167774460000146,
+        "rss_mb_before": 339.0703125,
+        "rss_mb_after": 336.78515625,
+        "digest": "13ee0b1870bc054f3782db87aeaee18d77ef6cb9d69e9565c5469b6af2f240bd"
+      },
+      {
+        "twin_init_s": 0.4075688259999879,
+        "replay_wall_s": 27.471753905000014,
+        "observations": 11176,
+        "forecasts": 922,
+        "ms_per_observation": 2.458102532659271,
+        "mean_inference_ms": 21.8,
+        "max_inference_ms": 74.69,
+        "ticks": 19,
+        "max_tick_s": 2.019265310000037,
+        "rss_mb_before": 352.93359375,
+        "rss_mb_after": 344.4765625,
+        "digest": "13ee0b1870bc054f3782db87aeaee18d77ef6cb9d69e9565c5469b6af2f240bd"
+      },
+      {
+        "twin_init_s": 0.38202629199997773,
+        "replay_wall_s": 28.640251895000006,
+        "observations": 11176,
+        "forecasts": 922,
+        "ms_per_observation": 2.5626567551002153,
+        "mean_inference_ms": 22.56,
+        "max_inference_ms": 41.1,
+        "ticks": 19,
+        "max_tick_s": 1.7927882090000367,
+        "rss_mb_before": 355.31640625,
+        "rss_mb_after": 349.6171875,
+        "digest": "13ee0b1870bc054f3782db87aeaee18d77ef6cb9d69e9565c5469b6af2f240bd"
+      }
+    ],
+    "digests_identical_across_repetitions": true,
+    "rss_mb": {
+      "process_start": 107.8515625,
+      "after_model_and_data_load": 447.3984375,
+      "end": 349.6171875,
+      "growth_over_repetitions_mb": 12.83203125
+    },
+    "sessions_retained_in_service": 0
+  }
+}

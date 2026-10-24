@@ -1,0 +1,26 @@
+{
+ "patient_id": "2",
+ "recording_id": "p2-s1-t4",
+ "identity_checks": {
+  "patient_same_in_predictions_warnings_summary": true,
+  "recording_same": true,
+  "prediction_rows": 922,
+  "warnings": 14
+ },
+ "n_discrepancies": 0,
+ "discrepant_metrics": []
+}
+OK  annotated_events                           independent=7  saved=7
+OK  events_with_forecast_coverage              independent=7  saved=7
+OK  events_detected                            independent=1  saved=1
+OK  event_sensitivity_all_events               independent=0.14285714285714285  saved=0.14285714285714285
+OK  event_sensitivity_covered_events           independent=0.14285714285714285  saved=0.14285714285714285
+OK  valid_early_warnings                       independent=1  saved=1
+OK  false_warnings                             independent=3  saved=3
+OK  redundant_warnings                         independent=0  saved=0
+OK  warnings_excluded_overlap_freezing         independent=10  saved=10
+OK  warnings_excluded_censored_future          independent=0  saved=0
+OK  scored_monitored_hours                     independent=0.022722222222222227  saved=0.022722222222222227
+OK  false_warnings_per_hour                    independent=132.0293398533007  saved=132.0293398533007
+OK  median_lead_s                              independent=2.3999999999999773  saved=2.3999999999999773
+warnings re-derived from scores: {'count': 14, 'saved_count': 14, 'same_times': True, 'note': 're-derivation uses threshold + merge gap only; the engine also applies hysteresis/cooldown/status rules, so a difference is explained, not an error, only if documented'}

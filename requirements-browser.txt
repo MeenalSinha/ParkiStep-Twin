@@ -1,0 +1,4 @@
+# Optional: real-browser verification scripts (scripts/p6_browser_*.py, scripts/p6_visual_review.py) and the soak test.
+# After installing run once:  python -m playwright install chromium
+playwright>=1.45
+psutil>=5.9

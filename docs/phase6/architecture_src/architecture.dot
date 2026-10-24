@@ -1,0 +1,83 @@
+// ParkiStep Twin - implemented architecture (EDITABLE SOURCE). Node positions are pinned (pos="x,y!", inches) so the layout is stable.
+// Render:  neato -Tpdf architecture.dot -o ../architecture.pdf ; neato -Tsvg architecture.dot -o ../architecture.svg ; neato -Tpng -Gdpi=150 architecture.dot -o ../architecture.png   [needs Graphviz]
+// Module names are the real packages in src/parkistep/. The colour/style legend is inside the figure.
+digraph parkistep {
+  layout=neato; overlap=false; splines=true; pad=0.3; fontname="Helvetica";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=12, margin="0.16,0.10", color="#4b5563", fillcolor="#ffffff", width=2.9, height=0.9, fixedsize=false];
+  edge [fontname="Helvetica", fontsize=10, color="#4b5563", arrowsize=0.8];
+
+  title [shape=plaintext, style="", pos="9.5,11.2!", label=<<B><FONT POINT-SIZE="20">ParkiStep Twin - implemented architecture</FONT></B><BR/><FONT POINT-SIZE="12">Live prediction uses only past sensor data (blue). Annotations (red, dashed) train the model offline and score replays after they end (purple, dashed); they never reach live inference.</FONT>>];
+
+  // band labels
+  b0 [shape=plaintext, style="", pos="-1.2,10!", label=<<B>Source data</B><BR/>(FoG-STAR,<BR/>not redistributed)>];
+  b1 [shape=plaintext, style="", pos="-1.2,8.2!", label=<<B>Phase 1</B><BR/>data foundation>];
+  b2 [shape=plaintext, style="", pos="-1.2,6.0!", label=<<B>Phase 2</B><BR/>forecasting<BR/>(offline)>];
+  b3 [shape=plaintext, style="", pos="-1.2,3.2!", label=<<B>Phase 3</B><BR/>digital-twin<BR/>runtime>];
+  b4 [shape=plaintext, style="", pos="-1.2,1.0!", label=<<B>Phase 4</B><BR/>dashboard>];
+
+  // source row
+  ann  [pos="1.6,10!",  fillcolor="#fee2e2", label="annotation columns\n(FoG flag, severity, activity)\nfrom video - labels only"];
+  sens [pos="5.2,10!",  fillcolor="#dbeafe", label="sensor_data.csv\nwearable accelerometer / gyroscope\nchannels, 4 body positions"];
+  clin [pos="8.8,10!",  fillcolor="#dcfce7", label="clinical_data.csv\none record per participant"];
+  leg  [shape=plaintext, style="", pos="14.6,10!", label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="2" COLOR="#9ca3af">
+      <TR><TD COLSPAN="2"><B>Legend</B></TD></TR>
+      <TR><TD ALIGN="LEFT"><FONT COLOR="#2563eb"><B>solid blue</B></FONT></TD><TD ALIGN="LEFT">live sensor data (past only)</TD></TR>
+      <TR><TD ALIGN="LEFT"><FONT COLOR="#16a34a"><B>solid green</B></FONT></TD><TD ALIGN="LEFT">historical clinical context</TD></TR>
+      <TR><TD ALIGN="LEFT"><FONT COLOR="#ea580c"><B>solid orange</B></FONT></TD><TD ALIGN="LEFT">model artifacts / model outputs</TD></TR>
+      <TR><TD ALIGN="LEFT"><FONT COLOR="#dc2626"><B>dashed red</B></FONT></TD><TD ALIGN="LEFT">training-only annotations</TD></TR>
+      <TR><TD ALIGN="LEFT"><FONT COLOR="#7c3aed"><B>dashed purple</B></FONT></TD><TD ALIGN="LEFT">retrospective evaluation / ground truth</TD></TR>
+      <TR><TD ALIGN="LEFT"><B>dotted grey</B></TD><TD ALIGN="LEFT">optional persistence</TD></TR></TABLE>>];
+
+  // Phase 1
+  ing  [pos="9.0,8.2!",  label="ingestion +\nschema validation\n(parkistep.ingestion, validation)"];
+  qual [pos="12.4,8.2!", label="quality audit + join audit\n(parkistep.quality, integration)\nPASS_WITH_WARNINGS"];
+  proc [pos="15.8,8.2!", fillcolor="#f3f4f6", label="processed tables\ndata/processed/fogstar\n(participant-level fusion key)"];
+
+  // Phase 2
+  win  [pos="1.6,6.4!",  label="windows + events\n(forecast.windows, events)\n2.0 s input, 0.2 s stride;\nlabel = onset within horizon H"];
+  feat [pos="5.2,6.4!",  label="features\n(forecast.features)\nsensor statistics\n(+ clinical fields for fusion)"];
+  mdl  [pos="8.8,6.4!",  label="models + experiment\n(forecast.models, experiment)\nlogistic, random forest, dummies;\nparticipant-grouped 5-fold CV"];
+  art  [pos="12.4,6.4!", fillcolor="#ffedd5", label="MODEL ARTIFACTS\n*.joblib + *.manifest.json\nSHA-256, feature schema, horizon,\nthreshold + provenance"];
+  ev2  [pos="8.8,4.7!",  fillcolor="#ede9fe", label="out-of-sample evaluation\n(forecast.evaluate)\nevent sensitivity, false alerts/h,\nlead time, bootstrap CIs"];
+
+  // Phase 3 (flows right -> left along the live lane)
+  strm [pos="15.8,3.2!", label="streams\n(twin/streams.py)\nreplay one recording sample by\nsample; annotations withheld"];
+  twin [pos="12.4,3.2!", fillcolor="#f0fdf4", label="twin state + rolling buffer\n(twin/state.py, buffer.py)\nclinical profile = historical context"];
+  gate [pos="9.0,3.2!",  fillcolor="#ffedd5", label="model gateway\n(twin/model.py)\nverifies manifest + SHA-256,\nschema, horizon -> ForecastPredictor"];
+  warn [pos="5.6,3.2!",  fillcolor="#ffedd5", label="warning manager\n(twin/alerts.py)\nthreshold, persistence, merge;\nstale / unavailable states"];
+  retro[pos="2.2,3.2!",  fillcolor="#ede9fe", label="retrospective comparison\n(twin/replay.py)\nruns only AFTER the replay ends"];
+  db   [pos="15.8,1.0!", label="SQLite state store (optional)\n(twin/storage.py)\ntwin state, predictions, events"];
+
+  // Phase 4
+  dsvc [pos="9.0,1.0!",  label="DashboardService + ReplaySession\n(dashboard/service.py, replay_session.py)\nstart / pause / resume / stop; failed state"];
+  ui   [pos="4.2,1.0!",  fillcolor="#fff7ed", label="Streamlit app - 7 pages\nOverview, Patient Profile, Movement Monitor,\nEarly Warning, Warning Center,\nReplay Analysis, Model Performance"];
+
+  // source -> Phase 1
+  sens -> ing [color="#2563eb", penwidth=1.6];
+  clin -> ing [color="#16a34a", penwidth=1.6];
+  ann  -> ing [color="#dc2626", style=dashed];
+  ing -> qual -> proc;
+  // Phase 1 -> Phase 2 (training)
+  proc -> win [color="#2563eb", label="sensor + clinical\n(training windows)", fontcolor="#2563eb"];
+  ann  -> win [color="#dc2626", style=dashed, penwidth=2, label="TRAINING-ONLY labels", fontcolor="#dc2626"];
+  win -> feat -> mdl -> art;
+  mdl -> ev2 [color="#7c3aed", style=dashed, label="out-of-fold\npredictions", fontcolor="#7c3aed"];
+  ann -> ev2 [color="#7c3aed", style=dashed, label="ground truth", fontcolor="#7c3aed"];
+  // live path
+  proc -> strm [color="#2563eb", penwidth=2.4, label="LIVE: past samples only", fontcolor="#2563eb"];
+  proc -> twin [color="#16a34a", label="historical\nclinical record", fontcolor="#16a34a"];
+  strm -> twin [color="#2563eb", penwidth=2.4, label="observations", fontcolor="#2563eb"];
+  art -> gate [color="#ea580c", penwidth=2, label="load + verify", fontcolor="#ea580c"];
+  twin -> gate [color="#2563eb", penwidth=2.4, label="trailing window", fontcolor="#2563eb"];
+  gate -> warn [color="#ea580c", penwidth=2.4, label="score\n(uncalibrated)", fontcolor="#ea580c"];
+  warn -> twin [color="#ea580c", label="warning state", fontcolor="#ea580c", constraint=false, headport=s, tailport=s];
+  twin -> db [style=dotted]; 
+  // retrospective
+  ann -> retro [color="#7c3aed", style=dashed, penwidth=2, label="ground truth,\nafter replay only", fontcolor="#7c3aed"];
+  warn -> retro [color="#7c3aed", style=dashed, label="warnings + scores", fontcolor="#7c3aed"];
+  // Phase 4
+  twin -> dsvc [color="#2563eb"]; warn -> dsvc [color="#ea580c"];
+  retro -> dsvc [color="#7c3aed", style=dashed];
+  ev2 -> dsvc [color="#7c3aed", style=dashed, label="saved Phase 2 report", fontcolor="#7c3aed"];
+  dsvc -> ui;
+}

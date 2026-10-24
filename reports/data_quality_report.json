@@ -1,0 +1,1010 @@
+{
+  "report_version": 1,
+  "generated_at_utc": "2026-10-20T06:52:01+00:00",
+  "synthetic_test_data": false,
+  "dataset": {
+    "key": "fogstar",
+    "name": "FoG-STAR: Freezing of Gait Severity, Tasks, Activities, and Ratings",
+    "version": "3.0 (as stated in the bundled README; the Zenodo record's own version tag could not be verified offline)",
+    "source": {
+      "url": "https://zenodo.org/records/17838806",
+      "zenodo_record": "17838806",
+      "zenodo_api": "https://zenodo.org/api/records/{record}",
+      "doi": null,
+      "paper_doi": "10.1038/s41597-026-06645-1"
+    },
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "note": "Stated in the Phase 0 pack. The bundled README only says 'see the Zenodo record'; verify on the record before redistribution."
+    },
+    "attribution": "Credit the dataset authors, link the license and indicate modifications. Cite Borz\u00ec, L. et al. (2026) Sci Data 13, 305, https://doi.org/10.1038/s41597-026-06645-1 and the Zenodo record https://zenodo.org/records/17838806.",
+    "citations": [
+      "Borz\u00ec, L. et al. (2026). A multi-level annotated sensor dataset of gait freezing manifestations and severity in Parkinson's disease. Scientific Data 13, 305. https://doi.org/10.1038/s41597-026-06645-1  (cited in the Phase 0 pack)",
+      "Borzi, L. et al. Freezing of gait detection: The effect of sensor type, position, activities, datasets, and machine learning model. Journal of Parkinson's Disease, 15(1), 163-181.  (cited in the dataset README)",
+      "Demrozi, F. et al. A low-cost wireless body area network for human activity recognition in healthy life and medical applications. IEEE Trans. Emerging Topics in Computing 11(4), 839-850 (2023).  (cited in the dataset README)"
+    ],
+    "known_documentation_discrepancies": [
+      "README says timestamp is in milliseconds; observed step is 1/60 (0.01667), i.e. the column is in seconds. The profile therefore sets timestamp.unit: seconds.",
+      "README names clinical columns fes_i and pdq_8; the CSV header uses 'fes-i' and 'pdq8'. Both spellings are listed as aliases.",
+      "README documents activity labels 1-7; the sensor file also contains activity value 0."
+    ]
+  },
+  "software": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+    "parkistep": "0.1.0",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "pyarrow": "26.0.0",
+    "matplotlib": "3.10.8",
+    "yaml": "6.0.3"
+  },
+  "raw_dir": "/home/claude/work/ParkiStep-Twin/data/raw/fogstar",
+  "missing_data_policy": "retain",
+  "files": {
+    "sensor": "/home/claude/work/ParkiStep-Twin/data/raw/fogstar/sensor_data.csv",
+    "clinical": "/home/claude/work/ParkiStep-Twin/data/raw/fogstar/clinical_data.csv"
+  },
+  "real_data_audit": "run",
+  "file_details": {
+    "sensor": {
+      "path": "/home/claude/work/ParkiStep-Twin/data/raw/fogstar/sensor_data.csv",
+      "bytes": 119629580,
+      "sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+      "rows": 329027,
+      "columns": 31
+    },
+    "clinical": {
+      "path": "/home/claude/work/ParkiStep-Twin/data/raw/fogstar/clinical_data.csv",
+      "bytes": 698,
+      "sha256": "91aa90f70e25d33d395077d21f2291de202809fecae0ff680f1522f942f5ead5",
+      "rows": 22,
+      "columns": 10
+    }
+  },
+  "schema_mapping": {
+    "clinical": {
+      "column_mapping": {
+        "participant_id": "subjectID",
+        "age": "age",
+        "gender": "gender",
+        "disease_duration": "disease_duration",
+        "hoehn_yahr": "h_y",
+        "updrs_iii": "updrs_iii",
+        "fog_q": "fog_q",
+        "moca": "moca",
+        "fes_i": "fes-i",
+        "pdq_8": "pdq8"
+      },
+      "unmapped_source_columns": []
+    },
+    "sensor": {
+      "column_mapping": {
+        "participant_id": "subjectID",
+        "session_id": "sessionID",
+        "task_id": "taskID",
+        "timestamp_s": "timestamp",
+        "ankleL_acc_x": "ankleL_acc_x",
+        "ankleL_acc_y": "ankleL_acc_y",
+        "ankleL_acc_z": "ankleL_acc_z",
+        "ankleL_gyro_x": "ankleL_gyro_x",
+        "ankleL_gyro_y": "ankleL_gyro_y",
+        "ankleL_gyro_z": "ankleL_gyro_z",
+        "ankleR_acc_x": "ankleR_acc_x",
+        "ankleR_acc_y": "ankleR_acc_y",
+        "ankleR_acc_z": "ankleR_acc_z",
+        "ankleR_gyro_x": "ankleR_gyro_x",
+        "ankleR_gyro_y": "ankleR_gyro_y",
+        "ankleR_gyro_z": "ankleR_gyro_z",
+        "back_acc_x": "back_acc_x",
+        "back_acc_y": "back_acc_y",
+        "back_acc_z": "back_acc_z",
+        "back_gyro_x": "back_gyro_x",
+        "back_gyro_y": "back_gyro_y",
+        "back_gyro_z": "back_gyro_z",
+        "wrist_acc_x": "wrist_acc_x",
+        "wrist_acc_y": "wrist_acc_y",
+        "wrist_acc_z": "wrist_acc_z",
+        "wrist_gyro_x": "wrist_gyro_x",
+        "wrist_gyro_y": "wrist_gyro_y",
+        "wrist_gyro_z": "wrist_gyro_z",
+        "activity": "activity",
+        "fog": "fog",
+        "fog_severity": "fog_severity"
+      },
+      "unmapped_source_columns": []
+    },
+    "timestamp_unit": "seconds",
+    "timestamp_canonical": "timestamp_s"
+  },
+  "clinical": {
+    "n_records": 22,
+    "n_distinct_participants": 22,
+    "duplicate_key_rows": 0,
+    "fields": {
+      "participant_id": {
+        "dtype": "Int64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unit": null
+      },
+      "age": {
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unit": "years",
+        "describe": {
+          "count": 22.0,
+          "mean": 70.95454545454545,
+          "std": 9.276068916596865,
+          "min": 54.0,
+          "25%": 65.0,
+          "50%": 71.0,
+          "75%": 76.0,
+          "max": 86.0
+        }
+      },
+      "gender": {
+        "dtype": "string",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unit": null,
+        "value_counts": {
+          "M": 12,
+          "F": 10
+        }
+      },
+      "disease_duration": {
+        "dtype": "float64",
+        "missing": 1,
+        "missing_pct": 4.545454545454546,
+        "unit": "years",
+        "describe": {
+          "count": 21.0,
+          "mean": 10.095238095238095,
+          "std": 6.788996699842782,
+          "min": 2.0,
+          "25%": 4.0,
+          "50%": 9.0,
+          "75%": 15.0,
+          "max": 25.0
+        }
+      },
+      "hoehn_yahr": {
+        "dtype": "float64",
+        "missing": 1,
+        "missing_pct": 4.545454545454546,
+        "unit": null,
+        "describe": {
+          "count": 21.0,
+          "mean": 2.738095238095238,
+          "std": 0.8458582567287444,
+          "min": 1.5,
+          "25%": 2.0,
+          "50%": 2.5,
+          "75%": 3.0,
+          "max": 4.0
+        }
+      },
+      "updrs_iii": {
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unit": null,
+        "describe": {
+          "count": 22.0,
+          "mean": 38.95454545454545,
+          "std": 14.636800563508775,
+          "min": 18.0,
+          "25%": 27.75,
+          "50%": 35.0,
+          "75%": 49.25,
+          "max": 69.0
+        }
+      },
+      "fog_q": {
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unit": null,
+        "describe": {
+          "count": 22.0,
+          "mean": 18.272727272727273,
+          "std": 5.382350506024014,
+          "min": 7.0,
+          "25%": 14.25,
+          "50%": 19.0,
+          "75%": 21.75,
+          "max": 27.0
+        }
+      },
+      "moca": {
+        "dtype": "float64",
+        "missing": 1,
+        "missing_pct": 4.545454545454546,
+        "unit": null,
+        "describe": {
+          "count": 21.0,
+          "mean": 21.333333333333332,
+          "std": 3.9285281382896233,
+          "min": 15.0,
+          "25%": 19.0,
+          "50%": 22.0,
+          "75%": 24.0,
+          "max": 29.0
+        }
+      },
+      "fes_i": {
+        "dtype": "float64",
+        "missing": 1,
+        "missing_pct": 4.545454545454546,
+        "unit": null,
+        "describe": {
+          "count": 21.0,
+          "mean": 36.95238095238095,
+          "std": 26.950837075082084,
+          "min": 11.0,
+          "25%": 18.0,
+          "50%": 27.0,
+          "75%": 53.0,
+          "max": 100.0
+        }
+      },
+      "pdq_8": {
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unit": null,
+        "describe": {
+          "count": 22.0,
+          "mean": 14.363636363636363,
+          "std": 6.862912435662217,
+          "min": 3.0,
+          "25%": 10.0,
+          "50%": 14.0,
+          "75%": 18.25,
+          "max": 29.0
+        }
+      }
+    }
+  },
+  "sensor": {
+    "n_rows": 329027,
+    "n_recordings": 106,
+    "n_participants": 22,
+    "n_distinct_participant_id": 22,
+    "n_distinct_session_id": 3,
+    "n_distinct_task_id": 7,
+    "missing": {
+      "per_channel": {
+        "ankleL_acc_x": {
+          "missing": 10236,
+          "missing_pct": 3.110990891325028
+        },
+        "ankleL_acc_y": {
+          "missing": 10236,
+          "missing_pct": 3.110990891325028
+        },
+        "ankleL_acc_z": {
+          "missing": 10236,
+          "missing_pct": 3.110990891325028
+        },
+        "ankleL_gyro_x": {
+          "missing": 10236,
+          "missing_pct": 3.110990891325028
+        },
+        "ankleL_gyro_y": {
+          "missing": 10236,
+          "missing_pct": 3.110990891325028
+        },
+        "ankleL_gyro_z": {
+          "missing": 10236,
+          "missing_pct": 3.110990891325028
+        },
+        "ankleR_acc_x": {
+          "missing": 9490,
+          "missing_pct": 2.884261777908804
+        },
+        "ankleR_acc_y": {
+          "missing": 11771,
+          "missing_pct": 3.577517954453586
+        },
+        "ankleR_acc_z": {
+          "missing": 11771,
+          "missing_pct": 3.577517954453586
+        },
+        "ankleR_gyro_x": {
+          "missing": 11771,
+          "missing_pct": 3.577517954453586
+        },
+        "ankleR_gyro_y": {
+          "missing": 11771,
+          "missing_pct": 3.577517954453586
+        },
+        "ankleR_gyro_z": {
+          "missing": 11771,
+          "missing_pct": 3.577517954453586
+        },
+        "back_acc_x": {
+          "missing": 24120,
+          "missing_pct": 7.330705382840922
+        },
+        "back_acc_y": {
+          "missing": 25462,
+          "missing_pct": 7.738574645849733
+        },
+        "back_acc_z": {
+          "missing": 25462,
+          "missing_pct": 7.738574645849733
+        },
+        "back_gyro_x": {
+          "missing": 27016,
+          "missing_pct": 8.210876311062618
+        },
+        "back_gyro_y": {
+          "missing": 27016,
+          "missing_pct": 8.210876311062618
+        },
+        "back_gyro_z": {
+          "missing": 27016,
+          "missing_pct": 8.210876311062618
+        },
+        "wrist_acc_x": {
+          "missing": 10211,
+          "missing_pct": 3.103392730687755
+        },
+        "wrist_acc_y": {
+          "missing": 10211,
+          "missing_pct": 3.103392730687755
+        },
+        "wrist_acc_z": {
+          "missing": 11465,
+          "missing_pct": 3.484516468253365
+        },
+        "wrist_gyro_x": {
+          "missing": 16122,
+          "missing_pct": 4.899901831764566
+        },
+        "wrist_gyro_y": {
+          "missing": 11465,
+          "missing_pct": 3.484516468253365
+        },
+        "wrist_gyro_z": {
+          "missing": 11465,
+          "missing_pct": 3.484516468253365
+        }
+      },
+      "per_position": {
+        "ankleL": {
+          "rows_all_channels_missing": 10236,
+          "rows_partially_missing": 0
+        },
+        "ankleR": {
+          "rows_all_channels_missing": 9490,
+          "rows_partially_missing": 2281
+        },
+        "back": {
+          "rows_all_channels_missing": 24120,
+          "rows_partially_missing": 4238
+        },
+        "wrist": {
+          "rows_all_channels_missing": 10211,
+          "rows_partially_missing": 5911
+        }
+      },
+      "rows_with_any_missing": 50193,
+      "rows_with_any_missing_pct": 15.254979074665606,
+      "total_missing_cells": 356792
+    },
+    "constant_channels": [],
+    "implausible_values": {},
+    "channel_inventory": [
+      {
+        "name": "ankleL_acc_x",
+        "source": "ankleL_acc_x",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleL_acc_y",
+        "source": "ankleL_acc_y",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleL_acc_z",
+        "source": "ankleL_acc_z",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleL_gyro_x",
+        "source": "ankleL_gyro_x",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleL_gyro_y",
+        "source": "ankleL_gyro_y",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleL_gyro_z",
+        "source": "ankleL_gyro_z",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleR_acc_x",
+        "source": "ankleR_acc_x",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleR_acc_y",
+        "source": "ankleR_acc_y",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleR_acc_z",
+        "source": "ankleR_acc_z",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleR_gyro_x",
+        "source": "ankleR_gyro_x",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleR_gyro_y",
+        "source": "ankleR_gyro_y",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "ankleR_gyro_z",
+        "source": "ankleR_gyro_z",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "back_acc_x",
+        "source": "back_acc_x",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "back_acc_y",
+        "source": "back_acc_y",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "back_acc_z",
+        "source": "back_acc_z",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "back_gyro_x",
+        "source": "back_gyro_x",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "back_gyro_y",
+        "source": "back_gyro_y",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "back_gyro_z",
+        "source": "back_gyro_z",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "wrist_acc_x",
+        "source": "wrist_acc_x",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "wrist_acc_y",
+        "source": "wrist_acc_y",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "wrist_acc_z",
+        "source": "wrist_acc_z",
+        "unit": "g",
+        "dtype": "float64"
+      },
+      {
+        "name": "wrist_gyro_x",
+        "source": "wrist_gyro_x",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "wrist_gyro_y",
+        "source": "wrist_gyro_y",
+        "unit": "deg/s",
+        "dtype": "float64"
+      },
+      {
+        "name": "wrist_gyro_z",
+        "source": "wrist_gyro_z",
+        "unit": "deg/s",
+        "dtype": "float64"
+      }
+    ],
+    "sampling": {
+      "timestamps_missing": 0,
+      "duplicate_timestamps": 0,
+      "out_of_order_steps": 0,
+      "recording_blocks": 106,
+      "recordings_non_contiguous": 0,
+      "recording_boundaries": {
+        "n_boundaries": 105,
+        "abutting_on_shared_clock": 105
+      },
+      "interval_s": {
+        "n": 328921,
+        "min": 0.016666666659148177,
+        "max": 0.016666666670062114,
+        "mean": 0.016666666666666836,
+        "std": 4.2820018409708236e-12,
+        "median": 0.016666666669607366,
+        "quantiles": {
+          "p01": 0.016666666659148177,
+          "p05": 0.016666666660057672,
+          "p50": 0.016666666669607366,
+          "p95": 0.016666666670062114,
+          "p99": 0.016666666670062114
+        }
+      },
+      "estimated_hz_overall": 59.99999998941348,
+      "estimated_hz_per_recording": {
+        "min": 59.99999998777639,
+        "max": 59.99999999990109
+      },
+      "expected_hz": 60,
+      "gap_threshold_s": 0.03333333333333333,
+      "fraction_within_tolerance": 1.0,
+      "expected_vs_observed_relative_diff": 1.7644197214394808e-10,
+      "gaps": {
+        "count": 0,
+        "total_missing_s": 0.0
+      },
+      "interval_histogram": {
+        "counts": [
+          5547,
+          84091,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17998,
+          5998,
+          35995,
+          0,
+          0,
+          0,
+          0,
+          179292
+        ],
+        "edges": [
+          0.016666666659148177,
+          0.016666666659693873,
+          0.01666666666023957,
+          0.016666666660785267,
+          0.016666666661330966,
+          0.01666666666187666,
+          0.016666666662422357,
+          0.016666666662968056,
+          0.01666666666351375,
+          0.01666666666405945,
+          0.016666666664605145,
+          0.01666666666515084,
+          0.01666666666569654,
+          0.016666666666242235,
+          0.016666666666787934,
+          0.01666666666733363,
+          0.016666666667879325,
+          0.016666666668425024,
+          0.01666666666897072,
+          0.016666666669516418,
+          0.016666666670062114
+        ]
+      }
+    },
+    "coverage": {
+      "n_recordings": 106,
+      "total_duration_s": 5482.016666666723,
+      "recording_duration_s": {
+        "count": 106.0,
+        "mean": 51.7171383647804,
+        "std": 34.13034642945235,
+        "min": 10.400000000000091,
+        "25%": 31.30416666667236,
+        "50%": 43.374999999999886,
+        "75%": 61.53333333333751,
+        "max": 189.03333333333296
+      },
+      "rows_per_participant": {
+        "1": 21489,
+        "2": 34215,
+        "3": 20270,
+        "4": 19370,
+        "5": 9445,
+        "6": 8703,
+        "7": 18734,
+        "8": 7442,
+        "9": 16231,
+        "10": 16020,
+        "11": 13855,
+        "12": 17287,
+        "13": 11000,
+        "14": 10684,
+        "15": 14847,
+        "16": 13346,
+        "17": 8237,
+        "18": 16093,
+        "19": 21928,
+        "20": 12590,
+        "21": 10992,
+        "22": 6249
+      }
+    }
+  },
+  "annotation": {
+    "fields": {
+      "activity": {
+        "role": "activity",
+        "value_counts": {
+          "0": 5197,
+          "1": 124913,
+          "2": 19590,
+          "3": 47806,
+          "4": 9924,
+          "5": 7977,
+          "6": 46792,
+          "7": 66828
+        },
+        "value_pct": {
+          "0": 1.5795056332762965,
+          "1": 37.964361587346936,
+          "2": 5.953918675367067,
+          "3": 14.529506697018785,
+          "4": 3.016165846571862,
+          "5": 2.4244210961410464,
+          "6": 14.221325301570996,
+          "7": 20.310795162707013
+        },
+        "labels": {
+          "1": "Walk",
+          "2": "Sit",
+          "3": "Stand",
+          "4": "Sit-to-stand",
+          "5": "Stand-to-sit",
+          "6": "Turn-right",
+          "7": "Turn-left"
+        },
+        "missing": 0,
+        "unexpected_values": [
+          0
+        ],
+        "rows_with_unexpected_values": 5197
+      },
+      "fog": {
+        "role": "event_label",
+        "value_counts": {
+          "0": 264700,
+          "1": 64327
+        },
+        "value_pct": {
+          "0": 80.44932482744578,
+          "1": 19.55067517255423
+        },
+        "labels": {
+          "0": "No FoG",
+          "1": "FoG"
+        },
+        "missing": 0,
+        "unexpected_values": [],
+        "rows_with_unexpected_values": 0
+      },
+      "fog_severity": {
+        "role": "severity",
+        "value_counts": {
+          "0": 264700,
+          "1": 5996,
+          "2": 13976,
+          "3": 44355
+        },
+        "value_pct": {
+          "0": 80.44932482744578,
+          "1": 1.8223428472435392,
+          "2": 4.247675722661058,
+          "3": 13.480656602649631
+        },
+        "labels": {
+          "0": "No FoG",
+          "1": "Shuffling",
+          "2": "Trembling",
+          "3": "Akinesia"
+        },
+        "missing": 0,
+        "unexpected_values": [],
+        "rows_with_unexpected_values": 0
+      }
+    },
+    "documented_by_source": true,
+    "episodes": {
+      "definition": "contiguous run of 'fog' == 1 within one recording (group_by=['participant_id', 'session_id', 'task_id'])",
+      "count": 101,
+      "per_participant": {
+        "1": 5,
+        "2": 13,
+        "3": 7,
+        "4": 2,
+        "5": 1,
+        "9": 12,
+        "11": 9,
+        "12": 4,
+        "13": 3,
+        "15": 10,
+        "16": 1,
+        "17": 5,
+        "19": 9,
+        "20": 6,
+        "21": 10,
+        "22": 4
+      },
+      "participants_with_episodes": 16,
+      "positive_rows": 64327,
+      "positive_pct": 19.55067517255423,
+      "duration_s": {
+        "count": 101.0,
+        "mean": 10.615016501652532,
+        "std": 16.905535829845,
+        "min": 0.5999999999994543,
+        "25%": 2.599999999999909,
+        "50%": 5.300000000009277,
+        "75%": 11.499999999999545,
+        "max": 108.68333333333669
+      },
+      "duration_samples": {
+        "count": 101.0,
+        "mean": 636.9009900990098,
+        "std": 1014.3321497906936,
+        "min": 36.0,
+        "25%": 156.0,
+        "50%": 318.0,
+        "75%": 690.0,
+        "max": 6521.0
+      },
+      "starting_at_recording_start": 0,
+      "note": "Durations include one sample interval; they describe source annotations only, not forecasting labels."
+    },
+    "severity_consistency": {
+      "severity_without_event": 0,
+      "event_without_severity": 0,
+      "episodes_with_multiple_severity_values": 6
+    },
+    "annotation_alignment": {
+      "samples_per_annotation_frame": 6,
+      "label_runs": 299,
+      "runs_whose_length_is_multiple_of_frame": 194,
+      "fraction_multiple_of_frame": 0.6488294314381271,
+      "note": "Informational: label runs are expected to align with annotation frames only approximately."
+    }
+  },
+  "readiness": [
+    {
+      "check": "annotated_episodes_available",
+      "required": 1,
+      "observed": 101,
+      "passed": true
+    },
+    {
+      "check": "participants_with_episodes",
+      "required": 2,
+      "observed": 16,
+      "passed": true
+    }
+  ],
+  "join": {
+    "join_key": "participant_id",
+    "join_type": "left",
+    "expected_cardinality": "many_to_one",
+    "observed_cardinality": "many_to_one",
+    "distinct_participants_sensor": 22,
+    "distinct_participants_clinical": 22,
+    "matched_participants": 22,
+    "sensor_participants_without_clinical": [],
+    "clinical_participants_without_sensor": [],
+    "sensor_null_keys": 0,
+    "duplicate_clinical_keys": 0,
+    "sensor_rows_before": 329027,
+    "clinical_rows": 22,
+    "validation_passed": true,
+    "warnings": [
+      "Some clinical attributes are missing for joined sensor rows (propagated from missing clinical values): disease_duration=6,249, hoehn_yahr=17,287, moca=13,855, fes_i=10,992"
+    ],
+    "failures": [],
+    "sensor_rows_after": 329027,
+    "rows_without_clinical_match": 0,
+    "missing_clinical_values_after_join_rows": {
+      "age": 0,
+      "gender": 0,
+      "disease_duration": 6249,
+      "hoehn_yahr": 17287,
+      "updrs_iii": 0,
+      "fog_q": 0,
+      "moca": 13855,
+      "fes_i": 10992,
+      "pdq_8": 0
+    }
+  },
+  "overview": {
+    "n_participants_sensor": 22,
+    "n_participants_clinical": 22,
+    "n_sensor_rows": 329027,
+    "n_clinical_records": 22,
+    "n_recordings": 106,
+    "n_annotated_episodes": 101,
+    "n_distinct_participant_id": 22,
+    "n_distinct_session_id": 3,
+    "n_distinct_task_id": 7
+  },
+  "status": "PASS_WITH_WARNINGS",
+  "status_reason": "All critical checks passed (required columns, timestamp integrity, join validity, annotation availability, forecasting prerequisites); 10 warning(s) remain: ANNOTATION_UNDOCUMENTED_VALUE, CLINICAL_MISSING_VALUES, CLINICAL_OUT_OF_RANGE, JOIN_MISSING_CLINICAL_AFTER, RECORDING_BOUNDARIES_INVISIBLE_IN_TIMESTAMPS, SENSOR_MISSING_VALUES.",
+  "issues": [
+    {
+      "severity": "warning",
+      "code": "CLINICAL_MISSING_VALUES",
+      "message": "'disease_duration' is missing for 1 participant(s) (ids: [22]); values are retained as missing, not imputed.",
+      "location": "clinical.fields.disease_duration",
+      "action": "",
+      "details": {
+        "count": 1,
+        "ids": [
+          22
+        ]
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "CLINICAL_MISSING_VALUES",
+      "message": "'hoehn_yahr' is missing for 1 participant(s) (ids: [12]); values are retained as missing, not imputed.",
+      "location": "clinical.fields.hoehn_yahr",
+      "action": "",
+      "details": {
+        "count": 1,
+        "ids": [
+          12
+        ]
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "CLINICAL_OUT_OF_RANGE",
+      "message": "'fog_q' has 3 value(s) outside the documented range [0, 24] (participants [11, 19, 22]; values [25.0, 27.0, 27.0]). Flagged for review, not altered.",
+      "location": "clinical.fields.fog_q.valid_range",
+      "action": "",
+      "details": {
+        "count": 3,
+        "ids": [
+          11,
+          19,
+          22
+        ]
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "CLINICAL_MISSING_VALUES",
+      "message": "'moca' is missing for 1 participant(s) (ids: [11]); values are retained as missing, not imputed.",
+      "location": "clinical.fields.moca",
+      "action": "",
+      "details": {
+        "count": 1,
+        "ids": [
+          11
+        ]
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "CLINICAL_MISSING_VALUES",
+      "message": "'fes_i' is missing for 1 participant(s) (ids: [21]); values are retained as missing, not imputed.",
+      "location": "clinical.fields.fes_i",
+      "action": "",
+      "details": {
+        "count": 1,
+        "ids": [
+          21
+        ]
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "CLINICAL_OUT_OF_RANGE",
+      "message": "'fes_i' has 9 value(s) outside the documented range [16, 64] (participants [4, 5, 6, 11, 13, 15, 18, 19, 22]; values [11.0, 15.0, 12.0, 84.0, 65.0, 80.0, 13.0, 100.0, 70.0]). Flagged for review, not altered.",
+      "location": "clinical.fields.fes_i.valid_range",
+      "action": "",
+      "details": {
+        "count": 9,
+        "ids": [
+          4,
+          5,
+          6,
+          11,
+          13,
+          15,
+          18,
+          19,
+          22
+        ]
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "SENSOR_MISSING_VALUES",
+      "message": "50,193 of 329,027 sensor rows (15.3%) have at least one missing channel value; retained as missing (no imputation or deletion).",
+      "location": "sensor channels",
+      "action": "Phase 2 must define an explicit policy for windows containing missing samples.",
+      "details": {
+        "rows": 50193
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "RECORDING_BOUNDARIES_INVISIBLE_IN_TIMESTAMPS",
+      "message": "105 of 105 consecutive recording boundaries are exactly one sampling step apart: the timestamp is one running clock across recordings, so gap checks cannot detect recording boundaries.",
+      "location": "timestamp_s",
+      "action": "Phase 2 windowing must group by the recording key (group_by), never by timestamp continuity alone.",
+      "details": {}
+    },
+    {
+      "severity": "warning",
+      "code": "ANNOTATION_UNDOCUMENTED_VALUE",
+      "message": "'activity' contains value(s) [0] not listed in the documentation/profile (5,197 rows). Kept unchanged.",
+      "location": "sensor.annotations.activity.allowed_values",
+      "action": "Confirm their meaning with the dataset authors before using this label in Phase 2.",
+      "details": {
+        "values": [
+          0
+        ]
+      }
+    },
+    {
+      "severity": "warning",
+      "code": "JOIN_MISSING_CLINICAL_AFTER",
+      "message": "Some clinical attributes are missing for joined sensor rows (propagated from missing clinical values): disease_duration=6,249, hoehn_yahr=17,287, moca=13,855, fes_i=10,992",
+      "location": "joined view",
+      "action": "",
+      "details": {}
+    }
+  ],
+  "figures": {
+    "generated": {},
+    "skipped": {
+      "all": "visualization.enabled is false"
+    }
+  }
+}

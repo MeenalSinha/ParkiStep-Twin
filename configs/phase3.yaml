@@ -1,0 +1,125 @@
+# ParkiStep Twin - Phase 3 configuration (digital-twin engine).
+# Nothing below is hard-coded in Python. Every value can be overridden on the command line: --set a.b.c=value
+# The forecasting model's input window, feature schema, horizon and operating threshold are NOT repeated here:
+# they are read from the verified Phase 2 model manifest (single source of truth). Values here only SELECT a model
+# or define runtime behaviour around it.
+# Outputs are research scores, not diagnoses, and the Phase 2 model is not clinically validated.
+phase3:
+  name: digital_twin
+  phase2_config: configs/phase2.yaml            # supplies dataset profile, channel schema, artifact location
+
+  patient:
+    id_field: participant_id                    # canonical field (Phase 1 profile) that identifies a patient
+    twin_id_template: "twin-{patient_id}"
+    id_pattern: '^[A-Za-z0-9_.\-]+$'            # accepted patient-identifier syntax
+    exists_policy: error                        # error | return_existing  (creating a twin that already exists)
+    require_clinical_record: false              # true = refuse to create a twin without a clinical record
+    clinical_source: phase1_processed           # phase1_processed | none  (read-only lookup of the clinical table)
+    clinical_feature_mapping: null              # null = identity; else {model_clinical_field: profile_field}
+    clinical_missing_policy: model_imputation   # model_imputation (use the model's trained policy) | require_all (no fusion forecast if a model field is missing)
+
+  observation:                                  # contract of one incoming sensor record
+    patient_field: participant_id
+    timestamp: {field: timestamp_s, kind: numeric, unit: seconds, timezone: UTC}   # kind: numeric | datetime ; timezone applies to naive datetimes
+    session_fields: [recording_id]              # fields whose values jointly identify a recording/session
+    channels: {mode: identity, mapping: {}}     # identity | mapping ({source_field: canonical_channel})
+    dtype: float                                # channel values must be convertible to this type (float)
+
+  ingestion:
+    duplicate_policy: reject                    # reject | ignore_identical   (same timestamp as the latest accepted sample)
+    out_of_order:
+      policy: reject                            # reject | reorder_within_tolerance
+      reorder_tolerance_s: 0.0                  # hold-back window (reorder policy only); latency = this value
+      max_held: 64                              # hard cap on held observations (reorder policy only)
+    max_gap_s: null                             # null = dataset profile sampling.gap_threshold_factor x sampling interval
+    gap_policy: reset_buffer                    # reset_buffer | flag_only (keep samples; the window is ineligible until the gap leaves it)
+    missing_channel_policy: mark_missing        # mark_missing (NaN, quality check decides) | reject
+    nonfinite_policy: mark_missing              # mark_missing | reject   (inf / unparseable values)
+    session_change_policy: reset_buffer         # reset_buffer | require_explicit_end
+
+  buffer:
+    max_duration_s: 10.0                        # retention horizon of raw samples; must cover the model window
+    max_observations: 2000                      # hard memory cap (samples)
+    warmup_extra_s: 0.0                         # additional observed time required beyond the model window before the first forecast
+    min_valid_fraction: null                    # null = value from the model manifest; otherwise must be >= the manifest value
+
+  model:
+    artifact_dir: null                          # null = <phase2 artifacts_root>/<experiment_id>/models
+    experiment: sensor_only                     # sensor_only | fusion | any experiment name present in the artifacts
+    model: random_forest
+    horizon_s: 3.0                              # must equal the artifact's horizon exactly; never substituted
+    on_unavailable: fail                        # fail (raise at start-up) | degrade (run in MODEL_UNAVAILABLE, no forecasts)
+    expected_dt_source: manifest                # manifest | config
+    expected_dt_s: null                         # used only when expected_dt_source = config
+
+  cadence:
+    every_s: null                               # null = the model manifest's anchor stride; forecasts are due at most this often
+    # Inference is synchronous and single-slot: at most one forecast per due time, no queue of pending requests.
+
+  forecast:
+    stale_after_cadences: 3.0                   # forecast becomes stale after this many cadence intervals without a new one
+    on_input_invalid: no_forecast               # no_forecast (only supported behaviour: the model is never called on invalid input)
+
+  warning:
+    policy_source: model_manifest               # model_manifest (alert policy saved with the model) | config (values below)
+    persistence_anchors: 1                      # config policy only: consecutive above-threshold forecasts required
+    merge_gap_s: 1.0                            # config policy only: runs closer than this are one warning
+    cooldown_s: 0.0                             # config policy only: refractory period after an activation
+    clear: {consecutive_below: 1}               # below-threshold forecasts required (in addition to the merge gap) to resolve
+    allow_repeat_while_active: false            # true = a separate warning may start while one is active (previous is closed as superseded)
+    expire_after_invalid_s: 5.0                 # an active warning expires after this long without a valid forecast (null = never)
+    max_active_s: null                          # force-expire a warning after this long (null = no limit)
+    threshold: {source: model_manifest, fallback_value: null}   # fallback_value is used ONLY if the manifest has no valid threshold
+    suppress_when_status: [STALE, ERROR, MODEL_UNAVAILABLE, DEGRADED_DATA_QUALITY]   # no new warnings in these twin states
+
+  baseline:                                     # descriptive rolling movement summary; NOT a model input, NOT a disease model
+    enabled: true
+    signals: [acc]                              # signal types (from the channel schema) whose magnitude is summarised
+    statistic: std                              # std | rms of the magnitude over the forecast window
+    min_updates: 30                             # updates required before deviation is reported
+    ewma_alpha: 0.02                            # exponential forgetting for the running mean/variance
+    update_only_when_status: [READY]
+    freeze_while_warning: true                  # no baseline updates during pending/active warnings
+    skip_if_abs_z_above: 4.0                    # outlier safeguard: abnormal windows do not drag the baseline
+    reset_on_session_change: false
+
+  lifecycle:
+    stale_after_s: 5.0                          # no accepted observation for this long (observation clock) => STALE (see tick())
+    error_recovery: auto                        # auto | manual
+
+  persistence:
+    enabled: true
+    backend: sqlite                             # sqlite | memory
+    path: artifacts/phase3/twin_state.sqlite
+    snapshot_policy: on_event                   # on_event | every_update | manual
+    store_clinical_values: false                # false = store only a reference + hash; values are re-read from the source on restore
+    store_observations: false                   # true = also log accepted raw observations (bounded by retention.observation_log_max)
+    overwrite: false                            # false = never replace an existing store / twin
+    on_incompatible: error                      # error | allow_config_change (restore despite changed state-affecting config; warm-up restarts)
+
+  retention:                                    # null = unbounded
+    prediction_history_max: 5000                # in memory per twin
+    warning_history_max: 1000
+    event_history_max: 5000                     # data-quality, session, status events per twin (in memory)
+    observation_log_max: 20000                  # persisted raw-observation rows per twin (store_observations only)
+    prediction_store_max: null                  # persisted prediction rows per twin
+    event_store_max: null
+
+  logging:
+    level: INFO
+    audit: {enabled: true, log_rejections: true}
+    error_reporting: {include_traceback: false}
+
+  replay:
+    scope: recording                            # recording | participant (all recordings of the participant, in file order)
+    participant_id: null                        # null = chosen by selection_policy
+    recording_id: null                          # null = chosen by selection_policy
+    selection_policy: most_events               # most_events | longest | first
+    speed: 0                                    # 0 = as fast as possible; >0 = multiples of real time (sleeps)
+    max_observations: null                      # null = whole recording
+    clock: observation                          # observation (deterministic) | wall   (processing-time clock)
+    evaluate_against_annotations: true          # compare warnings with annotated onsets AFTER the replay (never during)
+
+  outputs:
+    dir: reports/phase3
+    overwrite: true                             # replay reports; the state store has its own overwrite policy

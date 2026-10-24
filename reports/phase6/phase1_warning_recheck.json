@@ -1,0 +1,131 @@
+{
+  "rows_sensor": 329027,
+  "rows_clinical": 22,
+  "participants_sensor": 22,
+  "recordings": 106,
+  "participants_clinical": 22,
+  "participants_matched_sensor_to_clinical": 22,
+  "clinical_missing": {
+    "disease_duration": {
+      "n_missing": 1,
+      "participants": [
+        22
+      ]
+    },
+    "hoehn_yahr": {
+      "n_missing": 1,
+      "participants": [
+        12
+      ]
+    },
+    "moca": {
+      "n_missing": 1,
+      "participants": [
+        11
+      ]
+    },
+    "fes_i": {
+      "n_missing": 1,
+      "participants": [
+        21
+      ]
+    }
+  },
+  "clinical_out_of_range": {
+    "fog_q": {
+      "documented_range": [
+        0,
+        24
+      ],
+      "n_out_of_range": 3,
+      "n_values": 22,
+      "observed_min_max_of_offenders": [
+        25.0,
+        27.0
+      ]
+    },
+    "fes_i": {
+      "documented_range": [
+        16,
+        64
+      ],
+      "n_out_of_range": 9,
+      "n_values": 21,
+      "observed_min_max_of_offenders": [
+        11.0,
+        100.0
+      ]
+    }
+  },
+  "sensor_rows_with_any_missing_channel_pct": 15.25,
+  "recordings_with_a_whole_sensor_position_absent": {
+    "n": 14,
+    "examples": {
+      "(7, 2, 4)": [
+        "wrist"
+      ],
+      "(13, 1, 7)": [
+        "wrist"
+      ],
+      "(16, 1, 3)": [
+        "ankleR"
+      ],
+      "(16, 1, 7)": [
+        "ankleR"
+      ],
+      "(17, 1, 3)": [
+        "ankleL",
+        "back"
+      ]
+    }
+  },
+  "timestamp": {
+    "median_step_s": 0.016666666669607366,
+    "rows_per_s": 59.99999998941348,
+    "global_gaps_gt_1p5_steps": 0,
+    "duplicates": 0,
+    "non_monotonic": 0
+  },
+  "recording_boundaries": {
+    "n_boundaries": 105,
+    "boundaries_exactly_one_step_apart": 105,
+    "recordings_contiguous_rows": true
+  },
+  "annotations": {
+    "fog_events": 101,
+    "events_running_to_recording_end": 9,
+    "participants_with_events": 16,
+    "activity_zero_pct": 1.58,
+    "events_with_more_than_one_severity_value": 6
+  },
+  "comparison_with_phase1_report": [
+    {
+      "fact": "sensor rows",
+      "independent": 329027,
+      "phase1_report": 329027,
+      "match": true
+    },
+    {
+      "fact": "participants",
+      "independent": 22,
+      "phase1_report": null,
+      "match": false
+    },
+    {
+      "fact": "recordings",
+      "independent": 106,
+      "phase1_report": 106,
+      "match": true
+    }
+  ],
+  "unverified_comparisons_note": "Phase 1 report keys differ between versions; facts that could not be matched to a report key are listed with match=false and phase1_report=null and must be read as 'not compared', not as 'differs'.",
+  "matches_documented_expectation_from_PHASE1_VERIFICATION_md": {
+    "recordings_106": true,
+    "participants_22": true,
+    "events_101": true,
+    "events_end_9": true,
+    "participants_with_events_16": true,
+    "boundaries_105_of_105_one_step": true,
+    "sensor_nan_pct_about_15p3": true
+  }
+}

@@ -1,0 +1,142 @@
+# ParkiStep Twin - Phase 4 configuration (clinician dashboard + interactive replay).
+# Only PRESENTATION and interaction settings live here. Everything else keeps a single source of truth:
+#   model window / horizon / threshold ..... the Phase 2 model manifest (read through the Phase 3 model gateway)
+#   sensor channels, units, clinical fields  configs/datasets.yaml (dataset profile)
+#   twin lifecycle, buffer, warning policy .. configs/phase3.yaml
+#   performance figures ..................... saved Phase 2 experiment outputs (reports/phase2/*.json)
+# Override on the command line of the launcher:  PARKISTEP_PHASE4_SET="replay.default_speed=25;plots.history_s=30"
+# Outputs are research scores, not diagnoses. The Phase 2 model is not clinically validated.
+phase4:
+  app:
+    title: ParkiStep Twin
+    subtitle: Freezing-of-gait forecasting digital twin - research prototype
+    page_icon: "\U0001F9ED"
+    layout: wide                         # wide | centered
+    log_level: INFO
+    log_file: null                       # relative to the project root; null = console only
+    disclaimer_short: >-
+      Research prototype. Model scores are experimental estimates, not diagnoses, and not a validated clinical warning.
+      Not a medical device.
+
+  paths:
+    phase3_config: configs/phase3.yaml
+    phase2_metrics: null                 # null = <phase2 report_dir>/phase2_metrics.json
+    phase2_report: null                  # null = <phase2 report_dir>/phase2_results_report.md
+    app_log_dir: reports/phase4
+
+  navigation:                            # order and titles of the pages (files in app/pages must match `key`)
+    - {key: overview,          title: Overview}
+    - {key: patient_profile,   title: Patient Profile}
+    - {key: movement_monitor,  title: Movement Monitor}
+    - {key: early_warning,     title: Early Warning}
+    - {key: warning_center,    title: Warning Center}
+    - {key: replay_analysis,   title: Replay Analysis}
+    - {key: model_performance, title: Model Performance}
+
+  selection:
+    default_patient_policy: phase3_selection     # phase3_selection (Phase 3 replay.selection_policy) | first | none
+    default_recording_policy: phase3_selection   # phase3_selection | first | longest | none
+    show_annotation_counts_before_replay: false  # keep ground truth out of the live setup screens
+
+  model_selection:
+    allow_switching: true                        # list artifacts found next to the configured model
+    default: phase3                              # phase3 = the experiment/model/horizon configured in phase3.yaml
+
+  replay:
+    speed_choices: [1, 2, 5, 10, 20, 50]         # multiples of real time (simulated seconds per wall second); a target - inference time can limit it
+    default_speed: 5
+    allow_max_speed: true                        # adds an "as fast as possible" choice (bounded by max_observations_per_tick)
+    refresh_interval_s: 0.5                      # wall-clock period between UI updates while a replay is running
+    max_observations_per_tick: 600               # hard cap of observations handed to the engine per UI update
+    persist_state: false                         # true = write replays to the Phase 3 SQLite store (its overwrite protection applies)
+    keep_completed_sessions: 5                   # finished replay sessions kept in memory for review
+    max_stored_observations: 400000              # accepted observations kept for plots (beyond this, plots cover the first part only)
+
+  plots:
+    history_s: 20.0                              # trailing seconds shown in the live movement monitor
+    max_points_per_trace: 1500                   # decimation limit for every rendered trace
+    default_signals: [acc]                       # signal types (dataset channel schema) plotted by default
+    height_px: 230
+    forecast_history_points: 400                 # forecasts drawn in the risk chart
+    gap_factor: 2.0                              # a time step larger than factor x median step is drawn as a gap
+
+  tables:
+    max_rows: 200
+    recent_forecasts: 25
+
+  display:
+    score_decimals: 3
+    time_decimals: 2
+    percent_decimals: 1
+
+  features:
+    allow_acknowledge: true                      # acknowledgement is routed through the engine; never UI-only
+    show_retrospective: true
+
+  # Centralised visual language. Labels are always shown next to colours (colour is never the only cue).
+  theme:
+    font_family: "Inter, 'Segoe UI', system-ui, sans-serif"
+    colors:
+      background: "#F6F8FA"
+      surface: "#FFFFFF"
+      text: "#1F2933"
+      muted: "#616E7C"
+      border: "#D9E2EC"
+      primary: "#0B5FA5"
+      neutral: "#3E4C59"
+      ok: "#1B7F5C"
+      caution: "#B7791F"
+      alert: "#B42318"
+      unavailable: "#6B7280"
+      historical: "#7C5CBF"
+      annotation: "#0F766E"
+    series_colors: ["#0B5FA5", "#D97706", "#7C5CBF", "#0F766E", "#B42318", "#475569"]
+
+  status_styles:                                 # one place for status -> label / colour role / explanation
+    twin:
+      INITIALIZING:          {label: Initialising,          role: neutral,     help: The twin is being created.}
+      WAITING_FOR_DATA:      {label: Waiting for data,      role: neutral,     help: No sensor stream is being received.}
+      WARMING_UP:            {label: Warming up,            role: caution,     help: Not enough contiguous samples for one model window yet.}
+      READY:                 {label: Ready,                 role: ok,          help: The latest window satisfies the model's input requirements.}
+      DEGRADED_DATA_QUALITY: {label: Degraded data quality, role: caution,     help: The latest window does not meet the model's sensor-quality requirements.}
+      STALE:                 {label: Stale,                 role: unavailable, help: No new observation arrived recently.}
+      MODEL_UNAVAILABLE:     {label: Model unavailable,     role: unavailable, help: The configured model could not be loaded; no forecasts are produced.}
+      ERROR:                 {label: Error,                 role: alert,       help: The twin reported an error; see the audit events.}
+    forecast:
+      none:        {label: No forecast yet,     role: unavailable, help: No forecast has been computed. This is not low risk.}
+      current:     {label: Current,             role: ok,          help: The latest forecast was computed from the most recent window.}
+      stale:       {label: Stale,               role: caution,     help: No new forecast within the configured staleness interval. Do not read the old score as current.}
+      historical:  {label: Historical,          role: historical,  help: Restored from stored state. Not live data.}
+      unavailable: {label: Unavailable,         role: unavailable, help: A forecast could not be computed (see reason). This is not low risk.}
+    warning:
+      none:    {label: No active warning, role: neutral, help: The warning policy has not raised a warning.}
+      pending: {label: Pending,           role: caution, help: Above-threshold forecasts are accumulating towards the configured persistence rule.}
+      active:  {label: Active warning,    role: alert,   help: The configured warning policy raised a warning. It is a model output, not a clinical alert.}
+    replay:
+      READY:     {label: Ready,     role: neutral,     help: Replay prepared; not started.}
+      RUNNING:   {label: Replaying, role: primary,     help: Recorded observations are being fed to the engine in order.}
+      PAUSED:    {label: Paused,    role: caution,     help: Replay paused; the twin keeps its state.}
+      COMPLETED: {label: Completed, role: ok,          help: The whole recording was replayed.}
+      STOPPED:   {label: Stopped,   role: caution,     help: Replay was stopped before the end of the recording.}
+      FAILED:    {label: Failed,    role: alert,       help: The replay failed; see the message.}
+    data_mode:
+      replay:     {label: Replay of a recorded session, role: primary}
+      historical: {label: Historical (not live),       role: historical}
+      idle:       {label: Inactive,                    role: neutral}
+
+  text:                                          # fixed explanatory wording (kept out of the page code)
+    score_label: Model-estimated freezing-of-gait risk score within the configured forecast horizon
+    score_caveat: >-
+      The score is an uncalibrated model output. It is not a probability of a freezing episode and has not been
+      validated as a clinical measure.
+    warning_caveat: >-
+      A warning is a policy output of a research model. It does not establish that a freezing episode will occur,
+      and no warning does not mean that none will.
+    sensor_only_clinical_note: >-
+      The selected model is sensor-only. The clinical record is shown as context and does not influence its forecast.
+    retrospective_note: >-
+      Retrospective view: annotated events are shown only after the replay, were never available to the model, and the
+      replay of a dataset recording is in-sample for the saved model.
+    performance_note: >-
+      Participant-grouped out-of-fold evaluation on a small research cohort recorded in structured laboratory tasks.
+      It describes expected behaviour on new participants far better than any in-sample replay.

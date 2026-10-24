@@ -1,0 +1,587 @@
+{
+  "schema": "parkistep.release_manifest/1",
+  "generated_at_utc": "2026-10-23T18:33:34+00:00",
+  "release": {
+    "id": "0.1.0-phase6+87a5d7d21d",
+    "project_version_pyproject": "0.1.0",
+    "git_commit": null,
+    "vcs_note": "no .git directory in the delivered archive",
+    "source_tree_sha256": "87a5d7d21db57af4dd6a32065112153caae8079d1e7a4ec9cec78f897b1d48df",
+    "source_files_hashed": 146,
+    "status": "release candidate - see PHASE6_COMPLETION_REPORT.md for open items"
+  },
+  "dataset": {
+    "name": "FoG-STAR: Freezing of Gait Severity, Tasks, Activities, and Ratings",
+    "version_declared": "3.0 (as stated in the bundled README; the Zenodo record's own version tag could not be verified offline)",
+    "source_url": "https://zenodo.org/records/17838806",
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "note": "Stated in the Phase 0 pack. The bundled README only says 'see the Zenodo record'; verify on the record before redistribution."
+    },
+    "attribution": "Credit the dataset authors, link the license and indicate modifications. Cite Borz\u00ec, L. et al. (2026) Sci Data 13, 305, https://doi.org/10.1038/s41597-026-06645-1 and the Zenodo record https://zenodo.org/records/17838806.",
+    "acquired_at_utc": "2026-10-19T20:08:24+00:00",
+    "redistributed_in_repository": false,
+    "files": {
+      "sensor_data.csv": {
+        "sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+        "bytes": 119629580
+      },
+      "clinical_data.csv": {
+        "sha256": "91aa90f70e25d33d395077d21f2291de202809fecae0ff680f1522f942f5ead5",
+        "bytes": 698
+      }
+    }
+  },
+  "default_model": {
+    "experiment": "sensor_only",
+    "model": "random_forest",
+    "horizon_s": 3.0
+  },
+  "models": [
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_prior",
+      "horizon_s": 1.0,
+      "uses_clinical": true,
+      "artifact_bytes": 63282,
+      "sha256": "cd0439aed7820083c2fd8e59042a188a887e9e9c709998dfa526c9d5b14c26c1",
+      "sha256_matches_manifest": true,
+      "threshold": 0.04019277140445007,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_prior",
+      "horizon_s": 3.0,
+      "uses_clinical": true,
+      "artifact_bytes": 63282,
+      "sha256": "461b71d4ca73af2df05ad7f6c004631687623d521b40d05ef68d14def44ecfc2",
+      "sha256_matches_manifest": true,
+      "threshold": 0.13038676522974146,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_prior__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_prior",
+      "horizon_s": 5.0,
+      "uses_clinical": true,
+      "artifact_bytes": 63282,
+      "sha256": "3aa0c1bc94933b4fe872771e236fc1d78f56d4fcdbe9599f7d01ad90d71d9d4a",
+      "sha256_matches_manifest": true,
+      "threshold": 0.2454741738769135,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_random",
+      "horizon_s": 1.0,
+      "uses_clinical": true,
+      "artifact_bytes": 63102,
+      "sha256": "72ad7cadcdf3cd590ef1f7ae0cbcc5eedfde6d6289c352d05c85d8ffb151ab76",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9989086654299715,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_random",
+      "horizon_s": 3.0,
+      "uses_clinical": true,
+      "artifact_bytes": 63102,
+      "sha256": "1209a180eea88a0fb5b767df3ac107945b1dd9662866bbb8d4b8e94a45d412e3",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9989059132103135,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__dummy_random__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/dummy_random",
+      "horizon_s": 5.0,
+      "uses_clinical": true,
+      "artifact_bytes": 63102,
+      "sha256": "a2cbad01a1413856941fdde09540b5a93bf918d40b8c970c331839f1a6a38b9d",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9987817810298666,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/logistic",
+      "horizon_s": 1.0,
+      "uses_clinical": true,
+      "artifact_bytes": 67850,
+      "sha256": "84cbdf9d40ec0a6a8ab8fc7d0f18ca5885cd365eccaa533f02008ebbdf56ad9b",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9999141949161985,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/logistic",
+      "horizon_s": 3.0,
+      "uses_clinical": true,
+      "artifact_bytes": 67850,
+      "sha256": "150554ecd02f15cec0dde8648eaf920fd761668ebd4defc0e891c2449e3664c9",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9993136815991347,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__logistic__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/logistic",
+      "horizon_s": 5.0,
+      "uses_clinical": true,
+      "artifact_bytes": 67850,
+      "sha256": "308eef7ddf30bc2d6168a5af5572dedcc0221084b86a336986fd03632d05539a",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9976294474733641,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/random_forest",
+      "horizon_s": 1.0,
+      "uses_clinical": true,
+      "artifact_bytes": 941851,
+      "sha256": "9fadf87a820bd8ccbdcec727c59eeabba2d7be41ed649c4950a6a697f9d85bc0",
+      "sha256_matches_manifest": true,
+      "threshold": 0.4780653153278342,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/random_forest",
+      "horizon_s": 3.0,
+      "uses_clinical": true,
+      "artifact_bytes": 1044251,
+      "sha256": "4df58b386e0c454decbfa40427f8b932e3c7d32c5f2e122e56b5802bd0710d5f",
+      "sha256_matches_manifest": true,
+      "threshold": 0.6211903695859586,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/fusion__random_forest__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/fusion/random_forest",
+      "horizon_s": 5.0,
+      "uses_clinical": true,
+      "artifact_bytes": 1146971,
+      "sha256": "e139777e6a84693c1d61bf962a56c776d25d1b42ed94dc31fa2a88a97b395111",
+      "sha256_matches_manifest": true,
+      "threshold": 0.6988941760463855,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_prior",
+      "horizon_s": 1.0,
+      "uses_clinical": false,
+      "artifact_bytes": 60338,
+      "sha256": "feece12391a630516fa7c9d26825ec03b180a47e65fa28cc8138f691a1dfeb0d",
+      "sha256_matches_manifest": true,
+      "threshold": 0.04019277140445007,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_prior",
+      "horizon_s": 3.0,
+      "uses_clinical": false,
+      "artifact_bytes": 60338,
+      "sha256": "5eff9524059f5989e1d826834c7b7b06b6210f3eb2f665a14023c36670c57c83",
+      "sha256_matches_manifest": true,
+      "threshold": 0.13038676522974146,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_prior__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_prior",
+      "horizon_s": 5.0,
+      "uses_clinical": false,
+      "artifact_bytes": 60338,
+      "sha256": "89356e39e88df4765967317539fd58d0f2d5fbc571ae1c6dd872de3a35e99e43",
+      "sha256_matches_manifest": true,
+      "threshold": 0.2454741738769135,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_random",
+      "horizon_s": 1.0,
+      "uses_clinical": false,
+      "artifact_bytes": 60158,
+      "sha256": "b4d3b4af43de4e1ba4e0457d161eb234c8f6447e8ce4758c1a9032fcf7cce65c",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9989086654299715,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_random",
+      "horizon_s": 3.0,
+      "uses_clinical": false,
+      "artifact_bytes": 60158,
+      "sha256": "1805a6cda1fdb4c44093c9a45d07fe77f6fa6d14b1f4b13dd2b38f1a381cd917",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9989059132103135,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__dummy_random__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/dummy_random",
+      "horizon_s": 5.0,
+      "uses_clinical": false,
+      "artifact_bytes": 60158,
+      "sha256": "352be71bdfe76d67d8ba6b881304912a8685394ccd865b0d7cfd8d0f6415fc9e",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9987817810298666,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/logistic",
+      "horizon_s": 1.0,
+      "uses_clinical": false,
+      "artifact_bytes": 64810,
+      "sha256": "6845087b7be233e93d833c849254652d6520f5a0969c0ab1d85cf28d2b473935",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9999351140177216,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/logistic",
+      "horizon_s": 3.0,
+      "uses_clinical": false,
+      "artifact_bytes": 64810,
+      "sha256": "36a31d9b919915c8cfa5cfe7e712a7b8c8105628da603acbbafebdb77cacec06",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9990835478644999,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__logistic__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/logistic",
+      "horizon_s": 5.0,
+      "uses_clinical": false,
+      "artifact_bytes": 64810,
+      "sha256": "9a6d8b3aa1aa2b0b062014d0299055253b27ab57059e18209392d96b9ee43bd1",
+      "sha256_matches_manifest": true,
+      "threshold": 0.9994033660973549,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h1.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+      "horizon_s": 1.0,
+      "uses_clinical": false,
+      "artifact_bytes": 955851,
+      "sha256": "5a02924c3d9e58cb36eb91bd19632bd58560cb5b354ac37d015fda530df3f5b3",
+      "sha256_matches_manifest": true,
+      "threshold": 0.4803448528830765,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h3.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+      "horizon_s": 3.0,
+      "uses_clinical": false,
+      "artifact_bytes": 1032971,
+      "sha256": "55aee24bcf2325b221781058ece25f757c89f8b81862e2f106dd4fde48203263",
+      "sha256_matches_manifest": true,
+      "threshold": 0.7031869504322085,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    },
+    {
+      "manifest": "artifacts/phase2/fog_onset_forecast_6499e95d/models/sensor_only__random_forest__h5.manifest.json",
+      "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+      "horizon_s": 5.0,
+      "uses_clinical": false,
+      "artifact_bytes": 1184971,
+      "sha256": "ec8632e8735de7771f3ee64e0daa4b438341bf31af5bd8abde28305697c3c892",
+      "sha256_matches_manifest": true,
+      "threshold": 0.7059835364621135,
+      "threshold_policy": "fa_budget",
+      "verified": true
+    }
+  ],
+  "n_models": 24,
+  "experiment_ids": [
+    "fog_onset_forecast_6499e95d"
+  ],
+  "configuration_snapshot_sha256": {
+    "configs/datasets.yaml": "05965f2f8c28c7633c7698e09fa8c511ebb59e4317a06e9717a6b541464901f3",
+    "configs/phase2.yaml": "d56aee55903c08ecdce6ee2290559fc1be2586b5c01b097d970ec05cd9f622f1",
+    "configs/phase3.yaml": "6b05d09bd7b1154123a7a7e2d4c6e29ce4050d953ee82c75486ff4b0a41a643a",
+    "configs/phase4.yaml": "80fdbb68a0554001279f825c95c274fbcf5797172402cc1ba82aa94bc9bc7de4",
+    "configs/project.yaml": "9955e4b2a66bfed0359adb69c721ec08533bfb5c33016e2cbe4ade43e3d53340"
+  },
+  "software_versions_observed": {
+    "python": "3.12.3",
+    "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "PyYAML": "6.0.3",
+    "requests": "2.33.1",
+    "matplotlib": "3.10.8",
+    "pyarrow": "26.0.0",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "joblib": "1.5.3",
+    "streamlit": "1.66.1",
+    "plotly": "7.1.0",
+    "pytest": "9.1.1",
+    "playwright": "1.56.0",
+    "psutil": "7.2.2"
+  },
+  "requirements_files": {
+    "requirements.txt": {
+      "path": "requirements.txt",
+      "sha256": "326dd97b4ed94915d058d5c91ed50b841e422d60f1c58a8ffef187a8b7cf9120",
+      "bytes": 312
+    },
+    "requirements-lock.txt": {
+      "path": "requirements-lock.txt",
+      "sha256": "68fb219cab9b8862b654d173468120348f46ce36d041f113943cc84c318bdc7c",
+      "bytes": 614
+    },
+    "requirements-browser.txt": {
+      "path": "requirements-browser.txt",
+      "sha256": "9e91bfccd636afc501cfdd82f17f0c681759cf8c65e940849cf7c31d0581655f",
+      "bytes": 217
+    }
+  },
+  "verification": {
+    "full_regression": {
+      "junit": {
+        "path": "reports/phase6/junit_full_regression_final.xml",
+        "sha256": "75a4281124103ffa1ddad504922a7235d9e46a89a9fc848b5c19f7678dbac8aa",
+        "bytes": 42372
+      },
+      "tests": 331,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 264.404,
+      "command": "PARKISTEP_REQUIRE_REAL=1 python -m pytest -q -p no:cacheprovider"
+    },
+    "artifact_verification": {
+      "path": "reports/phase6/artifact_verification.json",
+      "sha256": "335d1fa49603809d50a89b0a9fc467bb917508432f260150af30acb96dfc4279",
+      "bytes": 59611,
+      "n_manifests": 24,
+      "n_passed": 24,
+      "software_mismatch_in_any_artifact_on_this_run": false
+    },
+    "retrospective_independent_recompute": {
+      "path": "reports/phase6/retrospective_recompute.json",
+      "sha256": "2d3f79b04e8446065ed4ce38220743df9e128ea0e3e8f59b89adb331f91e30ca",
+      "bytes": 5528,
+      "n_metrics_compared": 13,
+      "n_discrepancies": 0,
+      "recording": "p2-s1-t4"
+    },
+    "browser_failure_paths": {
+      "path": "reports/phase6/browser_failure_paths.json",
+      "sha256": "f0dc8b2ce255859a855f86f10a93285d74b8fc41b0fb1c46dbb27628d4c96a12",
+      "bytes": 22156,
+      "scenarios": {
+        "stop": true,
+        "failed_replay": true,
+        "stale_forecast": true,
+        "persistence_failure": true,
+        "data_integrity_faults": true,
+        "model_inference_failure": true,
+        "bad_reports_and_saved_state": true
+      },
+      "checks": 68,
+      "all_passed": true
+    },
+    "browser_multi_patient": {
+      "path": "reports/phase6/browser_multi_patient.json",
+      "sha256": "cfe1769e57874b12bd44937b5d115d670cbe1074571788b34c69e2bfe5bacad6",
+      "bytes": 18207,
+      "patients": 3,
+      "recordings": 6,
+      "checks": 47,
+      "all_passed": true
+    },
+    "soak": {
+      "path": "reports/phase6/soak_report.json",
+      "sha256": "f0102901f024968fce6a63eaf979025a737502d6d968d7959089526d18752609",
+      "bytes": 29501,
+      "cycles": 94,
+      "duration_s": 244.1,
+      "rss_slope_mb_per_cycle_after_warmup": 0.3165503947126894,
+      "all_passed": true,
+      "limitations": [
+        "service-level soak in one Python process (the Streamlit server adds its own overhead, sampled separately by the browser soak)",
+        "94 cycles of <= 1500 observations each; this bounds, but does not prove the absence of, slow leaks over hours or days",
+        "RSS is noisy (allocator/OS behaviour); the decision uses a fitted trend after warm-up, not single readings"
+      ]
+    },
+    "visual_review": {
+      "files": [
+        {
+          "path": "reports/phase6/visual_review_after_fix.json",
+          "sha256": "bfd10faa25091cf657b958384c1b86d023ba3604b385530233fcc8cb5109f93c",
+          "bytes": 14596
+        },
+        {
+          "path": "reports/phase6/visual_review_after_fix_b.json",
+          "sha256": "8ed4aefd261e2efbc004422b32bfdf30a2c33d5a1fa81d53d0dd5bb8d2b3107d",
+          "bytes": 13506
+        }
+      ],
+      "page_viewport_checks": 42,
+      "passed": 42
+    },
+    "phase1_warning_recheck": {
+      "path": "reports/phase6/phase1_warning_recheck.json",
+      "sha256": "3f83a4949605ebbedd30ff313732cf45f9031dad47cd8721d5aea2ac98ee65e9",
+      "bytes": 2880,
+      "matches_documented_expectation": {
+        "recordings_106": true,
+        "participants_22": true,
+        "events_101": true,
+        "events_end_9": true,
+        "participants_with_events_16": true,
+        "boundaries_105_of_105_one_step": true,
+        "sensor_nan_pct_about_15p3": true
+      }
+    },
+    "repository_audit": {
+      "path": "reports/phase6/repo_audit.json",
+      "sha256": "8f87399d469425428cc7cbd48171453b2825c63795d88d706ccce0855ff98446",
+      "bytes": 4559
+    }
+  },
+  "evaluation_reports": {
+    "phase2_metrics": {
+      "path": "reports/phase2/phase2_metrics.json",
+      "sha256": "6069899533ed40075d6fcb3689f5287c9d7ddfaf86ce482838531468f1995918",
+      "bytes": 260031
+    },
+    "phase2_results_report": {
+      "path": "reports/phase2/phase2_results_report.md",
+      "sha256": "dc357e1f4b9b963ae2030c459d7b10b645cb6b21a470710407b745b2d001de32",
+      "bytes": 16597
+    },
+    "phase1_quality_report": {
+      "path": "reports/data_quality_report.json",
+      "sha256": "918e935f0923297d0cfd488a2203fc50bcb4df64e8d66c86e8f47c9742be0dea",
+      "bytes": 28541
+    }
+  },
+  "architecture": {
+    "pdf": {
+      "path": "docs/phase6/architecture.pdf",
+      "sha256": "6baebc93bcba0f39b4ffaa0c56cf0c4cba0f7a2b0f9a2ce431911d3ff37ef996",
+      "bytes": 33348
+    },
+    "svg": {
+      "path": "docs/phase6/architecture.svg",
+      "sha256": "34a0378a143e372b5471b34bbc6fdfe2e37a09e48a729527101bb884732406bf",
+      "bytes": 34866
+    },
+    "source": {
+      "path": "docs/phase6/architecture_src/architecture.dot",
+      "sha256": "af5c90f8588aa4c6070d6fa40d919558b04781a8c0a949a1bd2c51757824ea15",
+      "bytes": 7251
+    },
+    "slide_figure": {
+      "path": "docs/phase6/architecture_src/architecture_slide.png",
+      "sha256": "1a1d8dd97103fb27b2c81b5b4fcdb2994a70fe0159123c7c82bbd5aab0641ab5",
+      "bytes": 345670
+    }
+  },
+  "presentation": {
+    "pptx": {
+      "path": "docs/phase6/ParkiStep_Twin_Presentation.pptx",
+      "sha256": "02acd0460a082e8305460253aa2f43a5a335776ae4049a1bfc2e4c1ffa356c3a",
+      "bytes": 838532
+    },
+    "pdf": {
+      "path": "docs/phase6/ParkiStep_Twin_Presentation.pdf",
+      "sha256": "28f13a1ad4cca64d7e278e5bf1ab6554ec6ba08f2e9740adc8b6f38f892ea22d",
+      "bytes": 846366
+    },
+    "builder": {
+      "path": "docs/phase6/presentation_src/build_presentation.py",
+      "sha256": "43b9b4d15ac60d591540435bd3f9dd8a677e8de17cb693aa286fb789c5bf0c2c",
+      "bytes": 27214
+    }
+  },
+  "licence": {
+    "code": {
+      "path": "LICENSE",
+      "sha256": "48a01b64cb9c7dc3b2a13ab3486a343994160bd18639dc11e0823d01eebd9a88",
+      "bytes": 1619
+    },
+    "third_party": {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "8479c3165b3268b073ab5bfaefd1cd67c36ec88330e850da0ab5bb2e2dd7c884",
+      "bytes": 4042
+    },
+    "copyright_holder": "PENDING - not supplied"
+  },
+  "readme_numbers_vs_generated_results": {
+    "average_precision": {
+      "value_in_phase2_metrics": "0.134",
+      "found_in_README": true
+    },
+    "event_sensitivity": {
+      "value_in_phase2_metrics": "0.21",
+      "found_in_README": true
+    },
+    "false_alerts_per_hour": {
+      "value_in_phase2_metrics": "74.3",
+      "found_in_README": true
+    },
+    "n_events_detected": {
+      "value_in_phase2_metrics": "16/75",
+      "found_in_README": true
+    }
+  },
+  "readme_numbers_all_match": true,
+  "demo_video": {
+    "script": {
+      "path": "docs/phase6/DEMO_VIDEO_SCRIPT.md",
+      "sha256": "13c852b3032427ae4361e5a70052c42e6f069bbd2ca0a894d861780c2e49daca",
+      "bytes": 14779
+    },
+    "video_file": null,
+    "status": "NOT RECORDED - only a script exists"
+  },
+  "team": {
+    "name": "PENDING",
+    "members": "PENDING",
+    "college": "PENDING",
+    "repository_url": "PENDING",
+    "video_url": "PENDING"
+  },
+  "contains_patient_level_data": false
+}

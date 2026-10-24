@@ -1,0 +1,12 @@
+pandas>=2.2
+numpy>=1.26
+PyYAML>=6.0
+requests>=2.31
+matplotlib>=3.8
+pyarrow>=15      # optional: parquet output (CSV fallback is configurable)
+pytest>=8        # tests
+scikit-learn>=1.4
+scipy>=1.11
+joblib>=1.3
+streamlit>=1.40   # Phase 4 dashboard (st.navigation, st.fragment)
+plotly>=5.20       # Phase 4 charts

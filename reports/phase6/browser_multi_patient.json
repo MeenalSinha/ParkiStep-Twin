@@ -1,0 +1,454 @@
+{
+  "schema": "parkistep.phase6.browser_multi_patient/1",
+  "discovered": {
+    "n_patients_tested": 3,
+    "combinations": [
+      {
+        "patient_id": "2",
+        "recording_id": "p2-s1-t1",
+        "n_recordings_for_patient": 4
+      },
+      {
+        "patient_id": "2",
+        "recording_id": "p2-s1-t7",
+        "n_recordings_for_patient": 4
+      },
+      {
+        "patient_id": "22",
+        "recording_id": "p22-s1-t3",
+        "n_recordings_for_patient": 2
+      },
+      {
+        "patient_id": "22",
+        "recording_id": "p22-s1-t4",
+        "n_recordings_for_patient": 2
+      },
+      {
+        "patient_id": "18",
+        "recording_id": "p18-s1-t1",
+        "n_recordings_for_patient": 8
+      },
+      {
+        "patient_id": "18",
+        "recording_id": "p18-s3-t4",
+        "n_recordings_for_patient": 8
+      }
+    ],
+    "models_offered": 24,
+    "alternative_model_used": "fusion/dummy_prior/h1"
+  },
+  "rows": [
+    {
+      "patient_id": "2",
+      "recording_id": "p2-s1-t1",
+      "n_recordings_for_patient": 4,
+      "metrics": {
+        "Recording": "p2-s1-t1",
+        "Replay position": "4.98 s",
+        "Processed / rejected": "300 / 0",
+        "Forecasts": "15",
+        "Warnings (active+closed)": "0",
+        "Twin status": "READY"
+      },
+      "reached_forecasts": true,
+      "no_inherited_buffer_or_history": true,
+      "ended_before_stop": false,
+      "stopped_metrics": {
+        "Recording": "p2-s1-t1",
+        "Replay position": "9.98 s",
+        "Processed / rejected": "600 / 0",
+        "Forecasts": "40",
+        "Warnings (active+closed)": "0",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "600",
+        "Rejected": "0",
+        "Warnings": "0",
+        "Future-data violations": "0",
+        "Annotated events": "0",
+        "Detected early": "0 / 0",
+        "Valid / false warnings": "0 / 0",
+        "Median warning lead": "n/a"
+      }
+    },
+    {
+      "patient_id": "2",
+      "recording_id": "p2-s1-t7",
+      "n_recordings_for_patient": 4,
+      "metrics": {
+        "Recording": "p2-s1-t7",
+        "Replay position": "189.03 s",
+        "Processed / rejected": "11,343 / 0",
+        "Forecasts": "936",
+        "Warnings (active+closed)": "4",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "11,343",
+        "Rejected": "0",
+        "Warnings": "4",
+        "Future-data violations": "0",
+        "Annotated events": "2",
+        "Detected early": "2 / 2",
+        "Valid / false warnings": "2 / 0",
+        "Median warning lead": "2.72 s"
+      },
+      "reached_forecasts": true,
+      "no_inherited_buffer_or_history": false,
+      "ended_before_stop": true,
+      "stopped_metrics": {
+        "Recording": "p2-s1-t7",
+        "Replay position": "189.03 s",
+        "Processed / rejected": "11,343 / 0",
+        "Forecasts": "936",
+        "Warnings (active+closed)": "4",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "11,343",
+        "Rejected": "0",
+        "Warnings": "4",
+        "Future-data violations": "0",
+        "Annotated events": "2",
+        "Detected early": "2 / 2",
+        "Valid / false warnings": "2 / 0",
+        "Median warning lead": "2.72 s"
+      }
+    },
+    {
+      "patient_id": "22",
+      "recording_id": "p22-s1-t3",
+      "n_recordings_for_patient": 2,
+      "metrics": {
+        "Recording": "p22-s1-t3",
+        "Replay position": "4.98 s",
+        "Processed / rejected": "300 / 0",
+        "Forecasts": "15",
+        "Warnings (active+closed)": "0",
+        "Twin status": "READY"
+      },
+      "reached_forecasts": true,
+      "no_inherited_buffer_or_history": true,
+      "ended_before_stop": false,
+      "stopped_metrics": {
+        "Recording": "p22-s1-t3",
+        "Replay position": "9.98 s",
+        "Processed / rejected": "600 / 0",
+        "Forecasts": "40",
+        "Warnings (active+closed)": "0",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "600",
+        "Rejected": "0",
+        "Warnings": "0",
+        "Future-data violations": "0",
+        "Annotated events": "0",
+        "Detected early": "0 / 0",
+        "Valid / false warnings": "0 / 0",
+        "Median warning lead": "n/a"
+      }
+    },
+    {
+      "patient_id": "22",
+      "recording_id": "p22-s1-t4",
+      "n_recordings_for_patient": 2,
+      "metrics": {
+        "Recording": "p22-s1-t4",
+        "Replay position": "57.28 s",
+        "Processed / rejected": "3,438 / 0",
+        "Forecasts": "0",
+        "Warnings (active+closed)": "0",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "3,438",
+        "Rejected": "0",
+        "Warnings": "0",
+        "Future-data violations": "0",
+        "Annotated events": "2",
+        "Detected early": "0 / 2",
+        "Valid / false warnings": "0 / 0",
+        "Median warning lead": "n/a"
+      },
+      "reached_forecasts": true,
+      "no_inherited_buffer_or_history": true,
+      "no_forecast_reason_shown_on": [
+        "Replay Analysis"
+      ],
+      "ended_before_stop": true,
+      "stopped_metrics": {
+        "Recording": "p22-s1-t4",
+        "Replay position": "57.28 s",
+        "Processed / rejected": "3,438 / 0",
+        "Forecasts": "0",
+        "Warnings (active+closed)": "0",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "3,438",
+        "Rejected": "0",
+        "Warnings": "0",
+        "Future-data violations": "0",
+        "Annotated events": "2",
+        "Detected early": "0 / 2",
+        "Valid / false warnings": "0 / 0",
+        "Median warning lead": "n/a"
+      }
+    },
+    {
+      "patient_id": "18",
+      "recording_id": "p18-s1-t1",
+      "n_recordings_for_patient": 8,
+      "metrics": {
+        "Recording": "p18-s1-t1",
+        "Replay position": "4.98 s",
+        "Processed / rejected": "300 / 0",
+        "Forecasts": "15",
+        "Warnings (active+closed)": "0",
+        "Twin status": "READY"
+      },
+      "reached_forecasts": true,
+      "no_inherited_buffer_or_history": true,
+      "ended_before_stop": false,
+      "stopped_metrics": {
+        "Recording": "p18-s1-t1",
+        "Replay position": "9.98 s",
+        "Processed / rejected": "600 / 0",
+        "Forecasts": "40",
+        "Warnings (active+closed)": "0",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "600",
+        "Rejected": "0",
+        "Warnings": "0",
+        "Future-data violations": "0",
+        "Annotated events": "0",
+        "Detected early": "0 / 0",
+        "Valid / false warnings": "0 / 0",
+        "Median warning lead": "n/a"
+      }
+    },
+    {
+      "patient_id": "18",
+      "recording_id": "p18-s3-t4",
+      "n_recordings_for_patient": 8,
+      "model_key": "fusion/dummy_prior/h1",
+      "model_label": "fusion / dummy_prior / 1 s horizon",
+      "metrics": {
+        "Recording": "p18-s3-t4",
+        "Replay position": "42.63 s",
+        "Processed / rejected": "2,559 / 0",
+        "Forecasts": "204",
+        "Warnings (active+closed)": "0",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "2,559",
+        "Rejected": "0",
+        "Warnings": "0",
+        "Future-data violations": "0",
+        "Annotated events": "0",
+        "Detected early": "0 / 0",
+        "Valid / false warnings": "0 / 0",
+        "Median warning lead": "n/a"
+      },
+      "reached_forecasts": true,
+      "no_inherited_buffer_or_history": true,
+      "ended_before_stop": true,
+      "stopped_metrics": {
+        "Recording": "p18-s3-t4",
+        "Replay position": "42.63 s",
+        "Processed / rejected": "2,559 / 0",
+        "Forecasts": "204",
+        "Warnings (active+closed)": "0",
+        "Twin status": "WAITING_FOR_DATA",
+        "Observations processed": "2,559",
+        "Rejected": "0",
+        "Warnings": "0",
+        "Future-data violations": "0",
+        "Annotated events": "0",
+        "Detected early": "0 / 0",
+        "Valid / false warnings": "0 / 0",
+        "Median warning lead": "n/a"
+      }
+    }
+  ],
+  "checks": {
+    "[0] p2 p2-s1-t1: replay shows the selected recording": {
+      "pass": true,
+      "detail": "{'Recording': 'p2-s1-t1', 'Replay position': '4.98 s', 'Processed / rejected': '300 / 0', 'Forecasts': '15', 'Warnings (active+closed)': '0', 'Twin status': 'READY'}"
+    },
+    "[0] replay produced forecasts": {
+      "pass": true,
+      "detail": "15"
+    },
+    "[0] recording belongs to the selected patient (id prefix)": {
+      "pass": true,
+      "detail": "p2-s1-t1"
+    },
+    "[0] counters belong to this twin (forecasts <= observations processed <= recording length)": {
+      "pass": true,
+      "detail": "{'Recording': 'p2-s1-t1', 'Replay position': '4.98 s', 'Processed / rejected': '300 / 0', 'Forecasts': '15', 'Warnings (active+closed)': '0', 'Twin status': 'READY'}"
+    },
+    "[0] Patient Profile for p2 shows its own clinical summary ('9 of 9 fields recorded')": {
+      "pass": true,
+      "detail": "Skip to main content\nkeyboard_double_arrow_left\n\nOverview\n\nPatient Profile\n\nMovement Monitor\n\nEarly Warning\n\nWarning Center\n\nReplay Analysis\n\nModel Performance\n\nParkiStep Twin\n\nFreezing-of-gait foreca"
+    },
+    "[0] Patient Profile selector follows the replay selection": {
+      "pass": true,
+      "detail": "2"
+    },
+    "[0] Warning Center renders without exception": {
+      "pass": true,
+      "detail": ""
+    },
+    "[1] p2 p2-s1-t7: replay shows the selected recording": {
+      "pass": true,
+      "detail": "{'Recording': 'p2-s1-t7', 'Replay position': '189.03 s', 'Processed / rejected': '11,343 / 0', 'Forecasts': '936', 'Warnings (active+closed)': '4', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '11,343', 'Rejected': '0', 'Warnings': '4', 'Future-data violations': '0', 'Annotated event"
+    },
+    "[1] replay produced forecasts": {
+      "pass": true,
+      "detail": "936"
+    },
+    "[1] recording belongs to the selected patient (id prefix)": {
+      "pass": true,
+      "detail": "p2-s1-t7"
+    },
+    "[1] counters belong to this twin (forecasts <= observations processed <= recording length)": {
+      "pass": true,
+      "detail": "{'Recording': 'p2-s1-t7', 'Replay position': '189.03 s', 'Processed / rejected': '11,343 / 0', 'Forecasts': '936', 'Warnings (active+closed)': '4', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '11,343', 'Rejected': '0', 'Warnings': '4', 'Future-data violations': '0', 'Annotated event"
+    },
+    "[1] Patient Profile for p2 shows its own clinical summary ('9 of 9 fields recorded')": {
+      "pass": true,
+      "detail": "Skip to main content\nkeyboard_double_arrow_left\n\nOverview\n\nPatient Profile\n\nMovement Monitor\n\nEarly Warning\n\nWarning Center\n\nReplay Analysis\n\nModel Performance\n\nParkiStep Twin\n\nFreezing-of-gait foreca"
+    },
+    "[1] Patient Profile selector follows the replay selection": {
+      "pass": true,
+      "detail": "2"
+    },
+    "[1] Warning Center renders without exception": {
+      "pass": true,
+      "detail": ""
+    },
+    "[2] p22 p22-s1-t3: replay shows the selected recording": {
+      "pass": true,
+      "detail": "{'Recording': 'p22-s1-t3', 'Replay position': '4.98 s', 'Processed / rejected': '300 / 0', 'Forecasts': '15', 'Warnings (active+closed)': '0', 'Twin status': 'READY'}"
+    },
+    "[2] replay produced forecasts": {
+      "pass": true,
+      "detail": "15"
+    },
+    "[2] recording belongs to the selected patient (id prefix)": {
+      "pass": true,
+      "detail": "p22-s1-t3"
+    },
+    "[2] counters belong to this twin (forecasts <= observations processed <= recording length)": {
+      "pass": true,
+      "detail": "{'Recording': 'p22-s1-t3', 'Replay position': '4.98 s', 'Processed / rejected': '300 / 0', 'Forecasts': '15', 'Warnings (active+closed)': '0', 'Twin status': 'READY'}"
+    },
+    "[2] Patient Profile for p22 shows its own clinical summary ('8 of 9 fields recorded')": {
+      "pass": true,
+      "detail": "Skip to main content\nkeyboard_double_arrow_left\n\nOverview\n\nPatient Profile\n\nMovement Monitor\n\nEarly Warning\n\nWarning Center\n\nReplay Analysis\n\nModel Performance\n\nParkiStep Twin\n\nFreezing-of-gait foreca"
+    },
+    "[2] Patient Profile selector follows the replay selection": {
+      "pass": true,
+      "detail": "22"
+    },
+    "[2] Warning Center renders without exception": {
+      "pass": true,
+      "detail": ""
+    },
+    "[3] p22 p22-s1-t4: replay shows the selected recording": {
+      "pass": true,
+      "detail": "{'Recording': 'p22-s1-t4', 'Replay position': '57.28 s', 'Processed / rejected': '3,438 / 0', 'Forecasts': '0', 'Warnings (active+closed)': '0', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '3,438', 'Rejected': '0', 'Warnings': '0', 'Future-data violations': '0', 'Annotated events': "
+    },
+    "[3] recording with no forecasts: Early Warning shows no current forecast and no score": {
+      "pass": true,
+      "detail": "CURRENT MODEL SCORE\nNo current forecast\nNo forecast yet session ended (replay_finished); forecasts of the old session are historical\nThe score is an uncalibrated model output. It is not a probability of a freezing episode and has not been validated as a clinical measure.\n\nNo active warning \u00a0 The war"
+    },
+    "[3] recording with no forecasts: the reason (insufficient sensor quality) is visible somewhere in the UI": {
+      "pass": true,
+      "detail": "{'Replay Analysis': True, 'Early Warning': False, 'Overview': False}"
+    },
+    "[3] recording belongs to the selected patient (id prefix)": {
+      "pass": true,
+      "detail": "p22-s1-t4"
+    },
+    "[3] counters belong to this twin (forecasts <= observations processed <= recording length)": {
+      "pass": true,
+      "detail": "{'Recording': 'p22-s1-t4', 'Replay position': '57.28 s', 'Processed / rejected': '3,438 / 0', 'Forecasts': '0', 'Warnings (active+closed)': '0', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '3,438', 'Rejected': '0', 'Warnings': '0', 'Future-data violations': '0', 'Annotated events': "
+    },
+    "[3] Patient Profile for p22 shows its own clinical summary ('8 of 9 fields recorded')": {
+      "pass": true,
+      "detail": "Skip to main content\nkeyboard_double_arrow_left\n\nOverview\n\nPatient Profile\n\nMovement Monitor\n\nEarly Warning\n\nWarning Center\n\nReplay Analysis\n\nModel Performance\n\nParkiStep Twin\n\nFreezing-of-gait foreca"
+    },
+    "[3] Patient Profile selector follows the replay selection": {
+      "pass": true,
+      "detail": "22"
+    },
+    "[3] Warning Center renders without exception": {
+      "pass": true,
+      "detail": ""
+    },
+    "[4] p18 p18-s1-t1: replay shows the selected recording": {
+      "pass": true,
+      "detail": "{'Recording': 'p18-s1-t1', 'Replay position': '4.98 s', 'Processed / rejected': '300 / 0', 'Forecasts': '15', 'Warnings (active+closed)': '0', 'Twin status': 'READY'}"
+    },
+    "[4] replay produced forecasts": {
+      "pass": true,
+      "detail": "15"
+    },
+    "[4] recording belongs to the selected patient (id prefix)": {
+      "pass": true,
+      "detail": "p18-s1-t1"
+    },
+    "[4] counters belong to this twin (forecasts <= observations processed <= recording length)": {
+      "pass": true,
+      "detail": "{'Recording': 'p18-s1-t1', 'Replay position': '4.98 s', 'Processed / rejected': '300 / 0', 'Forecasts': '15', 'Warnings (active+closed)': '0', 'Twin status': 'READY'}"
+    },
+    "[4] Patient Profile for p18 shows its own clinical summary ('9 of 9 fields recorded')": {
+      "pass": true,
+      "detail": "Skip to main content\nkeyboard_double_arrow_left\n\nOverview\n\nPatient Profile\n\nMovement Monitor\n\nEarly Warning\n\nWarning Center\n\nReplay Analysis\n\nModel Performance\n\nParkiStep Twin\n\nFreezing-of-gait foreca"
+    },
+    "[4] Patient Profile selector follows the replay selection": {
+      "pass": true,
+      "detail": "18"
+    },
+    "[4] Warning Center renders without exception": {
+      "pass": true,
+      "detail": ""
+    },
+    "[5] p18 p18-s3-t4: replay shows the selected recording": {
+      "pass": true,
+      "detail": "{'Recording': 'p18-s3-t4', 'Replay position': '42.63 s', 'Processed / rejected': '2,559 / 0', 'Forecasts': '204', 'Warnings (active+closed)': '0', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '2,559', 'Rejected': '0', 'Warnings': '0', 'Future-data violations': '0', 'Annotated events'"
+    },
+    "[5] replay produced forecasts": {
+      "pass": true,
+      "detail": "204"
+    },
+    "[5] recording belongs to the selected patient (id prefix)": {
+      "pass": true,
+      "detail": "p18-s3-t4"
+    },
+    "[5] counters belong to this twin (forecasts <= observations processed <= recording length)": {
+      "pass": true,
+      "detail": "{'Recording': 'p18-s3-t4', 'Replay position': '42.63 s', 'Processed / rejected': '2,559 / 0', 'Forecasts': '204', 'Warnings (active+closed)': '0', 'Twin status': 'WAITING_FOR_DATA', 'Observations processed': '2,559', 'Rejected': '0', 'Warnings': '0', 'Future-data violations': '0', 'Annotated events'"
+    },
+    "[5] selected non-default model is the one shown/used": {
+      "pass": true,
+      "detail": "fusion/dummy_prior"
+    },
+    "[5] Patient Profile for p18 shows its own clinical summary ('9 of 9 fields recorded')": {
+      "pass": true,
+      "detail": "Skip to main content\nkeyboard_double_arrow_left\n\nOverview\n\nPatient Profile\n\nMovement Monitor\n\nEarly Warning\n\nWarning Center\n\nReplay Analysis\n\nModel Performance\n\nParkiStep Twin\n\nFreezing-of-gait foreca"
+    },
+    "[5] Patient Profile selector follows the replay selection": {
+      "pass": true,
+      "detail": "18"
+    },
+    "[5] Warning Center renders without exception": {
+      "pass": true,
+      "detail": ""
+    },
+    "one twin created per started replay (double-click on Start created no extra twin)": {
+      "pass": true,
+      "detail": "twins created=7 for 6 + 1 starts"
+    },
+    "one SESSION_START per started replay": {
+      "pass": true,
+      "detail": "7"
+    },
+    "no Streamlit exceptions / JS errors / server tracebacks": {
+      "pass": true,
+      "detail": "[]"
+    }
+  },
+  "all_passed": true
+}

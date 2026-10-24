@@ -1,0 +1,144 @@
+# Dataset source profiles. Every dataset-specific assumption lives here, not in Python.
+# Canonical (internal) field names are the keys; `source` lists the accepted original
+# column names (aliases). Nothing in src/ refers to an original column name.
+datasets:
+  fogstar:
+    adapter: tabular_files            # reader implementation (see parkistep.ingestion)
+    synthetic: false
+    name: "FoG-STAR: Freezing of Gait Severity, Tasks, Activities, and Ratings"
+    version: "3.0 (as stated in the bundled README; the Zenodo record's own version tag could not be verified offline)"
+    raw_subdir: fogstar               # raw files live in <paths.data_root>/<raw_subdir>/
+    source:
+      url: https://zenodo.org/records/17838806
+      zenodo_record: "17838806"
+      zenodo_api: "https://zenodo.org/api/records/{record}"
+      doi: null                       # Zenodo record DOI not verified; paper DOI below
+      paper_doi: 10.1038/s41597-026-06645-1
+    license:
+      name: CC BY 4.0
+      url: https://creativecommons.org/licenses/by/4.0/
+      note: "Stated in the Phase 0 pack. The bundled README only says 'see the Zenodo record'; verify on the record before redistribution."
+    attribution: >-
+      Credit the dataset authors, link the license and indicate modifications.
+      Cite Borzì, L. et al. (2026) Sci Data 13, 305, https://doi.org/10.1038/s41597-026-06645-1
+      and the Zenodo record https://zenodo.org/records/17838806.
+    citations:
+      - "Borzì, L. et al. (2026). A multi-level annotated sensor dataset of gait freezing manifestations and severity in Parkinson's disease. Scientific Data 13, 305. https://doi.org/10.1038/s41597-026-06645-1  (cited in the Phase 0 pack)"
+      - "Borzi, L. et al. Freezing of gait detection: The effect of sensor type, position, activities, datasets, and machine learning model. Journal of Parkinson's Disease, 15(1), 163-181.  (cited in the dataset README)"
+      - "Demrozi, F. et al. A low-cost wireless body area network for human activity recognition in healthy life and medical applications. IEEE Trans. Emerging Topics in Computing 11(4), 839-850 (2023).  (cited in the dataset README)"
+    known_documentation_discrepancies:      # human-written notes, each verified against the real files
+      - "README says timestamp is in milliseconds; observed step is 1/60 (0.01667), i.e. the column is in seconds. The profile therefore sets timestamp.unit: seconds."
+      - "README names clinical columns fes_i and pdq_8; the CSV header uses 'fes-i' and 'pdq8'. Both spellings are listed as aliases."
+      - "README documents activity labels 1-7; the sensor file also contains activity value 0."
+    acquisition:
+      expected_files: [sensor_data.csv, clinical_data.csv]
+      archive_members: [sensor_data.csv, clinical_data.csv, "README*.txt", "*.yaml", "*.ipynb"]   # basename globs extracted from a local archive
+      manual_instructions: >-
+        Download the files from https://zenodo.org/records/17838806 (sensor_data.csv,
+        clinical_data.csv, README) and place them in <data_root>/fogstar/, or run
+        `python scripts/acquire_data.py --from-archive <Dataset.zip>`.
+      provenance_file: PROVENANCE.json
+
+    files:
+      sensor:   {pattern: "sensor_data.csv",   format: csv, encoding: utf-8, na_values: ["NaN", "nan", ""]}
+      clinical: {pattern: "clinical_data.csv", format: csv, encoding: utf-8, na_values: ["NaN", "nan", ""]}
+
+    clinical:
+      key: participant_id
+      one_record_per_key: true
+      fields:
+        participant_id:   {source: [subjectID], dtype: int, required: true}
+        age:              {source: [age], dtype: float, required: true, unit: years}
+        gender:           {source: [gender], dtype: str, required: true, categories: [M, F]}
+        disease_duration: {source: [disease_duration], dtype: float, required: true, unit: years}
+        hoehn_yahr:       {source: [h_y], dtype: float, required: true, valid_range: [0, 5]}
+        updrs_iii:        {source: [updrs_iii], dtype: float, required: true, valid_range: [0, 76]}
+        fog_q:            {source: [fog_q], dtype: float, required: true, valid_range: [0, 24]}
+        moca:             {source: [moca], dtype: float, required: true, valid_range: [0, 30]}
+        fes_i:            {source: ["fes-i", fes_i], dtype: float, required: true, valid_range: [16, 64]}
+        pdq_8:            {source: [pdq8, pdq_8], dtype: float, required: true, valid_range: [0, 32]}
+      # valid_range values are the ranges printed in the dataset README; fields without one
+      # (age, disease_duration) are not range-checked because no documented range exists.
+
+    sensor:
+      identifiers:
+        participant_id: {source: [subjectID], dtype: int, required: true}
+        session_id:     {source: [sessionID], dtype: int, required: true}
+        task_id:        {source: [taskID],    dtype: int, required: true}
+      group_by: [participant_id, session_id, task_id]   # one recording = one unique combination
+      timestamp: {source: [timestamp], canonical: timestamp_s, kind: numeric, unit: seconds}
+      channels:
+        positions: [ankleL, ankleR, back, wrist]
+        axes: [x, y, z]
+        source_template: "{position}_{signal}_{axis}"
+        canonical_template: "{position}_{signal}_{axis}"
+        signals:
+          acc:  {unit: g,     plausible_range: [-16, 16]}      # review heuristic, not documented by the source
+          gyro: {unit: deg/s, plausible_range: [-2000, 2000]}  # review heuristic, not documented by the source
+      annotations:
+        activity:
+          source: [activity]
+          dtype: int
+          role: activity
+          allowed_values: [1, 2, 3, 4, 5, 6, 7]
+          labels: {1: Walk, 2: Sit, 3: Stand, 4: Sit-to-stand, 5: Stand-to-sit, 6: Turn-right, 7: Turn-left}
+        fog:
+          source: [fog]
+          dtype: int
+          role: event_label
+          allowed_values: [0, 1]
+          labels: {0: No FoG, 1: FoG}
+        fog_severity:
+          source: [fog_severity]
+          dtype: int
+          role: severity
+          allowed_values: [1, 2, 3]
+          no_event_value: 0
+          labels: {0: No FoG, 1: Shuffling, 2: Trembling, 3: Akinesia}
+      annotation_rules:
+        documented_by_source: true
+        event_label: fog
+        positive_value: 1
+        severity: fog_severity
+        severity_requires_event: true
+        annotation_resolution_hz: 10      # README: annotations derived from 10 fps video
+      task_labels: {1: Timed Up-and-Go, 2: Stand 1min, 3: Walk back/forth, 4: Walk+Doorway, 5: Walk+Water, 6: Walk+Count, 7: 360 turn}
+
+    sampling:
+      expected_hz: 60
+      expected_hz_source: dataset README
+      tolerance_fraction: 0.05            # observed vs expected interval tolerated before a warning
+      gap_threshold_factor: 2.0           # gap = interval > factor x expected interval
+      mismatch_severity: warning
+
+    validation:
+      clinical:
+        duplicate_key_severity: error
+        missing_value_severity: warning
+        out_of_range_severity: warning
+        unexpected_category_severity: warning
+      sensor:
+        missing_value_severity: warning
+        all_missing_channel_severity: error
+        duplicate_timestamp_severity: error
+        out_of_order_severity: error
+        non_contiguous_recording_severity: warning
+        constant_channel_severity: warning
+        implausible_value_severity: warning
+        undocumented_label_severity: warning
+        unparseable_value_severity: error
+      annotation:
+        severity_inconsistency_severity: warning
+        missing_label_severity: warning
+    missing_data_policy: retain           # retain only; no imputation/interpolation/row deletion is performed
+    join:
+      key: participant_id
+      how: left                           # sensor left-joined to clinical; unmatched rows are kept and reported
+      expected_cardinality: many_to_one   # sensor rows -> one clinical record
+      unmatched_sensor_participants_severity: error
+      unmatched_clinical_participants_severity: warning
+      missing_clinical_after_join_severity: warning
+    readiness:                            # checks tied to the intended forecasting task
+      min_episodes_total: 1
+      min_participants_with_episodes: 2
+      severity: error

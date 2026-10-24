@@ -1,0 +1,660 @@
+[
+  {
+    "warning_id": "twin-2-w0001",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 566.683333333333,
+    "activation_prediction_id": "twin-2-p000059",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 570.083333333333,
+    "last_qualifying_prediction_id": "twin-2-p000076",
+    "n_qualifying_forecasts": 18,
+    "max_score": 0.7934422254399869,
+    "resolved_at": 571.283333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 566.683333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000059"
+      },
+      {
+        "ts": 571.283333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0002",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 572.483333333333,
+    "activation_prediction_id": "twin-2-p000088",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 573.483333333333,
+    "last_qualifying_prediction_id": "twin-2-p000093",
+    "n_qualifying_forecasts": 6,
+    "max_score": 0.7526506420833438,
+    "resolved_at": 574.683333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 572.483333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000088"
+      },
+      {
+        "ts": 574.683333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0003",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 594.883333333333,
+    "activation_prediction_id": "twin-2-p000200",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 595.683333333333,
+    "last_qualifying_prediction_id": "twin-2-p000204",
+    "n_qualifying_forecasts": 5,
+    "max_score": 0.7602120376719689,
+    "resolved_at": 596.883333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 594.883333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000200"
+      },
+      {
+        "ts": 596.883333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0004",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 596.883333333333,
+    "activation_prediction_id": "twin-2-p000210",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 608.683333333333,
+    "last_qualifying_prediction_id": "twin-2-p000269",
+    "n_qualifying_forecasts": 59,
+    "max_score": 0.8044894000624706,
+    "resolved_at": 609.883333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 596.883333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000210"
+      },
+      {
+        "ts": 609.883333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0005",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 611.283333333333,
+    "activation_prediction_id": "twin-2-p000282",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 616.083333333333,
+    "last_qualifying_prediction_id": "twin-2-p000306",
+    "n_qualifying_forecasts": 25,
+    "max_score": 0.817815408023746,
+    "resolved_at": 617.283333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 611.283333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000282"
+      },
+      {
+        "ts": 617.283333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0006",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 621.483333333333,
+    "activation_prediction_id": "twin-2-p000333",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 634.283333333333,
+    "last_qualifying_prediction_id": "twin-2-p000397",
+    "n_qualifying_forecasts": 65,
+    "max_score": 0.804707679002806,
+    "resolved_at": 635.483333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 621.483333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000333"
+      },
+      {
+        "ts": 635.483333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0007",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 637.083333333333,
+    "activation_prediction_id": "twin-2-p000411",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 638.283333333333,
+    "last_qualifying_prediction_id": "twin-2-p000417",
+    "n_qualifying_forecasts": 5,
+    "max_score": 0.7409076100416216,
+    "resolved_at": 639.483333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 637.083333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000411"
+      },
+      {
+        "ts": 639.483333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0008",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 639.483333333333,
+    "activation_prediction_id": "twin-2-p000423",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 639.483333333333,
+    "last_qualifying_prediction_id": "twin-2-p000423",
+    "n_qualifying_forecasts": 1,
+    "max_score": 0.7063268957256469,
+    "resolved_at": 640.683333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 639.483333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000423"
+      },
+      {
+        "ts": 640.683333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0009",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 643.483333333333,
+    "activation_prediction_id": "twin-2-p000443",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 643.883333333333,
+    "last_qualifying_prediction_id": "twin-2-p000445",
+    "n_qualifying_forecasts": 3,
+    "max_score": 0.7205238553834945,
+    "resolved_at": 645.083333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 643.483333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000443"
+      },
+      {
+        "ts": 645.083333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0010",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 672.883333333333,
+    "activation_prediction_id": "twin-2-p000590",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 680.883333333333,
+    "last_qualifying_prediction_id": "twin-2-p000630",
+    "n_qualifying_forecasts": 37,
+    "max_score": 0.7732366689450363,
+    "resolved_at": 682.083333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 672.883333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000590"
+      },
+      {
+        "ts": 682.083333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0011",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 682.683333333333,
+    "activation_prediction_id": "twin-2-p000639",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 692.483333333333,
+    "last_qualifying_prediction_id": "twin-2-p000688",
+    "n_qualifying_forecasts": 48,
+    "max_score": 0.8200379929310184,
+    "resolved_at": 693.683333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 682.683333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000639"
+      },
+      {
+        "ts": 693.683333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0012",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 694.683333333333,
+    "activation_prediction_id": "twin-2-p000699",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 696.883333333333,
+    "last_qualifying_prediction_id": "twin-2-p000710",
+    "n_qualifying_forecasts": 10,
+    "max_score": 0.7473457636294917,
+    "resolved_at": 698.083333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 694.683333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000699"
+      },
+      {
+        "ts": 698.083333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0013",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 712.683333333333,
+    "activation_prediction_id": "twin-2-p000789",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 727.083333333333,
+    "last_qualifying_prediction_id": "twin-2-p000861",
+    "n_qualifying_forecasts": 69,
+    "max_score": 0.7968367054563685,
+    "resolved_at": 728.283333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 712.683333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000789"
+      },
+      {
+        "ts": 728.283333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  },
+  {
+    "warning_id": "twin-2-w0014",
+    "twin_id": "twin-2",
+    "patient_id": "2",
+    "session_id": "p2-s1-t4",
+    "status": "RESOLVED",
+    "activated_at": 731.083333333333,
+    "activation_prediction_id": "twin-2-p000881",
+    "model_id": "fog_onset_forecast_6499e95d/sensor_only/random_forest",
+    "horizon_s": 3.0,
+    "threshold": 0.7031869504322085,
+    "threshold_source": "model_manifest",
+    "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+    "policy": {
+      "persistence_anchors": 1,
+      "merge_gap_s": 1.0,
+      "cooldown_s": 0.0,
+      "consecutive_below": 1,
+      "allow_repeat_while_active": false,
+      "expire_after_invalid_s": 5.0,
+      "max_active_s": null,
+      "continuity_s": 0.30000000000000004,
+      "source": "model_manifest"
+    },
+    "last_qualifying_at": 732.883333333333,
+    "last_qualifying_prediction_id": "twin-2-p000890",
+    "n_qualifying_forecasts": 10,
+    "max_score": 0.7727233216722421,
+    "resolved_at": 734.083333333333,
+    "resolution_reason": "no qualifying forecast within the merge gap; score below threshold",
+    "acknowledged_at": null,
+    "acknowledged_by": null,
+    "lifecycle": [
+      {
+        "ts": 731.083333333333,
+        "to": "ACTIVE",
+        "reason": "1 consecutive forecast(s) at or above the operating threshold 0.7032",
+        "prediction_id": "twin-2-p000881"
+      },
+      {
+        "ts": 734.083333333333,
+        "to": "RESOLVED",
+        "reason": "no qualifying forecast within the merge gap; score below threshold"
+      }
+    ],
+    "note": "A warning means the model score met the configured alert conditions. It does not establish that a freezing episode is occurring or will occur."
+  }
+]
